@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
+		C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
+		C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB171797B22100FB8A7F /* CoreGraphics.framework */; };
+		C179EB1E1797B22100FB8A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C179EB1C1797B22100FB8A7F /* InfoPlist.strings */; };
+		C179EB201797B22100FB8A7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB1F1797B22100FB8A7F /* main.m */; };
+		C179EB241797B22100FB8A7F /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB231797B22100FB8A7F /* MBAppDelegate.m */; };
+		C179EB261797B22100FB8A7F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C179EB251797B22100FB8A7F /* Default.png */; };
+		C179EB281797B22100FB8A7F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C179EB271797B22100FB8A7F /* Default@2x.png */; };
+		C179EB2A1797B22100FB8A7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C179EB291797B22100FB8A7F /* Default-568h@2x.png */; };
+		C179EB2D1797B22100FB8A7F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C179EB2B1797B22100FB8A7F /* MainStoryboard.storyboard */; };
+		C179EB301797B22100FB8A7F /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB2F1797B22100FB8A7F /* MBViewController.m */; };
+		C179EB381797B22100FB8A7F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB371797B22100FB8A7F /* SenTestingKit.framework */; };
+		C179EB391797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
+		C179EB3A1797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
+		C179EB421797B22100FB8A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C179EB401797B22100FB8A7F /* InfoPlist.strings */; };
+		C179EB451797B22100FB8A7F /* MoodyBootyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB441797B22100FB8A7F /* MoodyBootyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C179EB3B1797B22100FB8A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C179EB081797B22100FB8A7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C179EB0F1797B22100FB8A7F;
+			remoteInfo = MoodyBooty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C179EB101797B22100FB8A7F /* MoodyBooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C179EB131797B22100FB8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C179EB151797B22100FB8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C179EB171797B22100FB8A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C179EB1B1797B22100FB8A7F /* MoodyBooty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoodyBooty-Info.plist"; sourceTree = "<group>"; };
+		C179EB1D1797B22100FB8A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C179EB1F1797B22100FB8A7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C179EB211797B22100FB8A7F /* MoodyBooty-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoodyBooty-Prefix.pch"; sourceTree = "<group>"; };
+		C179EB221797B22100FB8A7F /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
+		C179EB231797B22100FB8A7F /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
+		C179EB251797B22100FB8A7F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C179EB271797B22100FB8A7F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C179EB291797B22100FB8A7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C179EB2C1797B22100FB8A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C179EB2E1797B22100FB8A7F /* MBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBViewController.h; sourceTree = "<group>"; };
+		C179EB2F1797B22100FB8A7F /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
+		C179EB361797B22100FB8A7F /* MoodyBootyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodyBootyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C179EB371797B22100FB8A7F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C179EB3F1797B22100FB8A7F /* MoodyBootyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoodyBootyTests-Info.plist"; sourceTree = "<group>"; };
+		C179EB411797B22100FB8A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C179EB431797B22100FB8A7F /* MoodyBootyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodyBootyTests.h; sourceTree = "<group>"; };
+		C179EB441797B22100FB8A7F /* MoodyBootyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodyBootyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C179EB0D1797B22100FB8A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */,
+				C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */,
+				C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C179EB321797B22100FB8A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB381797B22100FB8A7F /* SenTestingKit.framework in Frameworks */,
+				C179EB391797B22100FB8A7F /* UIKit.framework in Frameworks */,
+				C179EB3A1797B22100FB8A7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C179EB071797B22100FB8A7F = {
+			isa = PBXGroup;
+			children = (
+				C179EB191797B22100FB8A7F /* MoodyBooty */,
+				C179EB3D1797B22100FB8A7F /* MoodyBootyTests */,
+				C179EB121797B22100FB8A7F /* Frameworks */,
+				C179EB111797B22100FB8A7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C179EB111797B22100FB8A7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB101797B22100FB8A7F /* MoodyBooty.app */,
+				C179EB361797B22100FB8A7F /* MoodyBootyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C179EB121797B22100FB8A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB131797B22100FB8A7F /* UIKit.framework */,
+				C179EB151797B22100FB8A7F /* Foundation.framework */,
+				C179EB171797B22100FB8A7F /* CoreGraphics.framework */,
+				C179EB371797B22100FB8A7F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C179EB191797B22100FB8A7F /* MoodyBooty */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB221797B22100FB8A7F /* MBAppDelegate.h */,
+				C179EB231797B22100FB8A7F /* MBAppDelegate.m */,
+				C179EB2B1797B22100FB8A7F /* MainStoryboard.storyboard */,
+				C179EB2E1797B22100FB8A7F /* MBViewController.h */,
+				C179EB2F1797B22100FB8A7F /* MBViewController.m */,
+				C179EB1A1797B22100FB8A7F /* Supporting Files */,
+			);
+			path = MoodyBooty;
+			sourceTree = "<group>";
+		};
+		C179EB1A1797B22100FB8A7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB1B1797B22100FB8A7F /* MoodyBooty-Info.plist */,
+				C179EB1C1797B22100FB8A7F /* InfoPlist.strings */,
+				C179EB1F1797B22100FB8A7F /* main.m */,
+				C179EB211797B22100FB8A7F /* MoodyBooty-Prefix.pch */,
+				C179EB251797B22100FB8A7F /* Default.png */,
+				C179EB271797B22100FB8A7F /* Default@2x.png */,
+				C179EB291797B22100FB8A7F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C179EB3D1797B22100FB8A7F /* MoodyBootyTests */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB431797B22100FB8A7F /* MoodyBootyTests.h */,
+				C179EB441797B22100FB8A7F /* MoodyBootyTests.m */,
+				C179EB3E1797B22100FB8A7F /* Supporting Files */,
+			);
+			path = MoodyBootyTests;
+			sourceTree = "<group>";
+		};
+		C179EB3E1797B22100FB8A7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C179EB3F1797B22100FB8A7F /* MoodyBootyTests-Info.plist */,
+				C179EB401797B22100FB8A7F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C179EB0F1797B22100FB8A7F /* MoodyBooty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C179EB481797B22100FB8A7F /* Build configuration list for PBXNativeTarget "MoodyBooty" */;
+			buildPhases = (
+				C179EB0C1797B22100FB8A7F /* Sources */,
+				C179EB0D1797B22100FB8A7F /* Frameworks */,
+				C179EB0E1797B22100FB8A7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoodyBooty;
+			productName = MoodyBooty;
+			productReference = C179EB101797B22100FB8A7F /* MoodyBooty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C179EB351797B22100FB8A7F /* MoodyBootyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C179EB4B1797B22100FB8A7F /* Build configuration list for PBXNativeTarget "MoodyBootyTests" */;
+			buildPhases = (
+				C179EB311797B22100FB8A7F /* Sources */,
+				C179EB321797B22100FB8A7F /* Frameworks */,
+				C179EB331797B22100FB8A7F /* Resources */,
+				C179EB341797B22100FB8A7F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C179EB3C1797B22100FB8A7F /* PBXTargetDependency */,
+			);
+			name = MoodyBootyTests;
+			productName = MoodyBootyTests;
+			productReference = C179EB361797B22100FB8A7F /* MoodyBootyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C179EB081797B22100FB8A7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MB;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = paubins;
+			};
+			buildConfigurationList = C179EB0B1797B22100FB8A7F /* Build configuration list for PBXProject "MoodyBooty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C179EB071797B22100FB8A7F;
+			productRefGroup = C179EB111797B22100FB8A7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C179EB0F1797B22100FB8A7F /* MoodyBooty */,
+				C179EB351797B22100FB8A7F /* MoodyBootyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C179EB0E1797B22100FB8A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB1E1797B22100FB8A7F /* InfoPlist.strings in Resources */,
+				C179EB261797B22100FB8A7F /* Default.png in Resources */,
+				C179EB281797B22100FB8A7F /* Default@2x.png in Resources */,
+				C179EB2A1797B22100FB8A7F /* Default-568h@2x.png in Resources */,
+				C179EB2D1797B22100FB8A7F /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C179EB331797B22100FB8A7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB421797B22100FB8A7F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C179EB341797B22100FB8A7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C179EB0C1797B22100FB8A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB201797B22100FB8A7F /* main.m in Sources */,
+				C179EB241797B22100FB8A7F /* MBAppDelegate.m in Sources */,
+				C179EB301797B22100FB8A7F /* MBViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C179EB311797B22100FB8A7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C179EB451797B22100FB8A7F /* MoodyBootyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C179EB3C1797B22100FB8A7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C179EB0F1797B22100FB8A7F /* MoodyBooty */;
+			targetProxy = C179EB3B1797B22100FB8A7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C179EB1C1797B22100FB8A7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C179EB1D1797B22100FB8A7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C179EB2B1797B22100FB8A7F /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C179EB2C1797B22100FB8A7F /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		C179EB401797B22100FB8A7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C179EB411797B22100FB8A7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C179EB461797B22100FB8A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C179EB471797B22100FB8A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C179EB491797B22100FB8A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
+				INFOPLIST_FILE = "MoodyBooty/MoodyBooty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C179EB4A1797B22100FB8A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
+				INFOPLIST_FILE = "MoodyBooty/MoodyBooty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C179EB4C1797B22100FB8A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodyBooty.app/MoodyBooty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
+				INFOPLIST_FILE = "MoodyBootyTests/MoodyBootyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C179EB4D1797B22100FB8A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MoodyBooty.app/MoodyBooty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
+				INFOPLIST_FILE = "MoodyBootyTests/MoodyBootyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C179EB0B1797B22100FB8A7F /* Build configuration list for PBXProject "MoodyBooty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C179EB461797B22100FB8A7F /* Debug */,
+				C179EB471797B22100FB8A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C179EB481797B22100FB8A7F /* Build configuration list for PBXNativeTarget "MoodyBooty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C179EB491797B22100FB8A7F /* Debug */,
+				C179EB4A1797B22100FB8A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C179EB4B1797B22100FB8A7F /* Build configuration list for PBXNativeTarget "MoodyBootyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C179EB4C1797B22100FB8A7F /* Debug */,
+				C179EB4D1797B22100FB8A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C179EB081797B22100FB8A7F /* Project object */;
+}
