@@ -23,6 +23,11 @@
 		C179EB3A1797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
 		C179EB421797B22100FB8A7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C179EB401797B22100FB8A7F /* InfoPlist.strings */; };
 		C179EB451797B22100FB8A7F /* MoodyBootyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB441797B22100FB8A7F /* MoodyBootyTests.m */; };
+		C179EB501797B26F00FB8A7F /* MBQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB4F1797B26F00FB8A7F /* MBQuote.m */; };
+		C179EB521797B38D00FB8A7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB511797B38D00FB8A7F /* CoreData.framework */; };
+		C179EB5517A0D0B400FB8A7F /* MBMood.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB5417A0D0B400FB8A7F /* MBMood.m */; };
+		C179EB5E17A0DEF000FB8A7F /* MBMoodCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */; };
+		C179EB6117A0E0A100FB8A7F /* MBQuoteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,15 @@
 		C179EB411797B22100FB8A7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C179EB431797B22100FB8A7F /* MoodyBootyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodyBootyTests.h; sourceTree = "<group>"; };
 		C179EB441797B22100FB8A7F /* MoodyBootyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodyBootyTests.m; sourceTree = "<group>"; };
+		C179EB4E1797B26F00FB8A7F /* MBQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuote.h; sourceTree = "<group>"; };
+		C179EB4F1797B26F00FB8A7F /* MBQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuote.m; sourceTree = "<group>"; };
+		C179EB511797B38D00FB8A7F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C179EB5317A0D0B400FB8A7F /* MBMood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMood.h; sourceTree = "<group>"; };
+		C179EB5417A0D0B400FB8A7F /* MBMood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMood.m; sourceTree = "<group>"; };
+		C179EB5C17A0DEF000FB8A7F /* MBMoodCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMoodCollectionView.h; sourceTree = "<group>"; };
+		C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMoodCollectionView.m; sourceTree = "<group>"; };
+		C179EB5F17A0E0A100FB8A7F /* MBQuoteCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteCollectionViewController.h; sourceTree = "<group>"; };
+		C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C179EB521797B38D00FB8A7F /* CoreData.framework in Frameworks */,
 				C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */,
 				C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */,
 				C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +102,7 @@
 		C179EB071797B22100FB8A7F = {
 			isa = PBXGroup;
 			children = (
+				C179EB511797B38D00FB8A7F /* CoreData.framework */,
 				C179EB191797B22100FB8A7F /* MoodyBooty */,
 				C179EB3D1797B22100FB8A7F /* MoodyBootyTests */,
 				C179EB121797B22100FB8A7F /* Frameworks */,
@@ -123,6 +139,14 @@
 				C179EB2E1797B22100FB8A7F /* MBViewController.h */,
 				C179EB2F1797B22100FB8A7F /* MBViewController.m */,
 				C179EB1A1797B22100FB8A7F /* Supporting Files */,
+				C179EB4E1797B26F00FB8A7F /* MBQuote.h */,
+				C179EB4F1797B26F00FB8A7F /* MBQuote.m */,
+				C179EB5317A0D0B400FB8A7F /* MBMood.h */,
+				C179EB5417A0D0B400FB8A7F /* MBMood.m */,
+				C179EB5C17A0DEF000FB8A7F /* MBMoodCollectionView.h */,
+				C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */,
+				C179EB5F17A0E0A100FB8A7F /* MBQuoteCollectionViewController.h */,
+				C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -274,6 +298,10 @@
 				C179EB201797B22100FB8A7F /* main.m in Sources */,
 				C179EB241797B22100FB8A7F /* MBAppDelegate.m in Sources */,
 				C179EB301797B22100FB8A7F /* MBViewController.m in Sources */,
+				C179EB501797B26F00FB8A7F /* MBQuote.m in Sources */,
+				C179EB5517A0D0B400FB8A7F /* MBMood.m in Sources */,
+				C179EB5E17A0DEF000FB8A7F /* MBMoodCollectionView.m in Sources */,
+				C179EB6117A0E0A100FB8A7F /* MBQuoteCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

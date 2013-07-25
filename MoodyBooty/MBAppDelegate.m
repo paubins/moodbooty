@@ -7,12 +7,21 @@
 //
 
 #import "MBAppDelegate.h"
+#import "MBQuoteCollectionViewController.h"
+#import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 @implementation MBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    MBQuoteCollectionViewController *controller = [MBQuoteCollectionViewController new];
+    
+    window.rootViewController = controller;
+    self.window = window;
+
     return YES;
 }
 							
