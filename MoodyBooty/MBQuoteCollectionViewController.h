@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteCollectionViewController : UICollectionViewController
+@interface MBQuoteCollectionViewController : UICollectionViewController <UICollectionViewDelegate>
 
 @property NSArray *items;
 

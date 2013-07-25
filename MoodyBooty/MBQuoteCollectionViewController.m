@@ -7,6 +7,8 @@
 //
 
 #import "MBQuoteCollectionViewController.h"
+#import "MBQuoteCollectionViewCell.h"
+#import "MBQuoteUICollectionViewLayout.h"
 
 @implementation MBQuoteCollectionViewController
 
@@ -14,23 +16,28 @@
 {
     [super viewDidLoad];
     
+    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-    
-    self.collectionView.dataSource = self;
-    
-    self.view.backgroundColor = [UIColor greenColor];
-    self.collectionView.frame = self.view.bounds;
-    
-    self.items = @[@"mood1", @"mood2", @"mood3", @"mood4"];
     
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.items count];
+    return 4;
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 4;
+}
 
-
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    [cell setBackgroundColor:[UIColor greenColor]];
+    
+    return cell;
+}
 
 @end

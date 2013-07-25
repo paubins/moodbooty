@@ -8,6 +8,8 @@
 
 #import "MBAppDelegate.h"
 #import "MBQuoteCollectionViewController.h"
+#import "MBQuoteUICollectionViewLayout.h"
+#import "MBQuoteCollectionViewCell.h"
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 
@@ -16,12 +18,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    MBQuoteCollectionViewController *controller = [MBQuoteCollectionViewController new];
-    
-    window.rootViewController = controller;
     self.window = window;
-
+    
+    MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
+    self.window.rootViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

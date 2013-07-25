@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1519D2817A0F553009D4313 /* MBQuoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */; };
+		C1519D2B17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */; };
 		C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
 		C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
 		C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB171797B22100FB8A7F /* CoreGraphics.framework */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1519D2617A0F553009D4313 /* MBQuoteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteCollectionViewCell.h; sourceTree = "<group>"; };
+		C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteCollectionViewCell.m; sourceTree = "<group>"; };
+		C1519D2917A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteUICollectionViewLayout.h; sourceTree = "<group>"; };
+		C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteUICollectionViewLayout.m; sourceTree = "<group>"; };
 		C179EB101797B22100FB8A7F /* MoodyBooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C179EB131797B22100FB8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C179EB151797B22100FB8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +153,10 @@
 				C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */,
 				C179EB5F17A0E0A100FB8A7F /* MBQuoteCollectionViewController.h */,
 				C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */,
+				C1519D2617A0F553009D4313 /* MBQuoteCollectionViewCell.h */,
+				C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */,
+				C1519D2917A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.h */,
+				C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -302,6 +312,8 @@
 				C179EB5517A0D0B400FB8A7F /* MBMood.m in Sources */,
 				C179EB5E17A0DEF000FB8A7F /* MBMoodCollectionView.m in Sources */,
 				C179EB6117A0E0A100FB8A7F /* MBQuoteCollectionViewController.m in Sources */,
+				C1519D2817A0F553009D4313 /* MBQuoteCollectionViewCell.m in Sources */,
+				C1519D2B17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +494,7 @@
 				C179EB4A1797B22100FB8A7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C179EB4B1797B22100FB8A7F /* Build configuration list for PBXNativeTarget "MoodyBootyTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +503,7 @@
 				C179EB4D1797B22100FB8A7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
