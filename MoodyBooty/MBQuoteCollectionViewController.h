@@ -10,6 +10,4 @@
 
 @interface MBQuoteCollectionViewController : UICollectionViewController <UICollectionViewDelegate>
 
-@property NSArray *items;
-
 @end
