@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12EA5B117A19A0C004B805E /* MBQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B017A19A0C004B805E /* MBQuoteView.m */; };
+		C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */; };
+		C12EA5B617A1A83C004B805E /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EA5B517A1A83C004B805E /* smiley.png */; };
 		C1519D2817A0F553009D4313 /* MBQuoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */; };
 		C1519D2B17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */; };
+		C1623F2017A1BCB3000A130E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1623F1F17A1BCB3000A130E /* QuartzCore.framework */; };
 		C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
 		C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
 		C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB171797B22100FB8A7F /* CoreGraphics.framework */; };
@@ -30,6 +34,9 @@
 		C179EB5517A0D0B400FB8A7F /* MBMood.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB5417A0D0B400FB8A7F /* MBMood.m */; };
 		C179EB5E17A0DEF000FB8A7F /* MBMoodCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */; };
 		C179EB6117A0E0A100FB8A7F /* MBQuoteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */; };
+		C17A609D17A1BEA300C0BBA4 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = C17A609A17A1BEA300C0BBA4 /* FreigSanProBook.otf */; };
+		C17A609E17A1BEA300C0BBA4 /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = C17A609B17A1BEA300C0BBA4 /* FreigSanProMed.otf */; };
+		C17A609F17A1BEA300C0BBA4 /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = C17A609C17A1BEA300C0BBA4 /* FreigSanProSem.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12EA5AF17A19A0C004B805E /* MBQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteView.h; sourceTree = "<group>"; };
+		C12EA5B017A19A0C004B805E /* MBQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteView.m; sourceTree = "<group>"; };
+		C12EA5B217A19C1C004B805E /* MBQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteViewController.h; sourceTree = "<group>"; };
+		C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteViewController.m; sourceTree = "<group>"; };
+		C12EA5B517A1A83C004B805E /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
 		C1519D2617A0F553009D4313 /* MBQuoteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteCollectionViewCell.h; sourceTree = "<group>"; };
 		C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteCollectionViewCell.m; sourceTree = "<group>"; };
 		C1519D2917A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteUICollectionViewLayout.h; sourceTree = "<group>"; };
 		C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteUICollectionViewLayout.m; sourceTree = "<group>"; };
+		C1623F1F17A1BCB3000A130E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C179EB101797B22100FB8A7F /* MoodyBooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C179EB131797B22100FB8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C179EB151797B22100FB8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +91,9 @@
 		C179EB5D17A0DEF000FB8A7F /* MBMoodCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMoodCollectionView.m; sourceTree = "<group>"; };
 		C179EB5F17A0E0A100FB8A7F /* MBQuoteCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteCollectionViewController.h; sourceTree = "<group>"; };
 		C179EB6017A0E0A100FB8A7F /* MBQuoteCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteCollectionViewController.m; sourceTree = "<group>"; };
+		C17A609A17A1BEA300C0BBA4 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
+		C17A609B17A1BEA300C0BBA4 /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
+		C17A609C17A1BEA300C0BBA4 /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1623F2017A1BCB3000A130E /* QuartzCore.framework in Frameworks */,
 				C179EB521797B38D00FB8A7F /* CoreData.framework in Frameworks */,
 				C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */,
 				C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */,
@@ -108,6 +125,7 @@
 		C179EB071797B22100FB8A7F = {
 			isa = PBXGroup;
 			children = (
+				C1623F1F17A1BCB3000A130E /* QuartzCore.framework */,
 				C179EB511797B38D00FB8A7F /* CoreData.framework */,
 				C179EB191797B22100FB8A7F /* MoodyBooty */,
 				C179EB3D1797B22100FB8A7F /* MoodyBootyTests */,
@@ -157,6 +175,10 @@
 				C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */,
 				C1519D2917A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.h */,
 				C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */,
+				C12EA5AF17A19A0C004B805E /* MBQuoteView.h */,
+				C12EA5B017A19A0C004B805E /* MBQuoteView.m */,
+				C12EA5B217A19C1C004B805E /* MBQuoteViewController.h */,
+				C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -171,6 +193,10 @@
 				C179EB251797B22100FB8A7F /* Default.png */,
 				C179EB271797B22100FB8A7F /* Default@2x.png */,
 				C179EB291797B22100FB8A7F /* Default-568h@2x.png */,
+				C12EA5B517A1A83C004B805E /* smiley.png */,
+				C17A609A17A1BEA300C0BBA4 /* FreigSanProBook.otf */,
+				C17A609B17A1BEA300C0BBA4 /* FreigSanProMed.otf */,
+				C17A609C17A1BEA300C0BBA4 /* FreigSanProSem.otf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -271,6 +297,7 @@
 				C179EB281797B22100FB8A7F /* Default@2x.png in Resources */,
 				C179EB2A1797B22100FB8A7F /* Default-568h@2x.png in Resources */,
 				C179EB2D1797B22100FB8A7F /* MainStoryboard.storyboard in Resources */,
+				C12EA5B617A1A83C004B805E /* smiley.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C179EB421797B22100FB8A7F /* InfoPlist.strings in Resources */,
+				C17A609D17A1BEA300C0BBA4 /* FreigSanProBook.otf in Resources */,
+				C17A609E17A1BEA300C0BBA4 /* FreigSanProMed.otf in Resources */,
+				C17A609F17A1BEA300C0BBA4 /* FreigSanProSem.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +344,8 @@
 				C179EB6117A0E0A100FB8A7F /* MBQuoteCollectionViewController.m in Sources */,
 				C1519D2817A0F553009D4313 /* MBQuoteCollectionViewCell.m in Sources */,
 				C1519D2B17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m in Sources */,
+				C12EA5B117A19A0C004B805E /* MBQuoteView.m in Sources */,
+				C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

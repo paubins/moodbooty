@@ -7,6 +7,7 @@
 //
 
 #import "MBQuoteCollectionViewCell.h"
+#import "MBQuoteView.h"
 
 @implementation MBQuoteCollectionViewCell
 
@@ -33,14 +34,21 @@
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.textColor = [UIColor grayColor];
-        self.label.font = [UIFont boldSystemFontOfSize:35.0];
+        self.label.font = [UIFont boldSystemFontOfSize:10.0];
         self.label.backgroundColor = array[random() % 4];
-        self.label.text = @"Anxious";
+        self.label.text = @"Test";
         
         [self.contentView addSubview:self.label];
+        
     }
     
     return self;
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //MBQuoteCollectionViewCell *cell = (MBQuoteCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    NSLog(@"Clicked b");
 }
 
 @end

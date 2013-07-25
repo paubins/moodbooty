@@ -7,6 +7,7 @@
 //
 
 #import "MBAppDelegate.h"
+#import "MBQuoteViewController.h"
 #import "MBQuoteCollectionViewController.h"
 #import "MBQuoteUICollectionViewLayout.h"
 #import "MBQuoteCollectionViewCell.h"
@@ -21,7 +22,7 @@
     self.window = window;
     
     MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
-    self.window.rootViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
+    self.window.rootViewController = [MBQuoteViewController new];
     
     [self.window makeKeyAndVisible];
     
