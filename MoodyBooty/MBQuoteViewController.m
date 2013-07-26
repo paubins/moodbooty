@@ -33,7 +33,7 @@
                         @{
                             @"mood" : @"angry",
                             @"opposite" : @"happy",
-                            @"quote" : @"hey butt"
+                            @"quotes" : @"hey butt"
                             },
                         @{
                             @"mood" : @"impatient",
@@ -109,8 +109,18 @@
 
     
     UILabel *bottomLabel = [UILabel new];
+    UIButton *backButton;
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 80)];
+        } else {
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+        }
+    }
+
     [backButton setTitle:[@"Back" uppercaseString] forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
@@ -143,7 +153,7 @@
 
 -(void)closeModal
 {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

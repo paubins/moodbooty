@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteMoodViewController.m"
-         timestampString = "396517293.729707"
+         timestampString = "396550259.006918"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "150"
+         endingLineNumber = "150"
          landmarkName = "-loadView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteMoodViewController.m"
-         timestampString = "396517293.729707"
+         timestampString = "396550259.006918"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "165"
+         endingLineNumber = "165"
          landmarkName = "-openModel:"
          landmarkType = "5">
       </FileBreakpoint>

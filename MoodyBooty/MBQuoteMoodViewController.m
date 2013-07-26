@@ -79,7 +79,7 @@
         if ( i == 2 ) {
             b++;
         }
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106) + b, 146/2 + (j*106) , 101, 101)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), 147/2 + (j*106) , 106.7, 106.7)];
         button.backgroundColor = color;
         button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         button.titleEdgeInsets = UIEdgeInsetsMake(10, 5, 10, 5);
@@ -104,8 +104,34 @@
         }
         k++;
     }
+    
 
-    UILabel *bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,384,320, 136/2)];
+    
+    UILabel *bottomLabel;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,480,320, 136/2)];
+            
+            for ( int i = 0; i < 3; i++ ) {
+                UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), 147/2 + (j*106) , 106.7, 100)];
+                if ( i == 1 ){
+                    button.backgroundColor = [UIColor darkGrayColor];
+                } else {
+                    button.backgroundColor = [UIColor grayColor];
+                }
+                
+                button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+                button.titleEdgeInsets = UIEdgeInsetsMake(10, 5, 10, 5);
+                
+                [self.view addSubview:button];
+            }
+        } else {
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,384,320, 136/2)];
+        }
+    }
+    
     bottomLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     bottomLabel.textColor = [UIColor whiteColor];
     bottomLabel.textAlignment = NSTextAlignmentCenter;
@@ -130,7 +156,7 @@
 - (void) handleGesture
 {
     UIViewController *controller = [MBAboutViewController new];
-    [self presentViewController:controller animated:NO completion:nil];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void) openModel:(UIButton *)sender
@@ -139,7 +165,7 @@
     MBQuoteViewController *controller = [MBQuoteViewController new];
     [controller setMood:sender.tag];
     
-    [self presentViewController:controller animated:NO completion:nil];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 

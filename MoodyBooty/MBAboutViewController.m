@@ -84,7 +84,17 @@
     UIImageView *imageSmileyView = [[UIImageView alloc] initWithImage:imageSmiley];
     //imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 360, imageSmiley.size.width, imageSmiley.size.height);
     
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+    UIButton *backButton;
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 80)];
+        } else {
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+        }
+    }
     
     [backButton setTitle:[@"Back" uppercaseString] forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -113,7 +123,7 @@
 
 -(void)closeModal
 {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
