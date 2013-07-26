@@ -186,8 +186,9 @@
                        @[@"When someone is impatient and says, 'I haven't got all day,' I always wonder, How can that be? How can you not have all day?", @"George Carlin"],
                        @[@"I'm impatient. I get twitchy. When I get that feeling I just go out and make something happen.", @"John Cale"],
                        @[@"Intuition is a suspension of logic due to impatience.", @"Rita Mae Brown"],
-                       @[@"Life is like dancing. If we have a big floor, many people will dance. Some will get angry when the rhythm changes. But life is changing all the time.", @"attribute"],
-                       @[@"Life is like dancing. If we have a big floor, many people will dance. Some will get angry when the rhythm changes. But life is changing all the time.", @"attribute"]
+                       @[@"The ear tends to be lazy, craves the familiar and is shocked by the unexpected; the eye, on the other hand, tends to be impatient, craves the novel and is bored by repetition.", @"W. H. Auden"],
+                       @[@"I told her I'd wait forever for her, but that was before I found somebody else who'd give me a ride home.", @"Jarod Kintz"],
+                       @[@"EVOO is extra-virgin olive oil. I first coined 'EVOO' on my cooking show because saying 'extra virgin olive oil' over and over was wordy, and I'm an impatient girl - that's why I make 30-minute meals!", @"Rachael Ray"]
                        ];
             
             
