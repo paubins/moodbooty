@@ -1,5 +1,5 @@
 //
-//  MBQuoteView.h
+//  MBQuoteMoodViewController.h
 //  MoodyBooty
 //
 //  Created by paubins on 7/25/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteView : UIView <UIGestureRecognizerDelegate>
+@interface MBQuoteMoodViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

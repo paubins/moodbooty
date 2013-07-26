@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteViewController : UIViewController
+@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @end

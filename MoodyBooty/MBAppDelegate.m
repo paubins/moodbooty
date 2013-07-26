@@ -10,6 +10,7 @@
 #import "MBQuoteViewController.h"
 #import "MBQuoteCollectionViewController.h"
 #import "MBQuoteUICollectionViewLayout.h"
+#import "MBQuoteMoodViewController.h"
 #import "MBQuoteCollectionViewCell.h"
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
@@ -21,8 +22,12 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window = window;
     
+    NSLog(@"tt0001m_: %@", [UIFont fontNamesForFamilyName:@"FreightSans Pro"] );
+    
     MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
-    self.window.rootViewController = [MBQuoteViewController new];
+    //self.window.rootViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
+ 
+    self.window.rootViewController = [MBQuoteMoodViewController new];
     
     [self.window makeKeyAndVisible];
     

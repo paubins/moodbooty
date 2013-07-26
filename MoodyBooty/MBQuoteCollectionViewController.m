@@ -16,6 +16,7 @@
 {
     [super viewDidLoad];
     
+    self.collectionView.backgroundColor = [UIColor colorWithRed:58.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1];
     [self.collectionView registerClass:[MBQuoteCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
 }
@@ -27,7 +28,7 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 10;
+    return 4;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
