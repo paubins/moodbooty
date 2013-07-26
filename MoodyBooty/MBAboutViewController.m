@@ -9,6 +9,7 @@
 #import "MBAboutViewController.h"
 #import "MBAboutView.h"
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MBAboutViewController
 
@@ -81,20 +82,30 @@
     UIImage *imageSmiley = [UIImage imageNamed:@"Smiley_1"];
     
     UIImageView *imageSmileyView = [[UIImageView alloc] initWithImage:imageSmiley];
-    imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 360, imageSmiley.size.width, imageSmiley.size.height);
+    //imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 360, imageSmiley.size.width, imageSmiley.size.height);
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
     
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton setTitle:[@"Back" uppercaseString] forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
     [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    
+    
+    UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
+    
+    //shape layer for the line
+    CAShapeLayer *line = [CAShapeLayer layer];
+    line.path = [linePath CGPath];
+    //line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1].CGColor;
+    line.frame = CGRectMake(0, 380, 340, 1);
     
     [self.view addSubview:imageView];
     //[self.view addSubview:milkImageView];
     [self.view addSubview:always];
     [self.view addSubview:halfFull];
     [self.view addSubview:description];
+    //[self.view.layer addSublayer:line];
     [self.view addSubview:backButton];
     [self.view addSubview:imageSmileyView];
     

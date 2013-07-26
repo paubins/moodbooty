@@ -26,7 +26,7 @@
     
     MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
     
-    UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 120/2)];
+    UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 146/2)];
     
     
     NSMutableAttributedString *attributedString;
@@ -47,7 +47,7 @@
     CAShapeLayer *line = [CAShapeLayer layer];
     line.path = [linePath CGPath];
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
-    line.frame = CGRectMake(0, 120/2, 320, 5);
+    line.frame = CGRectMake(0, 146/2, 320, 5);
     
     
     NSArray *moods = @[
@@ -66,6 +66,7 @@
     NSInteger i = 0;
     NSInteger j = 0;
     NSInteger k = 0;
+    NSInteger b = 0;
     
     for ( NSArray *array in moods )
     {
@@ -75,7 +76,10 @@
         UIImage *image = [UIImage imageNamed:mood];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
       
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106), 120/2 + (j*106) , 100, 100)];
+        if ( i == 2 ) {
+            b++;
+        }
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106) + b, 146/2 + (j*106) , 101, 101)];
         button.backgroundColor = color;
         button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         button.titleEdgeInsets = UIEdgeInsetsMake(10, 5, 10, 5);
@@ -93,6 +97,7 @@
         
         if ( i == 2 ){
             i = 0;
+            b = 0;  
             j++;
         } else {
             i++;
@@ -100,7 +105,7 @@
         k++;
     }
 
-    UILabel *bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,400,320, 120/2)];
+    UILabel *bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,384,320, 136/2)];
     bottomLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     bottomLabel.textColor = [UIColor whiteColor];
     bottomLabel.textAlignment = NSTextAlignmentCenter;

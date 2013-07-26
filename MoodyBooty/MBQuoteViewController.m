@@ -75,12 +75,10 @@
     topLabel.frame = CGRectMake(0, 0, 320, 120/2);
     topLabel.textAlignment = NSTextAlignmentCenter;
     
-    UIImage *image = [UIImage imageNamed:@"smiley.png"];
+    UIImage *image = [UIImage imageNamed:@"Smiley_2"];
     
-
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.frame = CGRectMake(0, 50, 320, 100);
+    imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 90, image.size.width, image.size.height);
     imageView.contentMode = UIViewContentModeCenter;
 
     
@@ -113,9 +111,10 @@
     UILabel *bottomLabel = [UILabel new];
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
-    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton setTitle:[@"Back" uppercaseString] forState:UIControlStateNormal];
     [backButton setTitleColor:[UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
+    [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
     
 //    [backButton ]
 //    
@@ -136,7 +135,7 @@
     
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
-    //[self.view addSubview:imageView];
+    [self.view addSubview:imageView];
     [self.view addSubview:label];
     [self.view addSubview:backButton];
     
