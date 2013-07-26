@@ -14,15 +14,6 @@
 		C1519D2817A0F553009D4313 /* MBQuoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2717A0F553009D4313 /* MBQuoteCollectionViewCell.m */; };
 		C1519D2B17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */; };
 		C1623F2017A1BCB3000A130E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1623F1F17A1BCB3000A130E /* QuartzCore.framework */; };
-		C178BB6717A208BB00498F6C /* depressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB5E17A208BB00498F6C /* depressed.png */; };
-		C178BB6817A208BB00498F6C /* anxious.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB5F17A208BB00498F6C /* anxious.png */; };
-		C178BB6917A208BB00498F6C /* impatient.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6017A208BB00498F6C /* impatient.png */; };
-		C178BB6A17A208BB00498F6C /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6117A208BB00498F6C /* angry.png */; };
-		C178BB6B17A208BB00498F6C /* jealous.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6217A208BB00498F6C /* jealous.png */; };
-		C178BB6C17A208BB00498F6C /* lonely.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6317A208BB00498F6C /* lonely.png */; };
-		C178BB6D17A208BB00498F6C /* nostalgic.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6417A208BB00498F6C /* nostalgic.png */; };
-		C178BB6E17A208BB00498F6C /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6517A208BB00498F6C /* sad.png */; };
-		C178BB6F17A208BB00498F6C /* tired.png in Resources */ = {isa = PBXBuildFile; fileRef = C178BB6617A208BB00498F6C /* tired.png */; };
 		C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
 		C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
 		C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB171797B22100FB8A7F /* CoreGraphics.framework */; };
@@ -56,6 +47,29 @@
 		C17A60AD17A1E6B300C0BBA4 /* about-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C17A60AC17A1E6B300C0BBA4 /* about-background.png */; };
 		C17A60AF17A1E82000C0BBA4 /* about-smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C17A60AE17A1E82000C0BBA4 /* about-smiley.png */; };
 		C18BCA8117A1EBC30065BA6E /* milk.png in Resources */ = {isa = PBXBuildFile; fileRef = C18BCA8017A1EBC30065BA6E /* milk.png */; };
+		C1BF54B517A24FD9006411A9 /* Intro_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B217A24FD8006411A9 /* Intro_BG.png */; };
+		C1BF54B617A24FD9006411A9 /* Milk_Glass.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B317A24FD8006411A9 /* Milk_Glass.png */; };
+		C1BF54B717A24FD9006411A9 /* Smiley_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B417A24FD8006411A9 /* Smiley_1.png */; };
+		C1BF54C117A2500C006411A9 /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B817A2500B006411A9 /* angry.png */; };
+		C1BF54C217A2500C006411A9 /* anxious.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B917A2500B006411A9 /* anxious.png */; };
+		C1BF54C317A2500C006411A9 /* depressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BA17A2500B006411A9 /* depressed.png */; };
+		C1BF54C417A2500C006411A9 /* impatient.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BB17A2500B006411A9 /* impatient.png */; };
+		C1BF54C517A2500C006411A9 /* jealous.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BC17A2500B006411A9 /* jealous.png */; };
+		C1BF54C617A2500C006411A9 /* lonely.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BD17A2500B006411A9 /* lonely.png */; };
+		C1BF54C717A2500C006411A9 /* nostalgic.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BE17A2500B006411A9 /* nostalgic.png */; };
+		C1BF54C817A2500C006411A9 /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54BF17A2500C006411A9 /* sad.png */; };
+		C1BF54C917A2500C006411A9 /* tired.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54C017A2500C006411A9 /* tired.png */; };
+		C1BF54E517A25143006411A9 /* angry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54DC17A25134006411A9 /* angry@2x.png */; };
+		C1BF54E617A25143006411A9 /* anxious@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54DD17A25134006411A9 /* anxious@2x.png */; };
+		C1BF54E717A25143006411A9 /* depressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54DE17A25135006411A9 /* depressed@2x.png */; };
+		C1BF54E817A25143006411A9 /* impatient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54DF17A25136006411A9 /* impatient@2x.png */; };
+		C1BF54E917A25143006411A9 /* jealous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54E017A25137006411A9 /* jealous@2x.png */; };
+		C1BF54EA17A25143006411A9 /* lonely@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54E117A25139006411A9 /* lonely@2x.png */; };
+		C1BF54EB17A25143006411A9 /* nostalgic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54E217A2513B006411A9 /* nostalgic@2x.png */; };
+		C1BF54EC17A25143006411A9 /* sad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54E317A2513D006411A9 /* sad@2x.png */; };
+		C1BF54ED17A25143006411A9 /* tired@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54E417A25140006411A9 /* tired@2x.png */; };
+		C1BF54F017A25A04006411A9 /* Intro_BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54EE17A25A04006411A9 /* Intro_BG@2x.png */; };
+		C1BF54F117A25A04006411A9 /* Smiley_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54EF17A25A04006411A9 /* Smiley_1@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,15 +95,6 @@
 		C1519D2917A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteUICollectionViewLayout.h; sourceTree = "<group>"; };
 		C1519D2A17A0F7FD009D4313 /* MBQuoteUICollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteUICollectionViewLayout.m; sourceTree = "<group>"; };
 		C1623F1F17A1BCB3000A130E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C178BB5E17A208BB00498F6C /* depressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = depressed.png; sourceTree = "<group>"; };
-		C178BB5F17A208BB00498F6C /* anxious.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anxious.png; sourceTree = "<group>"; };
-		C178BB6017A208BB00498F6C /* impatient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impatient.png; sourceTree = "<group>"; };
-		C178BB6117A208BB00498F6C /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
-		C178BB6217A208BB00498F6C /* jealous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jealous.png; sourceTree = "<group>"; };
-		C178BB6317A208BB00498F6C /* lonely.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lonely.png; sourceTree = "<group>"; };
-		C178BB6417A208BB00498F6C /* nostalgic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nostalgic.png; sourceTree = "<group>"; };
-		C178BB6517A208BB00498F6C /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
-		C178BB6617A208BB00498F6C /* tired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tired.png; sourceTree = "<group>"; };
 		C179EB101797B22100FB8A7F /* MoodyBooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C179EB131797B22100FB8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C179EB151797B22100FB8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +138,29 @@
 		C17A60AC17A1E6B300C0BBA4 /* about-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-background.png"; sourceTree = "<group>"; };
 		C17A60AE17A1E82000C0BBA4 /* about-smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about-smiley.png"; sourceTree = "<group>"; };
 		C18BCA8017A1EBC30065BA6E /* milk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = milk.png; sourceTree = "<group>"; };
+		C1BF54B217A24FD8006411A9 /* Intro_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Intro_BG.png; sourceTree = "<group>"; };
+		C1BF54B317A24FD8006411A9 /* Milk_Glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Milk_Glass.png; sourceTree = "<group>"; };
+		C1BF54B417A24FD8006411A9 /* Smiley_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smiley_1.png; sourceTree = "<group>"; };
+		C1BF54B817A2500B006411A9 /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
+		C1BF54B917A2500B006411A9 /* anxious.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anxious.png; sourceTree = "<group>"; };
+		C1BF54BA17A2500B006411A9 /* depressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = depressed.png; sourceTree = "<group>"; };
+		C1BF54BB17A2500B006411A9 /* impatient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impatient.png; sourceTree = "<group>"; };
+		C1BF54BC17A2500B006411A9 /* jealous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jealous.png; sourceTree = "<group>"; };
+		C1BF54BD17A2500B006411A9 /* lonely.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lonely.png; sourceTree = "<group>"; };
+		C1BF54BE17A2500B006411A9 /* nostalgic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nostalgic.png; sourceTree = "<group>"; };
+		C1BF54BF17A2500C006411A9 /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sad.png; sourceTree = "<group>"; };
+		C1BF54C017A2500C006411A9 /* tired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tired.png; sourceTree = "<group>"; };
+		C1BF54DC17A25134006411A9 /* angry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angry@2x.png"; sourceTree = "<group>"; };
+		C1BF54DD17A25134006411A9 /* anxious@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anxious@2x.png"; sourceTree = "<group>"; };
+		C1BF54DE17A25135006411A9 /* depressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "depressed@2x.png"; sourceTree = "<group>"; };
+		C1BF54DF17A25136006411A9 /* impatient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "impatient@2x.png"; sourceTree = "<group>"; };
+		C1BF54E017A25137006411A9 /* jealous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jealous@2x.png"; sourceTree = "<group>"; };
+		C1BF54E117A25139006411A9 /* lonely@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lonely@2x.png"; sourceTree = "<group>"; };
+		C1BF54E217A2513B006411A9 /* nostalgic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nostalgic@2x.png"; sourceTree = "<group>"; };
+		C1BF54E317A2513D006411A9 /* sad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sad@2x.png"; sourceTree = "<group>"; };
+		C1BF54E417A25140006411A9 /* tired@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tired@2x.png"; sourceTree = "<group>"; };
+		C1BF54EE17A25A04006411A9 /* Intro_BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Intro_BG@2x.png"; sourceTree = "<group>"; };
+		C1BF54EF17A25A04006411A9 /* Smiley_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Smiley_1@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +261,11 @@
 		C179EB1A1797B22100FB8A7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C1BF54B217A24FD8006411A9 /* Intro_BG.png */,
+				C1BF54B317A24FD8006411A9 /* Milk_Glass.png */,
+				C1BF54B417A24FD8006411A9 /* Smiley_1.png */,
+				C1BF54EE17A25A04006411A9 /* Intro_BG@2x.png */,
+				C1BF54EF17A25A04006411A9 /* Smiley_1@2x.png */,
 				C179EB1B1797B22100FB8A7F /* MoodyBooty-Info.plist */,
 				C179EB1C1797B22100FB8A7F /* InfoPlist.strings */,
 				C179EB1F1797B22100FB8A7F /* main.m */,
@@ -247,15 +280,24 @@
 				C17A60AE17A1E82000C0BBA4 /* about-smiley.png */,
 				C17A60AC17A1E6B300C0BBA4 /* about-background.png */,
 				C18BCA8017A1EBC30065BA6E /* milk.png */,
-				C178BB5E17A208BB00498F6C /* depressed.png */,
-				C178BB5F17A208BB00498F6C /* anxious.png */,
-				C178BB6017A208BB00498F6C /* impatient.png */,
-				C178BB6117A208BB00498F6C /* angry.png */,
-				C178BB6217A208BB00498F6C /* jealous.png */,
-				C178BB6317A208BB00498F6C /* lonely.png */,
-				C178BB6417A208BB00498F6C /* nostalgic.png */,
-				C178BB6517A208BB00498F6C /* sad.png */,
-				C178BB6617A208BB00498F6C /* tired.png */,
+				C1BF54B817A2500B006411A9 /* angry.png */,
+				C1BF54B917A2500B006411A9 /* anxious.png */,
+				C1BF54BA17A2500B006411A9 /* depressed.png */,
+				C1BF54BB17A2500B006411A9 /* impatient.png */,
+				C1BF54BC17A2500B006411A9 /* jealous.png */,
+				C1BF54BD17A2500B006411A9 /* lonely.png */,
+				C1BF54BE17A2500B006411A9 /* nostalgic.png */,
+				C1BF54BF17A2500C006411A9 /* sad.png */,
+				C1BF54C017A2500C006411A9 /* tired.png */,
+				C1BF54DC17A25134006411A9 /* angry@2x.png */,
+				C1BF54DD17A25134006411A9 /* anxious@2x.png */,
+				C1BF54DE17A25135006411A9 /* depressed@2x.png */,
+				C1BF54DF17A25136006411A9 /* impatient@2x.png */,
+				C1BF54E017A25137006411A9 /* jealous@2x.png */,
+				C1BF54E117A25139006411A9 /* lonely@2x.png */,
+				C1BF54E217A2513B006411A9 /* nostalgic@2x.png */,
+				C1BF54E317A2513D006411A9 /* sad@2x.png */,
+				C1BF54E417A25140006411A9 /* tired@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -363,15 +405,29 @@
 				C17A60AD17A1E6B300C0BBA4 /* about-background.png in Resources */,
 				C17A60AF17A1E82000C0BBA4 /* about-smiley.png in Resources */,
 				C18BCA8117A1EBC30065BA6E /* milk.png in Resources */,
-				C178BB6717A208BB00498F6C /* depressed.png in Resources */,
-				C178BB6817A208BB00498F6C /* anxious.png in Resources */,
-				C178BB6917A208BB00498F6C /* impatient.png in Resources */,
-				C178BB6A17A208BB00498F6C /* angry.png in Resources */,
-				C178BB6B17A208BB00498F6C /* jealous.png in Resources */,
-				C178BB6C17A208BB00498F6C /* lonely.png in Resources */,
-				C178BB6D17A208BB00498F6C /* nostalgic.png in Resources */,
-				C178BB6E17A208BB00498F6C /* sad.png in Resources */,
-				C178BB6F17A208BB00498F6C /* tired.png in Resources */,
+				C1BF54B517A24FD9006411A9 /* Intro_BG.png in Resources */,
+				C1BF54B617A24FD9006411A9 /* Milk_Glass.png in Resources */,
+				C1BF54B717A24FD9006411A9 /* Smiley_1.png in Resources */,
+				C1BF54C117A2500C006411A9 /* angry.png in Resources */,
+				C1BF54C217A2500C006411A9 /* anxious.png in Resources */,
+				C1BF54C317A2500C006411A9 /* depressed.png in Resources */,
+				C1BF54C417A2500C006411A9 /* impatient.png in Resources */,
+				C1BF54C517A2500C006411A9 /* jealous.png in Resources */,
+				C1BF54C617A2500C006411A9 /* lonely.png in Resources */,
+				C1BF54C717A2500C006411A9 /* nostalgic.png in Resources */,
+				C1BF54C817A2500C006411A9 /* sad.png in Resources */,
+				C1BF54C917A2500C006411A9 /* tired.png in Resources */,
+				C1BF54E517A25143006411A9 /* angry@2x.png in Resources */,
+				C1BF54E617A25143006411A9 /* anxious@2x.png in Resources */,
+				C1BF54E717A25143006411A9 /* depressed@2x.png in Resources */,
+				C1BF54E817A25143006411A9 /* impatient@2x.png in Resources */,
+				C1BF54E917A25143006411A9 /* jealous@2x.png in Resources */,
+				C1BF54EA17A25143006411A9 /* lonely@2x.png in Resources */,
+				C1BF54EB17A25143006411A9 /* nostalgic@2x.png in Resources */,
+				C1BF54EC17A25143006411A9 /* sad@2x.png in Resources */,
+				C1BF54ED17A25143006411A9 /* tired@2x.png in Resources */,
+				C1BF54F017A25A04006411A9 /* Intro_BG@2x.png in Resources */,
+				C1BF54F117A25A04006411A9 /* Smiley_1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

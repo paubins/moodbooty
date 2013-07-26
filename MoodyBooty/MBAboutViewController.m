@@ -16,8 +16,8 @@
 {
     [super loadView];
     
-    UIImage *image = [UIImage imageNamed:@"about-background"];
-    UIImage *milkImage = [UIImage imageNamed:@"milk"];
+    UIImage *image = [UIImage imageNamed:@"Intro_BG"];
+    UIImage *milkImage = [UIImage imageNamed:@"Milk_Glass"];
     
     UIImageView *milkImageView = [[UIImageView alloc] initWithImage:milkImage];
     milkImageView.frame = CGRectMake(0, 150, milkImage.size.width, milkImage.size.height);
@@ -76,29 +76,33 @@
     self.view.userInteractionEnabled = YES;
 
     self.view.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:102.0/255.0 blue:111.0/255.0 alpha:1.0];
+
     
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNewGesture)];
-    //[self.view addGestureRecognizer:recognizer];
-    
-    UIImage *imageSmiley = [UIImage imageNamed:@"about-smiley"];
+    UIImage *imageSmiley = [UIImage imageNamed:@"Smiley_1"];
     
     UIImageView *imageSmileyView = [[UIImageView alloc] initWithImage:imageSmiley];
     imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 360, imageSmiley.size.width, imageSmiley.size.height);
     
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+    
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
+    [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    
     [self.view addSubview:imageView];
-    [self.view addSubview:milkImageView];
+    //[self.view addSubview:milkImageView];
     [self.view addSubview:always];
     [self.view addSubview:halfFull];
     [self.view addSubview:description];
+    [self.view addSubview:backButton];
     [self.view addSubview:imageSmileyView];
-    
-    [self.view addGestureRecognizer:recognizer];
     
 }
 
--(void)handleNewGesture
+-(void)closeModal
 {
-    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 

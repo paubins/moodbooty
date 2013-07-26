@@ -75,16 +75,16 @@
         UIImage *image = [UIImage imageNamed:mood];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
       
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(5 + (i*106), 120/2 + (j*106) + 15 , 100, 100)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106), 120/2 + (j*106) , 100, 100)];
         button.backgroundColor = color;
         button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+        button.titleEdgeInsets = UIEdgeInsetsMake(10, 5, 10, 5);
         
         [button setTitle:mood forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button addSubview:imageView];
         [button addTarget:self action:@selector(openModel:) forControlEvents:UIControlEventTouchDown];
         [button setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
-        //[button setTitleEdgeInsets:<#(UIEdgeInsets)#>]
         
         
         button.tag = k;
@@ -125,7 +125,7 @@
 - (void) handleGesture
 {
     UIViewController *controller = [MBAboutViewController new];
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:controller animated:NO completion:nil];
 }
 
 - (void) openModel:(UIButton *)sender

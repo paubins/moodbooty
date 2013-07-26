@@ -46,10 +46,12 @@
                             },
                         ];
     
+    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(mood == %@)", moods[self.mood][0]];
     
     NSArray *filteredQuotes = [quotes filteredArrayUsingPredicate:predicate];
-    NSString *quote = [[filteredQuotes objectAtIndex:0] objectForKey:@"quote"];  
+    NSString *quote = [[filteredQuotes objectAtIndex:0] objectForKey:@"quote"];
+    NSString *oppositeMood = [[filteredQuotes objectAtIndex:0] objectForKey:@"opposite"];
     
     [super viewDidLoad];
     
@@ -60,7 +62,7 @@
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[@"Chillll" uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[moods[self.mood][0] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -110,29 +112,40 @@
     
     UILabel *bottomLabel = [UILabel new];
     
-    NSMutableAttributedString *attributedString3;
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"Be Happy" uppercaseString]];
-    [attributedString3 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString3.length)];
-    [bottomLabel setAttributedText:attributedString3];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
     
-    bottomLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
-    bottomLabel.shadowColor = [UIColor blackColor];
-    bottomLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
-    
-    bottomLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
-    bottomLabel.frame = CGRectMake(0, 380, 320, 80);
-    bottomLabel.backgroundColor = [UIColor clearColor];
-    bottomLabel.textAlignment = NSTextAlignmentCenter;
-    
+//    [backButton ]
+//    
+//    NSMutableAttributedString *attributedString3;
+//    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:@"Be %@", oppositeMood] uppercaseString]];
+//    [attributedString3 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString3.length)];
+//    [bottomLabel setAttributedText:attributedString3];
+//    
+//    bottomLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
+//    bottomLabel.shadowColor = [UIColor blackColor];
+//    bottomLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
+//    
+//    bottomLabel.textColor = ;
+//    bottomLabel.frame = CGRectMake(0, 380, 320, 80);
+//    bottomLabel.backgroundColor = [UIColor clearColor];
+//    bottomLabel.textAlignment = NSTextAlignmentCenter;
+//    
     
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
-    [self.view addSubview:imageView];
+    //[self.view addSubview:imageView];
     [self.view addSubview:label];
-    [self.view addSubview:bottomLabel];
+    [self.view addSubview:backButton];
     
 }
 
+-(void)closeModal
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 
 @end
