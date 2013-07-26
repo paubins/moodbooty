@@ -37,10 +37,7 @@
     [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
-    topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
-//    topLabel.shadowColor = [UIColor blackColor];
-//    topLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
-    
+    topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];    
     topLabel.textColor = [UIColor colorWithRed:246.0 green:246.0 blue:246.0 alpha:1];
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     topLabel.frame = CGRectMake(0, 0, 320, 146/2);
@@ -69,13 +66,11 @@
     [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
-    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
-//    label.shadowColor = [UIColor blackColor];
-//    label.shadowOffset = CGSizeMake(-0.5, 0.5);
+    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:(quote.length > 50 ? (quote.length < 160 ? 21 : 18) : 35 )];
+
     
     label.textColor = [UIColor whiteColor];
     label.frame = CGRectMake(35, 160, 250, 230);
-    //label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     label.editable = NO;
