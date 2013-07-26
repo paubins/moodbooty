@@ -62,11 +62,11 @@
     line.frame = CGRectMake(0, 146/2, 320, 5);
     
     
-    UILabel *label = [UILabel new];
+    UITextView *label = [UITextView new];
     
     NSMutableAttributedString *attributedString2;
     attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D",quote]];
-    [attributedString2 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString2.length)];
+    [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
     label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
@@ -74,10 +74,11 @@
 //    label.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     label.textColor = [UIColor whiteColor];
-    label.frame = CGRectMake(35, 120, 250, 230);
-    label.numberOfLines = 0;
+    label.frame = CGRectMake(35, 160, 250, 230);
+    //label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
+    label.editable = NO;
 
     
     UIButton *backButton;
