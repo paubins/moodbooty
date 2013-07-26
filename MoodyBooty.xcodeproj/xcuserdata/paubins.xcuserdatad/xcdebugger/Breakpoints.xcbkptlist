@@ -73,12 +73,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteMoodViewController.m"
-         timestampString = "396496416.248379"
+         timestampString = "396512189.555181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
          landmarkName = "-loadView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MoodyBooty/MBQuoteViewController.m"
+         timestampString = "396512189.555181"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "-loadView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MoodyBooty/MBQuoteViewController.m"
+         timestampString = "396512189.555181"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "-loadView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MoodyBooty/MBQuoteMoodViewController.m"
+         timestampString = "396512189.555181"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
+         landmarkName = "-openModel:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

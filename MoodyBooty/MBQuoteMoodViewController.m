@@ -12,6 +12,7 @@
 #import "MBQuoteUICollectionViewLayout.h"
 #import "MBAboutViewController.h"
 #import "MBQuoteViewController.h"
+#import "MBQUoteView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
@@ -24,7 +25,6 @@
     self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
     
     MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
-    MBQuoteCollectionViewController *collectionViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
     
     UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 120/2)];
     
@@ -61,9 +61,11 @@
                        @[@"nostalgic", [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
                        @[@"jealous", [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
                        ];
+
     
     NSInteger i = 0;
     NSInteger j = 0;
+    NSInteger k = 0;
     
     for ( NSArray *array in moods )
     {
@@ -72,36 +74,32 @@
         
         UIImage *image = [UIImage imageNamed:mood];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+      
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(5 + (i*106), 120/2 + (j*106) + 15 , 100, 100)];
+        button.backgroundColor = color;
+        button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 20)];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor whiteColor];
-        label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2];
-        label.backgroundColor = [UIColor clearColor];
-        label.text = mood;
+        [button setTitle:mood forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button addSubview:imageView];
+        [button addTarget:self action:@selector(openModel:) forControlEvents:UIControlEventTouchDown];
+        [button setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+        //[button setTitleEdgeInsets:<#(UIEdgeInsets)#>]
         
-        UIView *cell = [[UIView alloc] initWithFrame:CGRectMake(5 + (i*106), 120/2 + (j*106) + 15 , 100, 100)];
-        cell.backgroundColor = array[1];
         
-        UIGestureRecognizer *recognizer = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(showQuote)];
-
-        [cell addSubview:label];
-        [cell addSubview:imageView];
+        button.tag = k;
         
-        cell.tag = i;
+        [self.view addSubview:button];
         
-        [imageView addGestureRecognizer:recognizer];
-        
-        [self.view addSubview:cell];
         if ( i == 2 ){
             i = 0;
             j++;
         } else {
             i++;
-            
         }
+        k++;
     }
-    
+
     UILabel *bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,400,320, 120/2)];
     bottomLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     bottomLabel.textColor = [UIColor whiteColor];
@@ -121,20 +119,22 @@
     
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
-    //[self.view addSubview:collectionViewController.view];
     [self.view addSubview:bottomLabel];
 }
 
 - (void) handleGesture
 {
     UIViewController *controller = [MBAboutViewController new];
-    [self.view addSubview:controller.view];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
-- (void) showQuote
+- (void) openModel:(UIButton *)sender
 {
-    UIViewController *controller = [MBQuoteViewController new];
-    [self.view addSubview:controller.view];
+
+    MBQuoteViewController *controller = [MBQuoteViewController new];
+    [controller setMood:sender.tag];
+    
+    [self presentViewController:controller animated:NO completion:nil];
 }
 
 

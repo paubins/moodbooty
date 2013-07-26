@@ -7,6 +7,7 @@
 //
 
 #import "MBQuoteView.h"
+#import "MBQuoteViewController.h"
 
 @implementation MBQuoteView
 
@@ -17,7 +18,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touched");
+    MBQuoteViewController *controller = [MBQuoteViewController new];
 }
 
 @end

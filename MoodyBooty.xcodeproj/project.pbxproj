@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C123FB7E17A2371F0037465A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = C123FB7D17A2371F0037465A /* Constants.m */; };
 		C12EA5B117A19A0C004B805E /* MBQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B017A19A0C004B805E /* MBQuoteView.m */; };
 		C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */; };
 		C12EA5B617A1A83C004B805E /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EA5B517A1A83C004B805E /* smiley.png */; };
@@ -68,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C123FB7C17A236FC0037465A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C123FB7D17A2371F0037465A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C12EA5AF17A19A0C004B805E /* MBQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteView.h; sourceTree = "<group>"; };
 		C12EA5B017A19A0C004B805E /* MBQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteView.m; sourceTree = "<group>"; };
 		C12EA5B217A19C1C004B805E /* MBQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteViewController.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 				C17A60A717A1D3F100C0BBA4 /* MBAboutViewController.m */,
 				C17A60A917A1DEFB00C0BBA4 /* MBAboutView.h */,
 				C17A60AA17A1DEFB00C0BBA4 /* MBAboutView.m */,
+				C123FB7C17A236FC0037465A /* Constants.h */,
+				C123FB7D17A2371F0037465A /* Constants.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				C17A60A217A1C2E000C0BBA4 /* MBQuoteMoodViewController.m in Sources */,
 				C17A60A817A1D3F100C0BBA4 /* MBAboutViewController.m in Sources */,
 				C17A60AB17A1DEFB00C0BBA4 /* MBAboutView.m in Sources */,
+				C123FB7E17A2371F0037465A /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
