@@ -75,21 +75,30 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 20)];
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor grayColor];
-        label.font = [UIFont boldSystemFontOfSize:10.0];
-        label.backgroundColor = color;
+        label.textColor = [UIColor whiteColor];
+        label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2];
+        label.backgroundColor = [UIColor clearColor];
         label.text = mood;
         
-        UIView *cell = [[UIView alloc] initWithFrame:CGRectMake(0 + (i*image.size.width), 120/2 + (j*image.size.height) , 100, 100)];
+        UIView *cell = [[UIView alloc] initWithFrame:CGRectMake(5 + (i*106), 120/2 + (j*106) + 15 , 100, 100)];
+        cell.backgroundColor = array[1];
+        
+        UIGestureRecognizer *recognizer = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(showQuote)];
 
         [cell addSubview:label];
         [cell addSubview:imageView];
         
+        cell.tag = i;
+        
+        [imageView addGestureRecognizer:recognizer];
+        
         [self.view addSubview:cell];
         if ( i == 2 ){
             i = 0;
+            j++;
         } else {
             i++;
+            
         }
     }
     
@@ -118,10 +127,15 @@
 
 - (void) handleGesture
 {
-    UIViewController *controller = [MBQuoteViewController new];
+    UIViewController *controller = [MBAboutViewController new];
     [self.view addSubview:controller.view];
 }
 
+- (void) showQuote
+{
+    UIViewController *controller = [MBQuoteViewController new];
+    [self.view addSubview:controller.view];
+}
 
 
 @end
