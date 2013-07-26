@@ -24,7 +24,7 @@
     
     self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
     
-    MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
+    //MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
     
     UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 146/2)];
     

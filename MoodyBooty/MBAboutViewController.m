@@ -130,16 +130,15 @@
         }
     }
     
-    [backButton setTitle:[@"Back" uppercaseString] forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    NSMutableAttributedString *attributedString4;
+    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
+    [attributedString4 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString4.length)];
+
+    [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
     [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    backButton.titleLabel.textColor = [UIColor whiteColor];
     
-//    [[backButton layer] setBorderWidth:2.0f];
-//    [[backButton layer] setBorderColor:[UIColor greenColor].CGColor];
-    
-    
-
     
     [self.view addSubview:imageView];
     //[self.view addSubview:milkImageView];

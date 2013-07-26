@@ -73,6 +73,7 @@
 		C1BF551D17A25CFE006411A9 /* Milk_Glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF551B17A25CFE006411A9 /* Milk_Glass@2x.png */; };
 		C1BF551F17A265C8006411A9 /* intro_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF551E17A265C8006411A9 /* intro_bg.png */; };
 		C1BF552117A265D6006411A9 /* intro_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF552017A265D6006411A9 /* intro_bg@2x.png */; };
+		C1BF552717A3260B006411A9 /* MBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BF552617A3260B006411A9 /* MBButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		C1BF551B17A25CFE006411A9 /* Milk_Glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Milk_Glass@2x.png"; sourceTree = "<group>"; };
 		C1BF551E17A265C8006411A9 /* intro_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_bg.png; sourceTree = "<group>"; };
 		C1BF552017A265D6006411A9 /* intro_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_bg@2x.png"; sourceTree = "<group>"; };
+		C1BF552517A3260B006411A9 /* MBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButton.h; sourceTree = "<group>"; };
+		C1BF552617A3260B006411A9 /* MBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +263,8 @@
 				C17A60AA17A1DEFB00C0BBA4 /* MBAboutView.m */,
 				C123FB7C17A236FC0037465A /* Constants.h */,
 				C123FB7D17A2371F0037465A /* Constants.m */,
+				C1BF552517A3260B006411A9 /* MBButton.h */,
+				C1BF552617A3260B006411A9 /* MBButton.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				C17A60A817A1D3F100C0BBA4 /* MBAboutViewController.m in Sources */,
 				C17A60AB17A1DEFB00C0BBA4 /* MBAboutView.m in Sources */,
 				C123FB7E17A2371F0037465A /* Constants.m in Sources */,
+				C1BF552717A3260B006411A9 /* MBButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
