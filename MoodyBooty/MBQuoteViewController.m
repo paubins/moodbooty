@@ -244,9 +244,9 @@
             quotes = @[
                        @[@"Sleep did not honor me with it’s presence.", @"Alysha Speer"],
                        @[@"I got tired of feeling like Dracula. I wanted to see some daylight, and not just at six o’clock in the morning.", @"Kate Moss"],
-                       @[@"Life is like dancing. If we have a big floor, many people will dance. Some will get angry when the rhythm changes. But life is changing all the time.", @"attribute"],
-                       @[@"Life is like dancing. If we have a big floor, many people will dance. Some will get angry when the rhythm changes. But life is changing all the time.", @"attribute"],
-                       @[@"Life is like dancing. If we have a big floor, many people will dance. Some will get angry when the rhythm changes. But life is changing all the time.", @"attribute"]
+                       @[@"Winston was gelatinous with fatigue.", @"George Orwell"],
+                       @[@"Ten men waiting for me at the door? Send one of them home, I'm tired.", @"Mae West"],
+                       @[@"Laziness is nothing more than the habit of resting before you get tired.", @"Jules Renard"]
                        ];
             
             idx = random() % [quotes count];
@@ -258,9 +258,9 @@
             quotes = @[
                        @[@"I seldom think about my limitations, and they never make me sad. Perhaps there is just a touch of yearning at times; but it is vague, like a breeze among flowers.", @"Helen Keller"],
                        @[@"So, this is my life. And I want you to know that I am both happy and sad and I'm still trying to figure out how that could be.", @"Stephen Chbosky"],
-                       @[@"Winston was gelatinous with fatigue.", @"George Orwell"],
-                       @[@"Ten men waiting for me at the door? Send one of them home, I'm tired.", @"Mae West"],
-                       @[@"Laziness is nothing more than the habit of resting before you get tired.", @"Jules Renard"]
+                      @[@"Don't cry because it's over, smile because it happened.", @"Dr. Seuss"],
+                       @[@"Success is getting what you want, happiness is wanting what you get", @"W.P. Kinsella"],
+                       @[@"It's been my experience that you can nearly always enjoy things if you make up your mind firmly that you will.", @"L.M. Montgomery"]
                        ];
             
             
