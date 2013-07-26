@@ -66,7 +66,7 @@
     [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
-    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:(quote.length > 50 ? (quote.length < 160 ? 21 : 18) : 35 )];
+    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:(quote.length > 50 ? (quote.length < 130 ? 24 : 18) : 35 )];
 
     
     label.textColor = [UIColor whiteColor];
