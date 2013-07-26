@@ -150,7 +150,8 @@
 
 -(void)closeModal
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.view performSelectorOnMainThread:@selector(removeFromSuperview) withObject:nil waitUntilDone:NO];
 }
 
 
@@ -184,7 +185,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:0.92];
             return @[@"angry", quotes[idx][0], quotes[idx][1], color];
             
         case IMPATIENT:

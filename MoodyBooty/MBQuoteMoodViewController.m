@@ -165,17 +165,17 @@
     MBQuoteViewController *controller = [MBQuoteViewController new];
     [controller setMood:sender.tag];
     
-//    controller.view.alpha = 0.0f;
-//    [self.view addSubview:controller.view];
+    controller.view.alpha = 0.0f;
+    [self.view addSubview:controller.view];
 //    
 //
-//    [UIView beginAnimations:@"fadeIn" context:nil];
-//    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-//    [UIView setAnimationDuration:0.4f];
-//    cont.alpha = 0.5f;
-//    [UIView commitAnimations];
+    [UIView beginAnimations:@"fadeIn" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.4f];
+    controller.view.alpha = 1.0f;
+    [UIView commitAnimations];
     
-    [self presentViewController:controller animated:YES completion:nil];
+    //[self presentViewController:controller animated:YES completion:nil];
 }
 
 
