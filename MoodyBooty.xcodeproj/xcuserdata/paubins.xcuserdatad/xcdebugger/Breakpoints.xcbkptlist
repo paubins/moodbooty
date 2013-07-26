@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
-         timestampString = "396512344.304339"
+         timestampString = "396558397.514013"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
          landmarkName = "-loadView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
-         timestampString = "396512964.049584"
+         timestampString = "396558397.514013"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "-loadView"
          landmarkType = "5">
       </FileBreakpoint>
