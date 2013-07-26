@@ -33,7 +33,7 @@
                         @{
                             @"mood" : @"angry",
                             @"opposite" : @"happy",
-                            @"quotes" : @"hey butt"
+                            @"quote" : @"hey butt"
                             },
                         @{
                             @"mood" : @"impatient",
@@ -67,8 +67,8 @@
     [topLabel setAttributedText:attributedString];
     
     topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
-    topLabel.shadowColor = [UIColor blackColor];
-    topLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
+//    topLabel.shadowColor = [UIColor blackColor];
+//    topLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     topLabel.textColor = [UIColor colorWithRed:246.0 green:246.0 blue:246.0 alpha:1];
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
@@ -90,6 +90,7 @@
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
     line.frame = CGRectMake(0, 120/2, 320, 5);
     
+    
     UILabel *label = [UILabel new];
     
     NSMutableAttributedString *attributedString2;
@@ -108,16 +109,33 @@
     label.backgroundColor = [UIColor clearColor];
 
     
-    UILabel *bottomLabel = [UILabel new];
     UIButton *backButton;
+    UIBezierPath *linePath2;
+    CAShapeLayer *line2;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 80)];
+            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+            
+            //shape layer for the line
+            line2 = [CAShapeLayer layer];
+            line2.path = [linePath2 CGPath];
+            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.frame = CGRectMake(0, 480, 320, 1);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
         } else {
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+            
+            //shape layer for the line
+            line2 = [CAShapeLayer layer];
+            line2.path = [linePath2 CGPath];
+            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.frame = CGRectMake(0, 390, 320, 1);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
         }
     }
 
@@ -147,6 +165,7 @@
     [self.view.layer addSublayer:line];
     [self.view addSubview:imageView];
     [self.view addSubview:label];
+    [self.view.layer addSublayer:line2];
     [self.view addSubview:backButton];
     
 }

@@ -112,7 +112,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,480,320, 136/2)];
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,480, 320, 146/2)];
             
             for ( int i = 0; i < 3; i++ ) {
                 UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), 147/2 + (j*106) , 106.7, 100)];
@@ -128,7 +128,7 @@
                 [self.view addSubview:button];
             }
         } else {
-            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,384,320, 136/2)];
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
         }
     }
     

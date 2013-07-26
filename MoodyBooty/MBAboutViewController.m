@@ -26,7 +26,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
     
-    UILabel *always = [[UILabel alloc] initWithFrame:CGRectMake(0, 140/2, 320, 20)];    
+    UILabel *always = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 320, 20)];
     
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[@"The glass is always" uppercaseString]];
@@ -37,11 +37,11 @@
     always.backgroundColor = [UIColor clearColor];
     always.textAlignment = NSTextAlignmentCenter;
     always.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:26/2];
-    always.shadowColor = [UIColor blackColor];
-    always.shadowOffset = CGSizeMake(-0.5, 0.5);
+//    always.shadowColor = [UIColor blackColor];
+//    always.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     
-    UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 200/2, 320, 40)];
+    UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 320, 40)];
     
     NSMutableAttributedString *attributedString2;
     attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Half full" uppercaseString]];
@@ -55,7 +55,17 @@
     halfFull.shadowColor = [UIColor blackColor];
     halfFull.shadowOffset = CGSizeMake(-0.5, 0.5);
     
-    UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(40, 240, 240, 120)];
+    UILabel *description;
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 300, 240, 120)];
+        } else {
+            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 230, 240, 120)];
+        }
+    }
     
     NSMutableAttributedString *attributedString3;
     attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"The app that turns your\r frown upside down with\r a dose of inspiration to\r kick any bad mood\r in the butt!" uppercaseString]];
@@ -69,8 +79,8 @@
     description.textAlignment = NSTextAlignmentCenter;
     description.contentMode = UIViewContentModeTop;
     description.lineBreakMode = NSLineBreakByWordWrapping;
-    description.shadowColor = [UIColor blackColor];
-    description.shadowOffset = CGSizeMake(-0.5, 0.5);
+//    description.shadowColor = [UIColor blackColor];
+//    description.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     
     self.view = [[MBAboutView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
@@ -82,17 +92,41 @@
     UIImage *imageSmiley = [UIImage imageNamed:@"Smiley_1"];
     
     UIImageView *imageSmileyView = [[UIImageView alloc] initWithImage:imageSmiley];
-    //imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 360, imageSmiley.size.width, imageSmiley.size.height);
     
-    UIButton *backButton;
-    
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 80)];
+            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 420, imageSmiley.size.width, imageSmiley.size.height);
         } else {
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 380, 320, 80)];
+            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 350, imageSmiley.size.width, imageSmiley.size.height);
+        }
+    }
+    
+    UIButton *backButton;
+    UIBezierPath *linePath2;
+    CAShapeLayer *line2;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+            
+            //shape layer for the line
+            line2 = [CAShapeLayer layer];
+            line2.path = [linePath2 CGPath];
+            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.frame = CGRectMake(0, 480, 320, 1);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
+        } else {
+            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+            
+            //shape layer for the line
+            line2 = [CAShapeLayer layer];
+            line2.path = [linePath2 CGPath];
+            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.frame = CGRectMake(0, 390, 320, 1);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
         }
     }
     
@@ -101,22 +135,21 @@
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
     [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
     
+//    [[backButton layer] setBorderWidth:2.0f];
+//    [[backButton layer] setBorderColor:[UIColor greenColor].CGColor];
     
-    UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
     
-    //shape layer for the line
-    CAShapeLayer *line = [CAShapeLayer layer];
-    line.path = [linePath CGPath];
-    //line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1].CGColor;
-    line.frame = CGRectMake(0, 380, 340, 1);
+
     
     [self.view addSubview:imageView];
     //[self.view addSubview:milkImageView];
     [self.view addSubview:always];
     [self.view addSubview:halfFull];
     [self.view addSubview:description];
-    //[self.view.layer addSublayer:line];
+    
+    [self.view.layer addSublayer:line2];
     [self.view addSubview:backButton];
+    
     [self.view addSubview:imageSmileyView];
     
 }
