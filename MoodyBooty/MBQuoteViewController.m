@@ -52,7 +52,6 @@
     imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 105, image.size.width, image.size.height);
     imageView.contentMode = UIViewContentModeCenter;
 
-    
     UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
     
     //shape layer for the line
@@ -60,7 +59,6 @@
     line.path = [linePath CGPath];
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
     line.frame = CGRectMake(0, 146/2, 320, 5);
-    
     
     UITextView *label = [UITextView new];
     
@@ -150,8 +148,7 @@
 
 -(void)closeModal
 {
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    [self.view performSelectorOnMainThread:@selector(removeFromSuperview) withObject:nil waitUntilDone:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -231,7 +228,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:0.92];
             return @[@"lonely", quotes[idx][0], quotes[idx][1], color];
         
         case DEPRESSED:
@@ -245,7 +242,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:0.92];
             return @[@"depressed", quotes[idx][0], quotes[idx][1], color];
         
         case TIRED:
@@ -259,7 +256,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:0.92];
             return @[@"tired", quotes[idx][0], quotes[idx][1], color];
         
         case SAD:
@@ -274,7 +271,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:0.92];
             return @[@"sad", quotes[idx][0], quotes[idx][1], color];
         
         case NOSTALGIC:
@@ -288,7 +285,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:0.92];
             return @[@"nostalgic", quotes[idx][0], quotes[idx][1], color];
             
         case JEALOUS:
@@ -303,7 +300,7 @@
             
             idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:0.92];
             return @[@"jealous", quotes[idx][0], quotes[idx][1], color];
     }
     

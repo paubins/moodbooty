@@ -26,9 +26,13 @@
     
     MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
     //self.window.rootViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
- 
-    self.window.rootViewController = [MBQuoteMoodViewController new];
+
+    MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
+    //controller.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
+    self.window.rootViewController = controller;
+//    
     [self.window makeKeyAndVisible];
     
     return YES;
