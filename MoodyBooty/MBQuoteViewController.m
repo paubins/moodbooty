@@ -10,6 +10,7 @@
 #import "MBQuoteView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
+#import <Social/Social.h>
 
 @implementation MBQuoteViewController
 
@@ -49,7 +50,6 @@
     imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 105, image.size.width, image.size.height);
     imageView.contentMode = UIViewContentModeCenter;
 
-    
     UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
     
     //shape layer for the line
@@ -57,7 +57,6 @@
     line.path = [linePath CGPath];
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
     line.frame = CGRectMake(0, 146/2, 320, 5);
-    
     
     UITextView *label = [UITextView new];
     
@@ -77,8 +76,18 @@
 
     
     UIButton *backButton;
+    UIButton *shareFacebook;
+    UIButton *shareTwitter;
+    
     UIBezierPath *linePath2;
     CAShapeLayer *line2;
+    
+    UIBezierPath *linePath3;
+    CAShapeLayer *line3;
+    
+    UIBezierPath *linePath4;
+    CAShapeLayer *line4;
+    
     UITextView *attributedTo;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
@@ -86,14 +95,27 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
             line2 = [CAShapeLayer layer];
             line2.path = [linePath2 CGPath];
             line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
+            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line3 = [CAShapeLayer layer];
+            line3.path = [linePath3 CGPath];
+            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line3.frame = CGRectMake(106.6, 480, 1, 146/2);
+            
+            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line4 = [CAShapeLayer layer];
+            line4.path = [linePath4 CGPath];
+            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line4.frame = CGRectMake(213.2, 480, 1, 146/2);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 106.6, 146/2)];
+            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 480, 106.6, 146/2)];
+            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 480, 106.6, 146/2)];
+            
             attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
         } else {
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
@@ -104,8 +126,24 @@
             line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
+            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line3 = [CAShapeLayer layer];
+            line3.path = [linePath3 CGPath];
+            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line3.frame = CGRectMake(106.6, 390, 1, 146/2);
+            
+            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line4 = [CAShapeLayer layer];
+            line4.path = [linePath4 CGPath];
+            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line4.frame = CGRectMake(213.2, 390, 1, 146/2);
+            
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 106.6, 146/2)];
+            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 390, 106.6, 146/2)];
+            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 390, 106.6, 146/2)];
+            
             attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 320, 320, 40)];
+            
         }
     }
 
@@ -133,13 +171,42 @@
     
     
     
+    NSMutableAttributedString *attributedString5;
+    attributedString5 = [[NSMutableAttributedString alloc] initWithString:[@"Share to \nFacebook" uppercaseString]];
+    [attributedString5 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString5.length)];
+    
+    [shareFacebook setAttributedTitle:attributedString5 forState:UIControlStateNormal];
+    [shareFacebook addTarget:self action:@selector(shareToFacebook) forControlEvents:UIControlEventTouchDown];
+    [shareFacebook setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
+    shareFacebook.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
+    shareFacebook.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    shareFacebook.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    NSMutableAttributedString *attributedString6;
+    attributedString6 = [[NSMutableAttributedString alloc] initWithString:[@"Share to \nTwitter" uppercaseString]];
+    [attributedString6 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString6.length)];
+    
+    [shareTwitter setAttributedTitle:attributedString6 forState:UIControlStateNormal];
+    [shareTwitter addTarget:self action:@selector(shareToTwitter) forControlEvents:UIControlEventTouchDown];
+    [shareTwitter setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
+    shareTwitter.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
+    shareTwitter.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    shareTwitter.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
     [self.view addSubview:imageView];
     [self.view addSubview:label];
     [self.view addSubview:attributedTo];
+    
     [self.view.layer addSublayer:line2];
+    [self.view.layer addSublayer:line3];
+    [self.view.layer addSublayer:line4];
+    
     [self.view addSubview:backButton];
+    [self.view addSubview:shareFacebook];
+    [self.view addSubview:shareTwitter];
     
 }
 
@@ -148,6 +215,38 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)shareToFacebook
+{
+    NSArray *moodInfo = [self getMoodInfo];
+    NSString *quote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [tweetSheet setInitialText:quote];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
+
+-(void)shareToTwitter
+{
+    NSArray *moodInfo = [self getMoodInfo];
+    NSString *quote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:quote];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
+
+-(NSInteger)getQuoteCount
+{
+    return 5;
+}
 
 -(NSArray *)getMoodInfo
 {
@@ -163,7 +262,6 @@
     NSInteger const JEALOUS = 8;
     
     NSArray *quotes;
-    NSInteger idx;
     UIColor *color;
     
     switch (self.mood) {
@@ -176,11 +274,8 @@
                         @[@"My uncle Sammy was an angry man. He had printed on his tombstone: What are you looking at?", @"Margaret Smith"]
                         ];
             
-            
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1];
-            return @[@"angry", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:0.92];
+            return @[@"angry", quotes[self.idx][0], quotes[self.idx][1], color];
             
         case IMPATIENT:
             quotes = @[
@@ -192,11 +287,8 @@
                        @[@"EVOO is extra-virgin olive oil. I first coined 'EVOO' on my cooking show because saying 'extra virgin olive oil' over and over was wordy, and I'm an impatient girl - that's why I make 30-minute meals!", @"Rachael Ray"]
                        ];
             
-            
-            idx = random() % [quotes count];
-            
             color = [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1];
-            return @[@"impatient", quotes[idx][0], quotes[idx][1], color];
+            return @[@"impatient", quotes[self.idx][0], quotes[self.idx][1], color];
             
         case ANXIOUS:
             quotes = @[
@@ -208,10 +300,8 @@
                        ];
             
             
-            idx = random() % [quotes count];
-            
             color = [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1];
-            return @[@"anxious", quotes[idx][0], quotes[idx][1], color];
+            return @[@"anxious", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case LONELY:
             quotes = @[
@@ -223,10 +313,9 @@
                        ];
             
             
-            idx = random() % [quotes count];
             
-            color = [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1];
-            return @[@"lonely", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:0.92];
+            return @[@"lonely", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case DEPRESSED:
             quotes = @[
@@ -237,10 +326,8 @@
                        @[@"I kind of like being depressed.", @"Nate Ruess"]
                        ];
             
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1];
-            return @[@"depressed", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:0.92];
+            return @[@"depressed", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case TIRED:
             quotes = @[
@@ -251,10 +338,8 @@
                        @[@"Laziness is nothing more than the habit of resting before you get tired.", @"Jules Renard"]
                        ];
             
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1];
-            return @[@"tired", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:0.92];
+            return @[@"tired", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case SAD:
             quotes = @[
@@ -265,11 +350,8 @@
                        @[@"It's been my experience that you can nearly always enjoy things if you make up your mind firmly that you will.", @"L.M. Montgomery"]
                        ];
             
-            
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1];
-            return @[@"sad", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:0.92];
+            return @[@"sad", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case NOSTALGIC:
             quotes = @[
@@ -280,10 +362,8 @@
                        @[@"I don’t have a photograph, but you can have my footprints. They’re upstairs in my socks.", @"Groucho Marx"]
                        ];
             
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1];
-            return @[@"nostalgic", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:0.92];
+            return @[@"nostalgic", quotes[self.idx][0], quotes[self.idx][1], color];
             
         case JEALOUS:
             quotes = @[
@@ -294,11 +374,8 @@
                        @[@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", @"Rodney Dangerfield"]
                        ];
             
-            
-            idx = random() % [quotes count];
-            
-            color = [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1];
-            return @[@"jealous", quotes[idx][0], quotes[idx][1], color];
+            color = [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:0.92];
+            return @[@"jealous", quotes[self.idx][0], quotes[self.idx][1], color];
     }
     
     return @[];

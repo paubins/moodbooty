@@ -21,14 +21,13 @@
 {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window = window;
+
+    MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
+    //controller.modalPresentationStyle = UIMOdal;
+    //controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    NSLog(@"tt0001m_: %@", [UIFont fontNamesForFamilyName:@"FreightSans Pro"] );
-    
-    MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
-    //self.window.rootViewController = [[MBQuoteCollectionViewController alloc] initWithCollectionViewLayout:collectionViewLayout];
- 
-    self.window.rootViewController = [MBQuoteMoodViewController new];
-    
+    self.window.rootViewController = controller;
+  
     [self.window makeKeyAndVisible];
     
     return YES;
