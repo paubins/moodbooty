@@ -153,6 +153,14 @@
     [self.view addSubview:bottomLabel];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    self.definesPresentationContext = YES;
+    self.providesPresentationContextTransitionStyle = YES;
+}
+
 - (void) handleGesture
 {
     UIViewController *controller = [MBAboutViewController new];
@@ -161,13 +169,17 @@
 
 - (void) openModel:(UIButton *)sender
 {
-
+    
     MBQuoteViewController *controller = [MBQuoteViewController new];
     [controller setMood:sender.tag];
+    [controller setIdx:random() % 5];
     
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-    self.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-
+    //[self addChildViewController:controller];
+    
+    //self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    controller.modalPresentationStyle = UIModalPresentationFullScreen;
+//    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
     [self presentViewController:controller animated:YES completion:nil];
 }
 
