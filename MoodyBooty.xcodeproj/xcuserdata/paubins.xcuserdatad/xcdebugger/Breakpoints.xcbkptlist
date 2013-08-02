@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
-         timestampString = "397112309.902077"
+         timestampString = "397113008.987634"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "220"
+         endingLineNumber = "220"
          landmarkName = "-closeModal"
          landmarkType = "5">
       </FileBreakpoint>

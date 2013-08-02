@@ -86,6 +86,13 @@
     
     UIBezierPath *linePath2;
     CAShapeLayer *line2;
+    
+    UIBezierPath *linePath3;
+    CAShapeLayer *line3;
+    
+    UIBezierPath *linePath4;
+    CAShapeLayer *line4;
+    
     UITextView *attributedTo;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
@@ -93,12 +100,22 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
             line2 = [CAShapeLayer layer];
             line2.path = [linePath2 CGPath];
             line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
+            
+            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line3 = [CAShapeLayer layer];
+            line3.path = [linePath3 CGPath];
+            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line3.frame = CGRectMake(106.6, 480, 1, 146/2);
+            
+            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line4 = [CAShapeLayer layer];
+            line4.path = [linePath4 CGPath];
+            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line4.frame = CGRectMake(213.2, 480, 1, 146/2);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 106.6, 146/2)];
             shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 480, 106.6, 146/2)];
@@ -113,6 +130,18 @@
             line2.path = [linePath2 CGPath];
             line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
+            
+            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line3 = [CAShapeLayer layer];
+            line3.path = [linePath3 CGPath];
+            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line3.frame = CGRectMake(106.6, 390, 1, 146/2);
+            
+            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+            line4 = [CAShapeLayer layer];
+            line4.path = [linePath4 CGPath];
+            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line4.frame = CGRectMake(213.2, 390, 1, 146/2);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 106.6, 146/2)];
             shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 390, 106.6, 146/2)];
@@ -153,9 +182,10 @@
     
     [shareFacebook setAttributedTitle:attributedString5 forState:UIControlStateNormal];
     [shareFacebook addTarget:self action:@selector(shareToFacebook) forControlEvents:UIControlEventTouchDown];
-    [shareFacebook setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    [shareFacebook setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
     shareFacebook.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     shareFacebook.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    shareFacebook.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     NSMutableAttributedString *attributedString6;
     attributedString6 = [[NSMutableAttributedString alloc] initWithString:[@"Share to \nTwitter" uppercaseString]];
@@ -163,9 +193,10 @@
     
     [shareTwitter setAttributedTitle:attributedString6 forState:UIControlStateNormal];
     [shareTwitter addTarget:self action:@selector(shareToTwitter) forControlEvents:UIControlEventTouchDown];
-    [shareTwitter setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    [shareTwitter setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
     shareTwitter.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     shareTwitter.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    shareTwitter.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     
     [self.view addSubview:topLabel];
@@ -173,7 +204,11 @@
     [self.view addSubview:imageView];
     [self.view addSubview:label];
     [self.view addSubview:attributedTo];
+    
     [self.view.layer addSublayer:line2];
+    [self.view.layer addSublayer:line3];
+    [self.view.layer addSublayer:line4];
+    
     [self.view addSubview:backButton];
     [self.view addSubview:shareFacebook];
     [self.view addSubview:shareTwitter];
