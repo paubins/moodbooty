@@ -8,10 +8,7 @@
 
 #import "MBAppDelegate.h"
 #import "MBQuoteViewController.h"
-#import "MBQuoteCollectionViewController.h"
-#import "MBQuoteUICollectionViewLayout.h"
 #import "MBQuoteMoodViewController.h"
-#import "MBQuoteCollectionViewCell.h"
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 
@@ -23,8 +20,6 @@
     self.window = window;
 
     MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
-    //controller.modalPresentationStyle = UIMOdal;
-    //controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     self.window.rootViewController = controller;
   

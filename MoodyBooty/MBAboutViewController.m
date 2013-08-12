@@ -7,7 +7,6 @@
 //
 
 #import "MBAboutViewController.h"
-#import "MBAboutView.h"
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -37,9 +36,6 @@
     always.backgroundColor = [UIColor clearColor];
     always.textAlignment = NSTextAlignmentCenter;
     always.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:26/2];
-//    always.shadowColor = [UIColor blackColor];
-//    always.shadowOffset = CGSizeMake(-0.5, 0.5);
-    
     
     UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 320, 40)];
     
@@ -79,11 +75,9 @@
     description.textAlignment = NSTextAlignmentCenter;
     description.contentMode = UIViewContentModeTop;
     description.lineBreakMode = NSLineBreakByWordWrapping;
-//    description.shadowColor = [UIColor blackColor];
-//    description.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     
-    self.view = [[MBAboutView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     self.view.userInteractionEnabled = YES;
 
     self.view.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:102.0/255.0 blue:111.0/255.0 alpha:1.0];
@@ -132,7 +126,7 @@
     
     NSMutableAttributedString *attributedString4;
     attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
-    [attributedString4 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString4.length)];
+    [attributedString4 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString4.length)];
 
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
@@ -141,7 +135,6 @@
     
     
     [self.view addSubview:imageView];
-    //[self.view addSubview:milkImageView];
     [self.view addSubview:always];
     [self.view addSubview:halfFull];
     [self.view addSubview:description];

@@ -7,7 +7,6 @@
 //
 
 #import "MBQuoteViewController.h"
-#import "MBQuoteView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
 #import <Social/Social.h>
@@ -27,7 +26,7 @@
     
     [super viewDidLoad];
     
-    self.view = [[MBQuoteView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
+    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
     
     self.view.backgroundColor = color;
     

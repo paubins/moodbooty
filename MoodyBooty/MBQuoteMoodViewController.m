@@ -7,12 +7,8 @@
 //
 
 #import "MBQuoteMoodViewController.h"
-#import "MBQuoteCollectionViewController.h"
-#import "MBQuoteCollectionViewCell.h"
-#import "MBQuoteUICollectionViewLayout.h"
 #import "MBAboutViewController.h"
 #import "MBQuoteViewController.h"
-#import "MBQUoteView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
@@ -23,8 +19,6 @@
     [super loadView];
     
     self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
-    
-    //MBQuoteUICollectionViewLayout *collectionViewLayout = [MBQuoteUICollectionViewLayout new];
     
     UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 146/2)];
     
