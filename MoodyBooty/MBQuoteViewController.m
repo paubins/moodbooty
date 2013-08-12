@@ -7,9 +7,13 @@
 //
 
 #import "MBQuoteViewController.h"
+#import "MBTextView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
+
 #import <Social/Social.h>
+
+#define kDefaultFontSize  50.0
 
 @implementation MBQuoteViewController
 
@@ -57,18 +61,27 @@
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
     line.frame = CGRectMake(0, 146/2, 320, 5);
     
-    UITextView *label = [UITextView new];
+    MBTextView *label = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
     
     NSMutableAttributedString *attributedString2;
     attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D",quote]];
     [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
-    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:(quote.length > 50 ? (quote.length < 130 ? 24 : 18) : 35 )];
+    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
+    
+    CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
+    
+    if (fontSize.height > 150) {
+        int newFontSize = kDefaultFontSize;
+        while (fontSize.height >= 150 || fontSize.width > 250 ) {
+            label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:newFontSize--];
+            fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
+        }
+    }
 
     
     label.textColor = [UIColor whiteColor];
-    label.frame = CGRectMake(35, 160, 250, 230);
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
     label.editable = NO;
