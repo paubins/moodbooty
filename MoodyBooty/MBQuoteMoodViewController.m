@@ -149,15 +149,29 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    
     [self setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     self.definesPresentationContext = YES;
     self.providesPresentationContextTransitionStyle = YES;
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if ( ![prefs boolForKey:@"aboutShown"] ){
+        MBAboutViewController *aboutViewController = [MBAboutViewController new];
+        [self presentViewController:aboutViewController animated:YES completion:nil];
+        [prefs setBool:YES forKey:@"aboutShown"];
+        [prefs synchronize];
+    }
 }
 
 - (void) handleGesture
 {
-    UIViewController *controller = [MBAboutViewController new];
+    MBAboutViewController *controller = [MBAboutViewController new];
     [self presentViewController:controller animated:YES completion:nil];
 }
 

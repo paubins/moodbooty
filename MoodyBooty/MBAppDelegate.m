@@ -9,6 +9,7 @@
 #import "MBAppDelegate.h"
 #import "MBQuoteViewController.h"
 #import "MBQuoteMoodViewController.h"
+#import "MBAboutViewController.h"
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 
@@ -24,6 +25,7 @@
     self.window.rootViewController = controller;
   
     [self.window makeKeyAndVisible];
+
     
     return YES;
 }

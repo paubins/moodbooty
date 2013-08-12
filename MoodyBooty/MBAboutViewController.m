@@ -125,7 +125,13 @@
     }
     
     NSMutableAttributedString *attributedString4;
-    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    if ( ![prefs boolForKey:@"aboutShown"] ){
+        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Next" uppercaseString]];
+    } else {
+        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
+    }
     [attributedString4 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString4.length)];
 
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
