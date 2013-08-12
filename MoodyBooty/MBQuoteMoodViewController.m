@@ -31,7 +31,7 @@
     
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[@"How ya feeling today?" uppercaseString]];
-    [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
@@ -141,8 +141,8 @@
     bottomLabel.userInteractionEnabled = YES;
     
     NSMutableAttributedString *attributedString2;
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Think half full." uppercaseString]];
-    [attributedString2 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString2.length)];
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Live half full." uppercaseString]];
+    [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
     [bottomLabel setAttributedText:attributedString2];
     
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture)];

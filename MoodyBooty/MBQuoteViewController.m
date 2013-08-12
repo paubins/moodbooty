@@ -35,7 +35,7 @@
     
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[mood uppercaseString]];
-    [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
     topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];    
@@ -155,7 +155,7 @@
     
     NSMutableAttributedString *attributedString3;
     attributedString3 = [[NSMutableAttributedString alloc] initWithString:[quoted uppercaseString]];
-    [attributedString3 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString3.length)];
+    [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
     
     [attributedTo setAttributedText:attributedString3];
     
