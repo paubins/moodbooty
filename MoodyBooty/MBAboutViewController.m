@@ -17,10 +17,6 @@
     [super loadView];
     
     UIImage *image = [UIImage imageNamed:@"intro_bg"];
-    UIImage *milkImage = [UIImage imageNamed:@"Milk_Glass"];
-    
-    UIImageView *milkImageView = [[UIImageView alloc] initWithImage:milkImage];
-    milkImageView.frame = CGRectMake(0, 150, milkImage.size.width, milkImage.size.height);
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
@@ -28,7 +24,7 @@
     UILabel *always = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 320, 20)];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[@"The glass is always" uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The glass is always", nil) uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
     [always setAttributedText:attributedString];
     
@@ -40,7 +36,7 @@
     UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 320, 40)];
     
     NSMutableAttributedString *attributedString2;
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Half full" uppercaseString]];
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Half full", nil) uppercaseString]];
     [attributedString2 addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString2.length)];
     [halfFull setAttributedText:attributedString2];
     
@@ -64,7 +60,7 @@
     }
     
     NSMutableAttributedString *attributedString3;
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"The app that turns your\r frown upside down with\r a dose of inspiration to\r kick any bad mood\r in the butt!" uppercaseString]];
+    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The app that turns your\r frown upside down with\r a dose of inspiration to\r kick any bad mood\r in the butt!", nil) uppercaseString]];
     [attributedString3 addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString3.length)];
     [description setAttributedText:attributedString3];
     
@@ -128,9 +124,9 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     if ( ![prefs boolForKey:@"aboutShown"] ){
-        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Next" uppercaseString]];
+        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Next", nil) uppercaseString]];
     } else {
-        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
+        attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Back", nil) uppercaseString]];
     }
     [attributedString4 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString4.length)];
 

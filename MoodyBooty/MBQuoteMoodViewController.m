@@ -24,7 +24,7 @@
     
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[@"How ya feeling today?" uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"How ya feeling today?", nil) uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -45,15 +45,15 @@
     
     
     NSArray *moods = @[
-                       @[@"angry", [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
-                       @[@"impatient", [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
-                       @[@"anxious", [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1]], // purple
-                       @[@"lonely", [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
-                       @[@"depressed", [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
-                       @[@"tired", [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
-                       @[@"sad", [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
-                       @[@"nostalgic", [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
-                       @[@"jealous", [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"angry", nil), [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
+                       @[NSLocalizedString(@"impatient", nil), [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
+                       @[NSLocalizedString(@"anxious", nil), [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1]], // purple
+                       @[NSLocalizedString(@"lonely", nil), [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
+                       @[NSLocalizedString(@"depressed", nil), [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
+                       @[NSLocalizedString(@"tired", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
+                       @[NSLocalizedString(@"sad", nil), [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
+                       @[NSLocalizedString(@"nostalgic", nil), [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"jealous", nil), [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
                        ];
 
     
@@ -135,7 +135,7 @@
     bottomLabel.userInteractionEnabled = YES;
     
     NSMutableAttributedString *attributedString2;
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Live half full." uppercaseString]];
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Live half full.", nil) uppercaseString]];
     [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
     [bottomLabel setAttributedText:attributedString2];
     

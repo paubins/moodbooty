@@ -37,7 +37,7 @@
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:@"don't be %@.", mood] uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), mood] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -68,6 +68,7 @@
     [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
+    label.scrollEnabled = NO;
     label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
     
     CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
@@ -170,10 +171,9 @@
     [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
     
     [attributedTo setAttributedText:attributedString3];
-    
 
     NSMutableAttributedString *attributedString4;
-    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[@"Back" uppercaseString]];
+    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Back", nil) uppercaseString]];
     [attributedString4 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString4.length)];
     
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
@@ -184,7 +184,7 @@
     
     
     NSMutableAttributedString *attributedString5;
-    attributedString5 = [[NSMutableAttributedString alloc] initWithString:[@"Share to \nFacebook" uppercaseString]];
+    attributedString5 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to \nFacebook", nil) uppercaseString]];
     [attributedString5 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString5.length)];
     
     [shareFacebook setAttributedTitle:attributedString5 forState:UIControlStateNormal];
@@ -195,7 +195,7 @@
     shareFacebook.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     NSMutableAttributedString *attributedString6;
-    attributedString6 = [[NSMutableAttributedString alloc] initWithString:[@"Share to \nTwitter" uppercaseString]];
+    attributedString6 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to \nTwitter", nil) uppercaseString]];
     [attributedString6 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString6.length)];
     
     [shareTwitter setAttributedTitle:attributedString6 forState:UIControlStateNormal];
@@ -300,7 +300,7 @@
                        @[@"EVOO is extra-virgin olive oil. I first coined 'EVOO' on my cooking show because saying 'extra virgin olive oil' over and over was wordy, and I'm an impatient girl - that's why I make 30-minute meals!", @"Rachael Ray"]
                        ];
             
-            color = [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:0.92];
             return @[@"impatient", quotes[self.idx][0], quotes[self.idx][1], color];
             
         case ANXIOUS:
@@ -313,7 +313,7 @@
                        ];
             
             
-            color = [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:0.92];
             return @[@"anxious", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case LONELY:
