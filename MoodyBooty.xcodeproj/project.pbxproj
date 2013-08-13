@@ -65,6 +65,10 @@
 		C1BF551F17A265C8006411A9 /* intro_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF551E17A265C8006411A9 /* intro_bg.png */; };
 		C1BF552117A265D6006411A9 /* intro_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF552017A265D6006411A9 /* intro_bg@2x.png */; };
 		C1BF552717A3260B006411A9 /* MBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BF552617A3260B006411A9 /* MBButton.m */; };
+		C1DB1FA717B9F4E00069048D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA517B9F4E00069048D /* icon.png */; };
+		C1DB1FA817B9F4E00069048D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA617B9F4E00069048D /* icon@2x.png */; };
+		C1DB1FAA17B9F50B0069048D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA917B9F50B0069048D /* icon.png */; };
+		C1DB1FAC17B9F5140069048D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FAB17B9F5140069048D /* icon@2x.png */; };
 		C1F2EEE217AB6DB4006481B7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2EEE117AB6DB4006481B7 /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +148,10 @@
 		C1BF552017A265D6006411A9 /* intro_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_bg@2x.png"; sourceTree = "<group>"; };
 		C1BF552517A3260B006411A9 /* MBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButton.h; sourceTree = "<group>"; };
 		C1BF552617A3260B006411A9 /* MBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButton.m; sourceTree = "<group>"; };
+		C1DB1FA517B9F4E00069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C1DB1FA617B9F4E00069048D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		C1DB1FA917B9F50B0069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C1DB1FAB17B9F5140069048D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		C1F2EEE117AB6DB4006481B7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -177,6 +185,8 @@
 		C179EB071797B22100FB8A7F = {
 			isa = PBXGroup;
 			children = (
+				C1DB1FAB17B9F5140069048D /* icon@2x.png */,
+				C1DB1FA917B9F50B0069048D /* icon.png */,
 				C1F2EEE117AB6DB4006481B7 /* Social.framework */,
 				C1623F1F17A1BCB3000A130E /* QuartzCore.framework */,
 				C179EB511797B38D00FB8A7F /* CoreData.framework */,
@@ -231,6 +241,8 @@
 		C179EB1A1797B22100FB8A7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C1DB1FA517B9F4E00069048D /* icon.png */,
+				C1DB1FA617B9F4E00069048D /* icon@2x.png */,
 				C1BF551E17A265C8006411A9 /* intro_bg.png */,
 				C1BF552017A265D6006411A9 /* intro_bg@2x.png */,
 				C1BF54B417A24FD8006411A9 /* Smiley_1.png */,
@@ -404,6 +416,10 @@
 				C1BF551D17A25CFE006411A9 /* Milk_Glass@2x.png in Resources */,
 				C1BF551F17A265C8006411A9 /* intro_bg.png in Resources */,
 				C1BF552117A265D6006411A9 /* intro_bg@2x.png in Resources */,
+				C1DB1FA717B9F4E00069048D /* icon.png in Resources */,
+				C1DB1FA817B9F4E00069048D /* icon@2x.png in Resources */,
+				C1DB1FAA17B9F50B0069048D /* icon.png in Resources */,
+				C1DB1FAC17B9F5140069048D /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +525,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -524,7 +541,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -540,6 +559,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -548,18 +568,21 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
 		C179EB491797B22100FB8A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
 				INFOPLIST_FILE = "MoodyBooty/MoodyBooty-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -567,10 +590,12 @@
 		C179EB4A1797B22100FB8A7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
 				INFOPLIST_FILE = "MoodyBooty/MoodyBooty-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

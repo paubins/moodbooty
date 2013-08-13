@@ -16,7 +16,7 @@
 {
     [super loadView];
     
-    UIImage *image = [UIImage imageNamed:@"Intro_BG"];
+    UIImage *image = [UIImage imageNamed:@"intro_bg"];
     UIImage *milkImage = [UIImage imageNamed:@"Milk_Glass"];
     
     UIImageView *milkImageView = [[UIImageView alloc] initWithImage:milkImage];
@@ -154,7 +154,14 @@
 
 -(void)closeModal
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromTop;
+    [self.view.window.layer addAnimation:transition forKey:nil];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 

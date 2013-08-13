@@ -37,7 +37,7 @@
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[mood uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:@"don't be %@.", mood] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -54,7 +54,7 @@
     imageView.contentMode = UIViewContentModeCenter;
 
     UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
-    
+        
     //shape layer for the line
     CAShapeLayer *line = [CAShapeLayer layer];
     line.path = [linePath CGPath];
@@ -163,7 +163,7 @@
     attributedTo.backgroundColor = [UIColor clearColor];
     attributedTo.textAlignment = NSTextAlignmentCenter;
     attributedTo.textColor = [UIColor whiteColor];
-    attributedTo.font = [UIFont fontWithName:@"FreightSansProBook-Regular" size:16];
+    attributedTo.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:16];
     
     NSMutableAttributedString *attributedString3;
     attributedString3 = [[NSMutableAttributedString alloc] initWithString:[quoted uppercaseString]];
@@ -211,7 +211,7 @@
     [self.view addSubview:imageView];
     [self.view addSubview:label];
     [self.view addSubview:attributedTo];
-    
+
     [self.view.layer addSublayer:line2];
     [self.view.layer addSublayer:line3];
     [self.view.layer addSublayer:line4];
@@ -224,6 +224,7 @@
 
 -(void)closeModal
 {
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

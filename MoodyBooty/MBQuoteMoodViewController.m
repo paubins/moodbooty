@@ -150,8 +150,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     
-    [self setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    //[self setModalTransitionStyle:UIMOdalTransi];
+    //[self setModalPresentationStyle:UIModalPre];
     self.definesPresentationContext = YES;
     self.providesPresentationContextTransitionStyle = YES;
     
@@ -172,8 +172,18 @@
 - (void) handleGesture
 {
     MBAboutViewController *controller = [MBAboutViewController new];
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromTop;
+    [self.view.window.layer addAnimation:transition forKey:nil];
+    
     [self presentViewController:controller animated:YES completion:nil];
 }
+
+
 
 - (void) openModel:(UIButton *)sender
 {
@@ -182,11 +192,14 @@
     [controller setMood:sender.tag];
     [controller setIdx:random() % 5];
     
-    //[self addChildViewController:controller];
     
-    //self.modalPresentationStyle = UIModalPresentationCurrentContext;
-//    controller.modalPresentationStyle = UIModalPresentationFullScreen;
-//    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    [self.view.window.layer addAnimation:transition forKey:nil];
+    
     
     [self presentViewController:controller animated:YES completion:nil];
 }

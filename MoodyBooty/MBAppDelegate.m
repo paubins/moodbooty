@@ -23,7 +23,8 @@
     MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
     
     self.window.rootViewController = controller;
-  
+    self.window.rootViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    
     [self.window makeKeyAndVisible];
 
     
