@@ -37,7 +37,7 @@
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), mood] uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), NSLocalizedString(mood, nil)] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -247,7 +247,15 @@
     NSArray *moodInfo = [self getMoodInfo];
     NSString *quote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
     
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    if ( quote.length > 140 ) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                 initWithTitle:NSLocalizedString(@"Whoops", nil)
+                                 message:NSLocalizedString(@"Sorry, this quote is too long to post to Twitter.", nil)
+                                 delegate:nil
+                                 cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                 otherButtonTitles:nil, nil];
+        [alertView show];
+    } else if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
