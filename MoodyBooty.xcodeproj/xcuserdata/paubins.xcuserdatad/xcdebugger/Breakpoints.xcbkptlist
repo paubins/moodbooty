@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteMoodViewController.m"
-         timestampString = "398158086.857689"
+         timestampString = "398244155.865123"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "-loadView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -91,8 +91,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "24"
          endingLineNumber = "24"
-         landmarkName = "-loadView"
-         landmarkType = "5">
+         landmarkName = "@implementation MBQuoteViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -104,19 +104,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "34"
          endingLineNumber = "34"
-         landmarkName = "-loadView"
-         landmarkType = "5">
+         landmarkName = "@implementation MBQuoteViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteMoodViewController.m"
-         timestampString = "398158086.857689"
+         timestampString = "398244155.865123"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-handleGesture"
          landmarkType = "5">
       </FileBreakpoint>

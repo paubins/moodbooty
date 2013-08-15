@@ -17,6 +17,20 @@
 
 @implementation MBQuoteViewController
 
+enum {
+    ANGRY = 0,
+    IMPATIENT,
+    TIRED,
+    LONELY,
+    DEPRESSED,
+    GUILTY,
+    SAD,
+    NOSTALGIC,
+    JEALOUS,
+    DULL,
+    SCARED,
+    ANXIOUS
+};
 
 -(void) loadView
 {
@@ -37,7 +51,7 @@
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), NSLocalizedString(mood, nil)] uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), mood] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -272,27 +286,17 @@
 -(NSArray *)getMoodInfo
 {
     
-    NSInteger const ANGRY = 0;
-    NSInteger const IMPATIENT = 1;
-    NSInteger const ANXIOUS = 2;
-    NSInteger const LONELY = 3;
-    NSInteger const DEPRESSED = 4;
-    NSInteger const TIRED = 5;
-    NSInteger const SAD = 6;
-    NSInteger const NOSTALGIC = 7;
-    NSInteger const JEALOUS = 8;
-    
     NSArray *quotes;
     UIColor *color;
     
     switch (self.mood) {
         case ANGRY:
             quotes = @[
-                        @[@"Sometimes, I feel discriminated against, but it does not make me angry. It merely astonishes me. How can any deny themselves the pleasure of my company? It's beyond me.", @"Zora Neale Hurston"],
-                        @[@"I'm not as angry as I used to be. But I can get in touch with that anger pretty quickly if I feel my space is being invaded or somebody is not treating me with the respect that I think I want.", @"Samuel L. Jackson"],
-                        @[@"I'm mellower now, I'm over 50. But I don't think I'm too mellow. I'm still angry at a lot of things.", @"Henry Rollins"],
-                        @[@"It's practically impossible to look at a penguin and feel angry.", @"Joe Moore"],
-                        @[@"My uncle Sammy was an angry man. He had printed on his tombstone: What are you looking at?", @"Margaret Smith"]
+                        @[NSLocalizedString(@"Sometimes, I feel discriminated against, but it does not make me angry. It merely astonishes me. How can any deny themselves the pleasure of my company? It's beyond me.", nil), @"Zora Neale Hurston"],
+                        @[NSLocalizedString(@"I'm not as angry as I used to be. But I can get in touch with that anger pretty quickly if I feel my space is being invaded or somebody is not treating me with the respect that I think I want.", nil), @"Samuel L. Jackson"],
+                        @[NSLocalizedString(@"I'm mellower now, I'm over 50. But I don't think I'm too mellow. I'm still angry at a lot of things.", nil), @"Henry Rollins"],
+                        @[NSLocalizedString(@"It's practically impossible to look at a penguin and feel angry.", nil), @"Joe Moore"],
+                        @[NSLocalizedString(@"My uncle Sammy was an angry man. He had printed on his tombstone: What are you looking at?", nil), @"Margaret Smith"]
                         ];
             
             color = [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:0.92];
@@ -300,12 +304,12 @@
             
         case IMPATIENT:
             quotes = @[
-                       @[@"When someone is impatient and says, 'I haven't got all day,' I always wonder, How can that be? How can you not have all day?", @"George Carlin"],
-                       @[@"I'm impatient. I get twitchy. When I get that feeling I just go out and make something happen.", @"John Cale"],
-                       @[@"Intuition is a suspension of logic due to impatience.", @"Rita Mae Brown"],
-                       @[@"The ear tends to be lazy, craves the familiar and is shocked by the unexpected; the eye, on the other hand, tends to be impatient, craves the novel and is bored by repetition.", @"W. H. Auden"],
-                       @[@"I told her I'd wait forever for her, but that was before I found somebody else who'd give me a ride home.", @"Jarod Kintz"],
-                       @[@"EVOO is extra-virgin olive oil. I first coined 'EVOO' on my cooking show because saying 'extra virgin olive oil' over and over was wordy, and I'm an impatient girl - that's why I make 30-minute meals!", @"Rachael Ray"]
+                       @[NSLocalizedString(@"When someone is impatient and says, 'I haven't got all day,' I always wonder, How can that be? How can you not have all day?", nil), @"George Carlin"],
+                       @[NSLocalizedString(@"I'm impatient. I get twitchy. When I get that feeling I just go out and make something happen.", nil), @"John Cale"],
+                       @[NSLocalizedString(@"Intuition is a suspension of logic due to impatience.", nil), @"Rita Mae Brown"],
+                       @[NSLocalizedString(@"The ear tends to be lazy, craves the familiar and is shocked by the unexpected; the eye, on the other hand, tends to be impatient, craves the novel and is bored by repetition.", nil), @"W. H. Auden"],
+                       @[NSLocalizedString(@"I told her I'd wait forever for her, but that was before I found somebody else who'd give me a ride home.", nil), @"Jarod Kintz"],
+                       @[NSLocalizedString(@"EVOO is extra-virgin olive oil. I first coined 'EVOO' on my cooking show because saying 'extra virgin olive oil' over and over was wordy, and I'm an impatient girl - that's why I make 30-minute meals!", nil), @"Rachael Ray"]
                        ];
             
             color = [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:0.92];
@@ -313,11 +317,11 @@
             
         case ANXIOUS:
             quotes = @[
-                       @[@"True happiness is... to enjoy the present, without anxious dependence upon the future.", @"Lucius Annaeus Seneca"],
-                       @[@"There are moments when all anxiety and stated toil are becalmed in the infinite leisure and repose of nature.", @"Henry David Thoreau"],
-                       @[@"Anxiety does not empty tomorrow of its sorrows, but only empties today of its strength.", @"Charles Spurgeon"],
-                       @[@"Nothing in the affairs of men is worthy of great anxiety.", @"Plato"],
-                       @[@"We should not fret for what is past, nor should we be anxious about the future; men of discernment deal only with the present moment.", @"Chanakya"]
+                       @[NSLocalizedString(@"True happiness is... to enjoy the present, without anxious dependence upon the future.", nil), @"Lucius Annaeus Seneca"],
+                       @[NSLocalizedString(@"There are moments when all anxiety and stated toil are becalmed in the infinite leisure and repose of nature.", nil), @"Henry David Thoreau"],
+                       @[NSLocalizedString(@"Anxiety does not empty tomorrow of its sorrows, but only empties today of its strength.", nil), @"Charles Spurgeon"],
+                       @[NSLocalizedString(@"Nothing in the affairs of men is worthy of great anxiety.", nil), @"Plato"],
+                       @[NSLocalizedString(@"We should not fret for what is past, nor should we be anxious about the future; men of discernment deal only with the present moment.", nil), @"Chanakya"]
                        ];
             
             
@@ -326,11 +330,11 @@
         
         case LONELY:
             quotes = @[
-                       @[@"To fulfill a dream, to be allowed to sweat over lonely labor, to be given a chance to create, is the meat and potatoes of life. The money is the gravy.", @"Bette Davis"],
-                       @[@"No one really wants to admit they are lonely, and it is never really addressed very much between friends and family. But I have felt lonely many times in my life.", @"Bill Murray"],
-                       @[@"I like the idea of being alone. I like the idea of often being alone in all aspects of my life. I like to feel lonely. I like to need things.", @"Robert Plant"],
-                       @[@"If I'm such a legend, then why am I so lonely? Let me tell you, legends are all very well if you've got somebody around who loves you.", @"Judy Garland"],
-                       @[@"For now, I'm just going to hang out with these two smoking hotties and fly privately around the world. It might be lonely up here, but I sure like the view.", @"Charlie Sheen"]
+                       @[NSLocalizedString(@"To fulfill a dream, to be allowed to sweat over lonely labor, to be given a chance to create, is the meat and potatoes of life. The money is the gravy.", nil), @"Bette Davis"],
+                       @[NSLocalizedString(@"No one really wants to admit they are lonely, and it is never really addressed very much between friends and family. But I have felt lonely many times in my life.", nil), @"Bill Murray"],
+                       @[NSLocalizedString(@"I like the idea of being alone. I like the idea of often being alone in all aspects of my life. I like to feel lonely. I like to need things.", nil), @"Robert Plant"],
+                       @[NSLocalizedString(@"If I'm such a legend, then why am I so lonely? Let me tell you, legends are all very well if you've got somebody around who loves you.", nil), @"Judy Garland"],
+                       @[NSLocalizedString(@"For now, I'm just going to hang out with these two smoking hotties and fly privately around the world. It might be lonely up here, but I sure like the view.", nil), @"Charlie Sheen"]
                        ];
             
             
@@ -340,11 +344,11 @@
         
         case DEPRESSED:
             quotes = @[
-                       @[@"Art saved me; it got me through my depression and self-loathing, back to a place of innocence.", @"Jeanette Winterson"],
-                       @[@"The concept of the 'good ol' days' must be one of our society's biggest delusions, top reasons for depression, as well as most often used excuse for lack of success.", @"Bo Bennett"],
-                       @[@"That terrible mood of depression of whether it's any good or not is what is known as The Artist's Reward.", @"Ernest Hemingway"],
-                       @[@"Certainly, I think being depressed is absolutely part of the human condition, it has to be, if there's joy there's its opposite, and it's something you ride if you possibly can.", @"Bob Geldof"],
-                       @[@"I kind of like being depressed.", @"Nate Ruess"]
+                       @[NSLocalizedString(@"Art saved me; it got me through my depression and self-loathing, back to a place of innocence.", nil), @"Jeanette Winterson"],
+                       @[NSLocalizedString(@"The concept of the 'good ol' days' must be one of our society's biggest delusions, top reasons for depression, as well as most often used excuse for lack of success.", nil), @"Bo Bennett"],
+                       @[NSLocalizedString(@"That terrible mood of depression of whether it's any good or not is what is known as The Artist's Reward.", nil), @"Ernest Hemingway"],
+                       @[NSLocalizedString(@"Certainly, I think being depressed is absolutely part of the human condition, it has to be, if there's joy there's its opposite, and it's something you ride if you possibly can.", nil), @"Bob Geldof"],
+                       @[NSLocalizedString(@"I kind of like being depressed.", nil), @"Nate Ruess"]
                        ];
             
             color = [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:0.92];
@@ -352,11 +356,11 @@
         
         case TIRED:
             quotes = @[
-                       @[@"Sleep did not honor me with it’s presence.", @"Alysha Speer"],
-                       @[@"I got tired of feeling like Dracula. I wanted to see some daylight, and not just at six o’clock in the morning.", @"Kate Moss"],
-                       @[@"Winston was gelatinous with fatigue.", @"George Orwell"],
-                       @[@"Ten men waiting for me at the door? Send one of them home, I'm tired.", @"Mae West"],
-                       @[@"Laziness is nothing more than the habit of resting before you get tired.", @"Jules Renard"]
+                       @[NSLocalizedString(@"Sleep did not honor me with it’s presence.", nil), @"Alysha Speer"],
+                       @[NSLocalizedString(@"I got tired of feeling like Dracula. I wanted to see some daylight, and not just at six o’clock in the morning.", nil), @"Kate Moss"],
+                       @[NSLocalizedString(@"Winston was gelatinous with fatigue.", nil), @"George Orwell"],
+                       @[NSLocalizedString(@"Ten men waiting for me at the door? Send one of them home, I'm tired.", nil), @"Mae West"],
+                       @[NSLocalizedString(@"Laziness is nothing more than the habit of resting before you get tired.", nil), @"Jules Renard"]
                        ];
             
             color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:0.92];
@@ -364,11 +368,11 @@
         
         case SAD:
             quotes = @[
-                       @[@"I seldom think about my limitations, and they never make me sad. Perhaps there is just a touch of yearning at times; but it is vague, like a breeze among flowers.", @"Helen Keller"],
-                       @[@"So, this is my life. And I want you to know that I am both happy and sad and I'm still trying to figure out how that could be.", @"Stephen Chbosky"],
-                      @[@"Don't cry because it's over, smile because it happened.", @"Dr. Seuss"],
-                       @[@"Success is getting what you want, happiness is wanting what you get", @"W.P. Kinsella"],
-                       @[@"It's been my experience that you can nearly always enjoy things if you make up your mind firmly that you will.", @"L.M. Montgomery"]
+                       @[NSLocalizedString(@"I seldom think about my limitations, and they never make me sad. Perhaps there is just a touch of yearning at times; but it is vague, like a breeze among flowers.", nil), @"Helen Keller"],
+                       @[NSLocalizedString(@"So, this is my life. And I want you to know that I am both happy and sad and I'm still trying to figure out how that could be.", nil), @"Stephen Chbosky"],
+                       @[NSLocalizedString(@"Don't cry because it's over, smile because it happened.", nil), @"Dr. Seuss"],
+                       @[NSLocalizedString(@"Success is getting what you want, happiness is wanting what you get", nil), @"W.P. Kinsella"],
+                       @[NSLocalizedString(@"It's been my experience that you can nearly always enjoy things if you make up your mind firmly that you will.", nil), @"L.M. Montgomery"]
                        ];
             
             color = [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:0.92];
@@ -376,11 +380,11 @@
         
         case NOSTALGIC:
             quotes = @[
-                       @[@"I don't know what they are called, the spaces between seconds– but I think of you always in those intervals.", @"Salvador Plascencia"],
-                       @[@"The concept of the 'good ol' days' must be one of our society's biggest delusions, top reasons for depression, as well as most often used excuse for lack of success.", @"Bo Bennett"],
-                       @[@"Remembrance of things past is not necessarily the remembrance of things as they were.", @"Marcel Proust"],
-                       @[@"We are homesick most for the places we have never known.", @"Carson McCullers"],
-                       @[@"I don’t have a photograph, but you can have my footprints. They’re upstairs in my socks.", @"Groucho Marx"]
+                       @[NSLocalizedString(@"I don't know what they are called, the spaces between seconds– but I think of you always in those intervals.", nil), @"Salvador Plascencia"],
+                       @[NSLocalizedString(@"The concept of the 'good ol' days' must be one of our society's biggest delusions, top reasons for depression, as well as most often used excuse for lack of success.", nil), @"Bo Bennett"],
+                       @[NSLocalizedString(@"Remembrance of things past is not necessarily the remembrance of things as they were.", nil), @"Marcel Proust"],
+                       @[NSLocalizedString(@"We are homesick most for the places we have never known.", nil), @"Carson McCullers"],
+                       @[NSLocalizedString(@"I don’t have a photograph, but you can have my footprints. They’re upstairs in my socks.", nil), @"Groucho Marx"]
                        ];
             
             color = [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:0.92];
@@ -388,15 +392,48 @@
             
         case JEALOUS:
             quotes = @[
-                       @[@"If I had a clone, he’d better be my equal, and not my better. Can you imagine how I’d feel being jealous of myself?", @"Jarod Kintz"],
-                       @[@"Don't waste time on jealousy. Sometimes you're ahead, sometimes you're behind.", @"Mary Schmich"],
-                       @[@"People are taken aback by a confident, pretty girl who knows what she wants in life and isn't going to let anyone get in her way. And you know what it's all about? Jealousy.", @"Summer Altice"],
-                       @[@"He that is jealous is not in love.", @"Saint Augustine"],
-                       @[@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", @"Rodney Dangerfield"]
+                       @[NSLocalizedString(@"If I had a clone, he’d better be my equal, and not my better. Can you imagine how I’d feel being jealous of myself?", nil), @"Jarod Kintz"],
+                       @[NSLocalizedString(@"Don't waste time on jealousy. Sometimes you're ahead, sometimes you're behind.", nil), @"Mary Schmich"],
+                       @[NSLocalizedString(@"People are taken aback by a confident, pretty girl who knows what she wants in life and isn't going to let anyone get in her way. And you know what it's all about? Jealousy.", nil), @"Summer Altice"],
+                       @[NSLocalizedString(@"He that is jealous is not in love.", nil), @"Saint Augustine"],
+                       @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
                        ];
             
             color = [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:0.92];
             return @[@"jealous", quotes[self.idx][0], quotes[self.idx][1], color];
+        case GUILTY:
+            quotes = @[
+                       @[NSLocalizedString(@"If I had a clone, he’d better be my equal, and not my better. Can you imagine how I’d feel being jealous of myself?", nil), @"Jarod Kintz"],
+                       @[NSLocalizedString(@"Don't waste time on jealousy. Sometimes you're ahead, sometimes you're behind.", nil), @"Mary Schmich"],
+                       @[NSLocalizedString(@"People are taken aback by a confident, pretty girl who knows what she wants in life and isn't going to let anyone get in her way. And you know what it's all about? Jealousy.", nil), @"Summer Altice"],
+                       @[NSLocalizedString(@"He that is jealous is not in love.", nil), @"Saint Augustine"],
+                       @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
+                       ];
+            
+            color = [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1];
+            return @[@"guilty", quotes[self.idx][0], quotes[self.idx][1], color];
+        case SCARED:
+            quotes = @[
+                       @[NSLocalizedString(@"If I had a clone, he’d better be my equal, and not my better. Can you imagine how I’d feel being jealous of myself?", nil), @"Jarod Kintz"],
+                       @[NSLocalizedString(@"Don't waste time on jealousy. Sometimes you're ahead, sometimes you're behind.", nil), @"Mary Schmich"],
+                       @[NSLocalizedString(@"People are taken aback by a confident, pretty girl who knows what she wants in life and isn't going to let anyone get in her way. And you know what it's all about? Jealousy.", nil), @"Summer Altice"],
+                       @[NSLocalizedString(@"He that is jealous is not in love.", nil), @"Saint Augustine"],
+                       @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
+                       ];
+            
+            color = [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1];
+            return @[@"scared", quotes[self.idx][0], quotes[self.idx][1], color];
+        case DULL:
+            quotes = @[
+                       @[NSLocalizedString(@"If I had a clone, he’d better be my equal, and not my better. Can you imagine how I’d feel being jealous of myself?", nil), @"Jarod Kintz"],
+                       @[NSLocalizedString(@"Don't waste time on jealousy. Sometimes you're ahead, sometimes you're behind.", nil), @"Mary Schmich"],
+                       @[NSLocalizedString(@"People are taken aback by a confident, pretty girl who knows what she wants in life and isn't going to let anyone get in her way. And you know what it's all about? Jealousy.", nil), @"Summer Altice"],
+                       @[NSLocalizedString(@"He that is jealous is not in love.", nil), @"Saint Augustine"],
+                       @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
+                       ];
+            
+            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1];
+            return @[@"dull", quotes[self.idx][0], quotes[self.idx][1], color];
     }
     
     return @[];

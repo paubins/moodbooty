@@ -45,15 +45,21 @@
     
     
     NSArray *moods = @[
-                       @[@"angry", [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
-                       @[@"impatient", [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
-                       @[@"anxious", [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1]], // purple
-                       @[@"lonely", [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
-                       @[@"depressed", [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
-                       @[@"tired", [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
-                       @[@"sad", [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
-                       @[@"nostalgic", [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
-                       @[@"jealous", [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"angry", nil), [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
+                       @[NSLocalizedString(@"impatient", nil), [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
+                       @[NSLocalizedString(@"tired", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
+                       
+                       @[NSLocalizedString(@"lonely", nil), [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
+                       @[NSLocalizedString(@"depressed", nil), [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
+                       @[NSLocalizedString(@"guilty", nil), [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       
+                       @[NSLocalizedString(@"sad", nil), [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
+                       @[NSLocalizedString(@"nostalgic", nil), [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"jealous", nil), [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       
+                       @[NSLocalizedString(@"dull", nil), [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"scared", nil), [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1]], // pink
+                       @[NSLocalizedString(@"anxious", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // purple
                        ];
 
     
@@ -61,6 +67,13 @@
     NSInteger j = 0;
     NSInteger k = 0;
     NSInteger b = 0;
+    
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenHeight = screenSize.height;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 147/2, 106.7*3, screenHeight - 158)];
+    [scrollView setContentSize:CGSizeMake(106.7*3, 106.7*4)];
     
     for ( NSArray *array in moods )
     {
@@ -73,12 +86,12 @@
         if ( i == 2 ) {
             b++;
         }
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), 147/2 + (j*106) , 106.7, 106.7)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), (j*106) , 106.7, 106.7)];
         button.backgroundColor = color;
         button.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         button.titleEdgeInsets = UIEdgeInsetsMake(10, 5, 10, 5);
         
-        [button setTitle:NSLocalizedString(mood, nil) forState:UIControlStateNormal];
+        [button setTitle:mood forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button addSubview:imageView];
         [button addTarget:self action:@selector(openModel:) forControlEvents:UIControlEventTouchDown];
@@ -88,7 +101,7 @@
         
         button.tag = k;
         
-        [self.view addSubview:button];
+        [scrollView addSubview:button];
         
         if ( i == 2 ){
             i = 0;
@@ -100,10 +113,10 @@
         k++;
     }
     
+    [self.view addSubview:scrollView];
 
     
     UILabel *bottomLabel;
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
