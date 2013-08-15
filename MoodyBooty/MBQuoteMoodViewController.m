@@ -74,6 +74,7 @@
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 147/2, 106.7*3, screenHeight - 158)];
     [scrollView setContentSize:CGSizeMake(106.7*3, 106.7*4)];
+    [scrollView setBounces:NO];
     
     for ( NSArray *array in moods )
     {

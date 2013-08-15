@@ -325,7 +325,7 @@ enum {
                        ];
             
             
-            color = [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:0.92];
+            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:0.92];
             return @[@"anxious", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case LONELY:
@@ -363,7 +363,7 @@ enum {
                        @[NSLocalizedString(@"Laziness is nothing more than the habit of resting before you get tired.", nil), @"Jules Renard"]
                        ];
             
-            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:0.92];
+            color = [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:0.92];
             return @[@"tired", quotes[self.idx][0], quotes[self.idx][1], color];
         
         case SAD:
@@ -410,7 +410,7 @@ enum {
                        @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
                        ];
             
-            color = [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:148.0/255.0 green:62.0/255.0 blue:70.0/255.0 alpha:0.92];
             return @[@"guilty", quotes[self.idx][0], quotes[self.idx][1], color];
         case SCARED:
             quotes = @[
@@ -421,7 +421,7 @@ enum {
                        @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
                        ];
             
-            color = [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:0.92];
             return @[@"scared", quotes[self.idx][0], quotes[self.idx][1], color];
         case DULL:
             quotes = @[
@@ -432,7 +432,7 @@ enum {
                        @[NSLocalizedString(@"My wife's jealousy is getting ridiculous. The other day she looked at my calendar and wanted to know who May was.", nil), @"Rodney Dangerfield"]
                        ];
             
-            color = [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1];
+            color = [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:0.92];
             return @[@"dull", quotes[self.idx][0], quotes[self.idx][1], color];
     }
     
