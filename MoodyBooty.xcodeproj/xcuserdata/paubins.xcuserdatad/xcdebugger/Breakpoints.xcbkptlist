@@ -190,11 +190,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
+<<<<<<< HEAD
          timestampString = "398329423.569712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "296"
          endingLineNumber = "296"
+=======
+         timestampString = "398324010.0331"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "289"
+         endingLineNumber = "289"
+>>>>>>> feature/web_quotes
          landmarkName = "-getMoodInfo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +211,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
+<<<<<<< HEAD
          timestampString = "398329423.569712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "315"
          endingLineNumber = "315"
+=======
+         timestampString = "398325494.818165"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "308"
+         endingLineNumber = "308"
+>>>>>>> feature/web_quotes
          landmarkName = "-getMoodInfo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +232,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
+<<<<<<< HEAD
          timestampString = "398329423.569712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "315"
          endingLineNumber = "315"
+=======
+         timestampString = "398327634.899759"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "308"
+         endingLineNumber = "308"
+>>>>>>> feature/web_quotes
          landmarkName = "-getMoodInfo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +253,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
+<<<<<<< HEAD
          timestampString = "398329423.569712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "313"
          endingLineNumber = "313"
+=======
+         timestampString = "398325491.251637"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "306"
+         endingLineNumber = "306"
+>>>>>>> feature/web_quotes
          landmarkName = "-getMoodInfo"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +274,19 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MoodyBooty/MBQuoteViewController.m"
+<<<<<<< HEAD
          timestampString = "398329423.569712"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "316"
          endingLineNumber = "316"
+=======
+         timestampString = "398327634.899759"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "309"
+         endingLineNumber = "309"
+>>>>>>> feature/web_quotes
          landmarkName = "-getMoodInfo"
          landmarkType = "5">
       </FileBreakpoint>
