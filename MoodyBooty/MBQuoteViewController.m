@@ -285,7 +285,8 @@ enum {
 
 -(NSArray *)getMoodInfo
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/", self.mood]];
+    NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                             timeoutInterval:30];

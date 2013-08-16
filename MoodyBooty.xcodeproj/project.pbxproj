@@ -49,6 +49,7 @@
 		C19EFF0917BCA7C10046CFA6 /* scared.png in Resources */ = {isa = PBXBuildFile; fileRef = C19EFF0717BCA7BF0046CFA6 /* scared.png */; };
 		C19EFF0A17BCA7C10046CFA6 /* scared@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C19EFF0817BCA7C00046CFA6 /* scared@2x.png */; };
 		C1A8CB5C17B8AC46008DD2EE /* MBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A8CB5B17B8AC46008DD2EE /* MBTextView.m */; };
+		C1B8002417BE130700BA791E /* MBNoConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B8002317BE130700BA791E /* MBNoConnectionViewController.m */; };
 		C1BF54B717A24FD9006411A9 /* Smiley_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54B417A24FD8006411A9 /* Smiley_1.png */; };
 		C1BF54F117A25A04006411A9 /* Smiley_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54EF17A25A04006411A9 /* Smiley_1@2x.png */; };
 		C1BF54F317A25A80006411A9 /* Smiley_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF54F217A25A7F006411A9 /* Smiley_2@2x.png */; };
@@ -131,7 +132,7 @@
 		C19EFE8417BC92940046CFA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
 		C19EFE8517BC92940046CFA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C19EFE8617BC92940046CFA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C19EFE8A17BC93110046CFA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C19EFE8A17BC93110046CFA6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C19EFE8C17BC93170046CFA6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C19EFE8D17BC931B0046CFA6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C19EFE8E17BC931D0046CFA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -251,6 +252,8 @@
 		C19EFF0817BCA7C00046CFA6 /* scared@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scared@2x.png"; sourceTree = "<group>"; };
 		C1A8CB5A17B8AC46008DD2EE /* MBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextView.h; sourceTree = "<group>"; };
 		C1A8CB5B17B8AC46008DD2EE /* MBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextView.m; sourceTree = "<group>"; };
+		C1B8002217BE130700BA791E /* MBNoConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNoConnectionViewController.h; sourceTree = "<group>"; };
+		C1B8002317BE130700BA791E /* MBNoConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNoConnectionViewController.m; sourceTree = "<group>"; };
 		C1BF54B417A24FD8006411A9 /* Smiley_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smiley_1.png; sourceTree = "<group>"; };
 		C1BF54EF17A25A04006411A9 /* Smiley_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Smiley_1@2x.png"; sourceTree = "<group>"; };
 		C1BF54F217A25A7F006411A9 /* Smiley_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Smiley_2@2x.png"; sourceTree = "<group>"; };
@@ -366,6 +369,8 @@
 				C1BF552617A3260B006411A9 /* MBButton.m */,
 				C1A8CB5A17B8AC46008DD2EE /* MBTextView.h */,
 				C1A8CB5B17B8AC46008DD2EE /* MBTextView.m */,
+				C1B8002217BE130700BA791E /* MBNoConnectionViewController.h */,
+				C1B8002317BE130700BA791E /* MBNoConnectionViewController.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				C17A60A817A1D3F100C0BBA4 /* MBAboutViewController.m in Sources */,
 				C1BF552717A3260B006411A9 /* MBButton.m in Sources */,
 				C1A8CB5C17B8AC46008DD2EE /* MBTextView.m in Sources */,
+				C1B8002417BE130700BA791E /* MBNoConnectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
