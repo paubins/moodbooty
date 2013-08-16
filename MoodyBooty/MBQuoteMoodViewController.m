@@ -14,6 +14,7 @@
 
 @implementation MBQuoteMoodViewController
 
+
 - (void)loadView
 {
     [super loadView];
@@ -44,7 +45,7 @@
     line.frame = CGRectMake(0, 146/2, 320, 5);
     
     
-    NSArray *moods = @[
+    self.moods = @[
                        @[NSLocalizedString(@"angry", nil), [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
                        @[NSLocalizedString(@"impatient", nil), [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
                        @[NSLocalizedString(@"tired", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
@@ -76,7 +77,7 @@
     [scrollView setContentSize:CGSizeMake(106.7*3, 106.7*4)];
     [scrollView setBounces:NO];
     
-    for ( NSArray *array in moods )
+    for ( NSArray *array in self.moods )
     {
         NSString *mood = array[0];
         UIColor *color = array[1];
@@ -204,9 +205,8 @@
 {
     
     MBQuoteViewController *controller = [MBQuoteViewController new];
-    [controller setMood:sender.tag];
-    [controller setIdx:random() % 5];
-    
+    [controller setMood:self.moods[sender.tag][0]];
+    [controller setColor:self.moods[sender.tag][1]];
     
     CATransition *transition = [CATransition animation];
     transition.duration = 0.3;

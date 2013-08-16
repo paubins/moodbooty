@@ -10,7 +10,7 @@
 
 @interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate>
 
-@property NSInteger mood;
-@property NSInteger idx;
+@property NSString *mood;
+@property UIColor *color;
 
 @end

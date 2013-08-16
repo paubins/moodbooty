@@ -10,4 +10,6 @@
 
 @interface MBQuoteMoodViewController : UIViewController <UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) NSArray *moods;
+
 @end
