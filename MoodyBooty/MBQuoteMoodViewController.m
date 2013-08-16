@@ -46,21 +46,21 @@
     
     
     self.moods = @[
-                       @[NSLocalizedString(@"angry", nil), [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
-                       @[NSLocalizedString(@"impatient", nil), [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
-                       @[NSLocalizedString(@"tired", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // light brown
+                       @[@"angry", [UIColor colorWithRed:232.0/255.0 green:92.0/255.0 blue:65.0/255.0 alpha:1]], // red
+                       @[@"impatient", [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
+                       @[@"tired", [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1]], // light brown
                        
-                       @[NSLocalizedString(@"lonely", nil), [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
-                       @[NSLocalizedString(@"depressed", nil), [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
-                       @[NSLocalizedString(@"guilty", nil), [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       @[@"lonely", [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
+                       @[@"depressed", [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
+                       @[@"guilty", [UIColor colorWithRed:148.0/255.0 green:62.0/255.0 blue:70.0/255.0 alpha:1]], // pink
                        
-                       @[NSLocalizedString(@"sad", nil), [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
-                       @[NSLocalizedString(@"nostalgic", nil), [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
-                       @[NSLocalizedString(@"jealous", nil), [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
+                       @[@"sad", [UIColor colorWithRed:254.0/255.0 green:189.0/255.0 blue:86.0/255.0 alpha:1]], // golden yellow
+                       @[@"nostalgic", [UIColor colorWithRed:251.0/255.0 green:161.0/255.0 blue:125.0/255.0 alpha:1]], // pink
+                       @[@"jealous", [UIColor colorWithRed:131.0/255.0 green:136.0/255.0 blue:92.0/255.0 alpha:1]], // pink
                        
-                       @[NSLocalizedString(@"dull", nil), [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1]], // pink
-                       @[NSLocalizedString(@"scared", nil), [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1]], // pink
-                       @[NSLocalizedString(@"anxious", nil), [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // purple
+                       @[@"dull", [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1]], // pink
+                       @[@"scared", [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1]], // pink
+                       @[@"anxious", [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // purple
                        ];
 
     
@@ -79,7 +79,7 @@
     
     for ( NSArray *array in self.moods )
     {
-        NSString *mood = array[0];
+        NSString *mood = NSLocalizedString(array[0], nil);
         UIColor *color = array[1];
         
         UIImage *image = [UIImage imageNamed:mood];
