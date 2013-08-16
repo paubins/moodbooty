@@ -12,25 +12,13 @@
 #import <CoreData/CoreData.h>
 
 #import <Social/Social.h>
+#import "MBNoConnectionViewController.h"
 
 #define kDefaultFontSize  50.0
 
 @implementation MBQuoteViewController
 
-enum {
-    ANGRY = 0,
-    IMPATIENT,
-    TIRED,
-    LONELY,
-    DEPRESSED,
-    GUILTY,
-    SAD,
-    NOSTALGIC,
-    JEALOUS,
-    DULL,
-    SCARED,
-    ANXIOUS
-};
+BOOL quoteLoaded;
 
 -(void) loadView
 {
@@ -294,11 +282,14 @@ enum {
     NSData *responseData;
     NSURLResponse *response;
     NSError *error;
+    NSOperationQueue *queue = [NSOperationQueue new];
     
     // Make synchronous request
     responseData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
     
     // Construct a String around the Data from the response
     //response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate, NSURLConnectionDelegate>
 
 @property NSString *mood;
 @property UIColor *color;

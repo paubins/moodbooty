@@ -29,9 +29,6 @@
 {
     [super viewDidLoad];
     
-    
-    
-    
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     self.view.userInteractionEnabled = YES;
     
