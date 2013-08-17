@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate, NSURLConnectionDelegate>
+@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate, NSURLConnectionDelegate> {
+    BOOL quoteLoaded;
+    NSMutableData *responseData;
+    NSArray *moodInfo;
+    NSURLConnection *connection;
+    
+    NSString *quote;
+    NSString *quoted;
+
+}
 
 @property NSString *mood;
 @property UIColor *color;

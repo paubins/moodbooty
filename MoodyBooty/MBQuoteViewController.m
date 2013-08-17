@@ -18,28 +18,31 @@
 
 @implementation MBQuoteViewController
 
-BOOL quoteLoaded;
 
 -(void) loadView
 {
-    
-    NSArray *moodInfo = [self getMoodInfo];
-    
-    NSString *mood = moodInfo[0];
-    NSString *quote = moodInfo[1];
-    NSString *quoted = moodInfo[2];
-    UIColor *color = moodInfo[3];
-    
     [super viewDidLoad];
+    
+    quoteLoaded = NO;
+    
+    NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
+                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                            timeoutInterval:30];
+    
+    connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
+    
+    
     
     self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
     
-    self.view.backgroundColor = color;
+    self.view.backgroundColor = _color;
     
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), mood] uppercaseString]];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), self.mood] uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -49,11 +52,7 @@ BOOL quoteLoaded;
     topLabel.frame = CGRectMake(0, 0, 320, 146/2);
     topLabel.textAlignment = NSTextAlignmentCenter;
     
-    UIImage *image = [UIImage imageNamed:@"Smiley_2"];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 105, image.size.width, image.size.height);
-    imageView.contentMode = UIViewContentModeCenter;
 
     UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
         
@@ -62,33 +61,6 @@ BOOL quoteLoaded;
     line.path = [linePath CGPath];
     line.fillColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.3].CGColor;
     line.frame = CGRectMake(0, 146/2, 320, 5);
-    
-    MBTextView *label = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
-    
-    NSMutableAttributedString *attributedString2;
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D",quote]];
-    [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
-    [label setAttributedText:attributedString2];
-    
-    label.scrollEnabled = NO;
-    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
-    
-    CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
-    
-    if (fontSize.height > 150) {
-        int newFontSize = kDefaultFontSize;
-        while (fontSize.height >= 150 || fontSize.width > 250 ) {
-            label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:newFontSize--];
-            fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
-        }
-    }
-
-    
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor clearColor];
-    label.editable = NO;
-
     
     UIButton *backButton;
     UIButton *shareFacebook;
@@ -102,8 +74,6 @@ BOOL quoteLoaded;
     
     UIBezierPath *linePath4;
     CAShapeLayer *line4;
-    
-    UITextView *attributedTo;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
@@ -130,8 +100,6 @@ BOOL quoteLoaded;
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 106.6, 146/2)];
             shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 480, 106.6, 146/2)];
             shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 480, 106.6, 146/2)];
-            
-            attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
         } else {
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
             
@@ -156,23 +124,8 @@ BOOL quoteLoaded;
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 106.6, 146/2)];
             shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 390, 106.6, 146/2)];
             shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 390, 106.6, 146/2)];
-            
-            attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 320, 320, 40)];
-            
         }
     }
-
-    attributedTo.editable = NO;
-    attributedTo.backgroundColor = [UIColor clearColor];
-    attributedTo.textAlignment = NSTextAlignmentCenter;
-    attributedTo.textColor = [UIColor whiteColor];
-    attributedTo.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:16];
-    
-    NSMutableAttributedString *attributedString3;
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[quoted uppercaseString]];
-    [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
-    
-    [attributedTo setAttributedText:attributedString3];
 
     NSMutableAttributedString *attributedString4;
     attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Back", nil) uppercaseString]];
@@ -207,13 +160,9 @@ BOOL quoteLoaded;
     shareTwitter.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     shareTwitter.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
-    [self.view addSubview:imageView];
-    [self.view addSubview:label];
-    [self.view addSubview:attributedTo];
-
+    
     [self.view.layer addSublayer:line2];
     [self.view.layer addSublayer:line3];
     [self.view.layer addSublayer:line4];
@@ -224,32 +173,167 @@ BOOL quoteLoaded;
     
 }
 
+-(void)viewWillLayoutSubviews {
+    UITextView *attributedTo;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    MBTextView *label = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
+    
+    if ( NO ) { //quoteLoaded ) {
+        UIImage *image = [UIImage imageNamed:@"Smiley_2"];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 105, image.size.width, image.size.height);
+        imageView.contentMode = UIViewContentModeCenter;
+        
+        
+        NSMutableAttributedString *attributedString2;
+        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D",quote]];
+        [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
+        [label setAttributedText:attributedString2];
+        
+        label.scrollEnabled = NO;
+        label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
+        
+        CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
+        
+        if (fontSize.height > 150) {
+            int newFontSize = kDefaultFontSize;
+            while (fontSize.height >= 150 || fontSize.width > 250 ) {
+                label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:newFontSize--];
+                fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
+            }
+        }
+        
+        
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = [UIColor clearColor];
+        label.editable = NO;
+
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            if (screenSize.height > 480.0f) {
+                attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
+            } else {
+                attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 320, 320, 40)];
+            }
+        }
+        attributedTo.editable = NO;
+        attributedTo.backgroundColor = [UIColor clearColor];
+        attributedTo.textAlignment = NSTextAlignmentCenter;
+        attributedTo.textColor = [UIColor whiteColor];
+        attributedTo.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:16];
+        
+        NSMutableAttributedString *attributedString3;
+        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[quoted uppercaseString]];
+        [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
+        
+        [attributedTo setAttributedText:attributedString3];
+        
+        quoteLoaded = NO;
+        
+        [self.view addSubview:imageView];
+        [self.view addSubview:label];
+        [self.view addSubview:attributedTo];
+        
+    } else {
+        MBTextView *loading;
+        UITextView *patience;
+        NSMutableAttributedString *attributedString2;
+        NSMutableAttributedString *attributedString3;
+
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            if (screenSize.height > 480.0f) {
+                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
+                loading = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
+            } else {
+                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 245, 320, 40)];
+                loading = [[MBTextView alloc] initWithFrame:CGRectMake(35, 175, 250, 150)];
+            }
+        }
+        
+        loading.scrollEnabled = NO;
+        loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:14];
+        loading.textColor = [UIColor whiteColor];
+        loading.textAlignment = NSTextAlignmentCenter;
+        loading.backgroundColor = [UIColor clearColor];
+        loading.editable = NO;
+        
+        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Loading..." uppercaseString]];
+        [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
+        [loading setAttributedText:attributedString2];
+
+        
+        
+        UIBezierPath *aPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 20, 20)];
+        [aPath fill];
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.path = [aPath CGPath];
+        shapeLayer.fillColor = [UIColor whiteColor].CGColor;
+        shapeLayer.frame = CGRectMake(0, 160, 100, 100);
+        
+        patience.editable = NO;
+        patience.backgroundColor = [UIColor clearColor];
+        patience.textAlignment = NSTextAlignmentCenter;
+        patience.textColor = [UIColor whiteColor];
+        patience.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:14];
+        
+        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"Patience is a virtue." uppercaseString]];
+        [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
+        
+        [patience setAttributedText:attributedString3];
+        
+        quoteLoaded = NO;
+        
+        [self.view addSubview:loading];
+        [self.view.layer addSublayer:shapeLayer];
+        [self.view addSubview:patience];
+    }
+}
+
 -(void)closeModal
 {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)shareToFacebook
 {
-    NSArray *moodInfo = [self getMoodInfo];
-    NSString *quote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
+    if ( !quoteLoaded ) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"Whoops", nil)
+                                  message:NSLocalizedString(@"The quote hasn't loaded yet.", nil)
+                                  delegate:nil
+                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        return;
+    }
+    NSString *formattedQuote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [tweetSheet setInitialText:quote];
+        [tweetSheet setInitialText:formattedQuote];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }
 
 -(void)shareToTwitter
 {
-    NSArray *moodInfo = [self getMoodInfo];
-    NSString *quote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
+    if ( !quoteLoaded ) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"Whoops", nil)
+                                  message:NSLocalizedString(@"The quote hasn't loaded yet.", nil)
+                                  delegate:nil
+                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        return;
+    }
+    NSString *quoteWithQuoted = [NSString stringWithFormat:@"\"%@\" - %@", quote, quoted];
     
-    if ( quote.length > 140 ) {
+    if ( quoteWithQuoted.length > 140 ) {
         UIAlertView *alertView = [[UIAlertView alloc]
                                  initWithTitle:NSLocalizedString(@"Whoops", nil)
                                  message:NSLocalizedString(@"Sorry, this quote is too long to post to Twitter.", nil)
@@ -266,40 +350,33 @@ BOOL quoteLoaded;
     }
 }
 
--(NSInteger)getQuoteCount
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    return 5;
+    if (!responseData) {
+        responseData = [[NSMutableData alloc] init];
+    }
+    [responseData appendData:data];
 }
 
--(NSArray *)getMoodInfo
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                            timeoutInterval:30];
-    // Fetch the JSON response
-    NSData *responseData;
-    NSURLResponse *response;
-    NSError *error;
-    NSOperationQueue *queue = [NSOperationQueue new];
-    
-    // Make synchronous request
-    responseData = [NSURLConnection sendSynchronousRequest:urlRequest
-                                    returningResponse:&response
-                                                error:&error];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
-    
-    // Construct a String around the Data from the response
-    //response = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    
-    
-    NSArray* dictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    [responseData setLength:0];
+}
 
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError *error;
+    NSArray* dictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    
     NSDictionary *fields = [dictionary[0] objectForKey:@"fields"];
     
-    return @[self.mood, [fields objectForKey:@"quote"], [fields objectForKey:@"attribution"], self.color];
+    moodInfo = @[self.mood, [fields objectForKey:@"quote"], [fields objectForKey:@"attribution"], self.color];
+    quoteLoaded = YES;
+    
+    quote = moodInfo[1];
+    quoted = moodInfo[2];
+    
+    [self.view setNeedsLayout];
 }
 
 @end
