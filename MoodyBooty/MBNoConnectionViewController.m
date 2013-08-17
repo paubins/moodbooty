@@ -9,6 +9,7 @@
 #import "MBNoConnectionViewController.h"
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MBTextView.h"
 
 @interface MBNoConnectionViewController ()
 
@@ -25,56 +26,57 @@
     return self;
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
     [super viewDidLoad];
     
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
     self.view.userInteractionEnabled = YES;
-    
     self.view.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:102.0/255.0 blue:111.0/255.0 alpha:1.0];
     
-    
-    UIImage *imageSmiley = [UIImage imageNamed:@"Smiley_1"];
+    UIImage *imageSmiley = [UIImage imageNamed:@"nointernet"];
     
     UIImageView *imageSmileyView = [[UIImageView alloc] initWithImage:imageSmiley];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (screenSize.height > 480.0f) {
-            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 420, imageSmiley.size.width, imageSmiley.size.height);
-        } else {
-            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 350, imageSmiley.size.width, imageSmiley.size.height);
-        }
-    }
-    
     UIButton *backButton;
     UIBezierPath *linePath2;
     CAShapeLayer *line2;
+    MBTextView *crap;
+    MBTextView *noConnectionString;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
+            
+            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 255, imageSmiley.size.width, imageSmiley.size.height);
+            
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
             
             //shape layer for the line
             line2 = [CAShapeLayer layer];
             line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
+            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 195, screenSize.width, 20)];
+            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 20)];
         } else {
+            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 225, imageSmiley.size.width, imageSmiley.size.height);
+            
             linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
             
             //shape layer for the line
             line2 = [CAShapeLayer layer];
             line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+            line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
+            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 150, screenSize.width, 20)];
+            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 20)];
         }
     }
     
@@ -89,7 +91,36 @@
     backButton.titleLabel.textColor = [UIColor whiteColor];
     
     
+    NSMutableAttributedString *attributedString2;
+
+    crap.scrollEnabled = NO;
+    crap.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+    crap.textColor = [UIColor whiteColor];
+    crap.textAlignment = NSTextAlignmentCenter;
+    crap.backgroundColor = [UIColor clearColor];
+    crap.editable = NO;
+    
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Aw crap" uppercaseString]];
+    [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
+    [crap setAttributedText:attributedString2];
+    
+    
+    NSMutableAttributedString *attributedString3;
+    
+    noConnectionString.scrollEnabled = NO;
+    noConnectionString.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+    noConnectionString.textColor = [UIColor whiteColor];
+    noConnectionString.textAlignment = NSTextAlignmentCenter;
+    noConnectionString.backgroundColor = [UIColor clearColor];
+    noConnectionString.editable = NO;
+    
+    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"No internet connection" uppercaseString]];
+    [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
+    [noConnectionString setAttributedText:attributedString3];
+
     [self.view.layer addSublayer:line2];
+    [self.view addSubview:noConnectionString];
+    [self.view addSubview:crap];
     [self.view addSubview:backButton];
     [self.view addSubview:imageSmileyView];
     
@@ -101,13 +132,13 @@
     transition.duration = 0.3;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionPush;
-    transition.subtype = kCATransitionFromTop;
+    transition.subtype = kCATransitionFromBottom;
     [self.view.window.layer addAnimation:transition forKey:nil];
     
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:NO completion:^{
+        
+    }];
 }
-
-
 
 
 - (void)didReceiveMemoryWarning

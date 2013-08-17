@@ -10,14 +10,16 @@
 #import "MBTextView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
-
 #import <Social/Social.h>
 #import "MBNoConnectionViewController.h"
+#import "MBLoadingView.h"
 
 #define kDefaultFontSize  50.0
 
 @implementation MBQuoteViewController
 
+MBLoadingView *loadingView;
+NSTimer *timer;
 
 -(void) loadView
 {
@@ -178,7 +180,7 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     MBTextView *label = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
     
-    if ( NO ) { //quoteLoaded ) {
+    if ( quoteLoaded ) {
         UIImage *image = [UIImage imageNamed:@"Smiley_2"];
         
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
@@ -230,69 +232,47 @@
         [attributedTo setAttributedText:attributedString3];
         
         quoteLoaded = NO;
+        if ( timer ) {
+            [timer invalidate];
+        }
         
+        [loadingView removeFromSuperview];
         [self.view addSubview:imageView];
         [self.view addSubview:label];
         [self.view addSubview:attributedTo];
         
     } else {
-        MBTextView *loading;
-        UITextView *patience;
-        NSMutableAttributedString *attributedString2;
-        NSMutableAttributedString *attributedString3;
-
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            if (screenSize.height > 480.0f) {
-                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
-                loading = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
-            } else {
-                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 245, 320, 40)];
-                loading = [[MBTextView alloc] initWithFrame:CGRectMake(35, 175, 250, 150)];
-            }
-        }
-        
-        loading.scrollEnabled = NO;
-        loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:14];
-        loading.textColor = [UIColor whiteColor];
-        loading.textAlignment = NSTextAlignmentCenter;
-        loading.backgroundColor = [UIColor clearColor];
-        loading.editable = NO;
-        
-        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Loading..." uppercaseString]];
-        [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
-        [loading setAttributedText:attributedString2];
-
-        
-        
-        UIBezierPath *aPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 20, 20)];
-        [aPath fill];
-        
-        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        shapeLayer.path = [aPath CGPath];
-        shapeLayer.fillColor = [UIColor whiteColor].CGColor;
-        shapeLayer.frame = CGRectMake(0, 160, 100, 100);
-        
-        patience.editable = NO;
-        patience.backgroundColor = [UIColor clearColor];
-        patience.textAlignment = NSTextAlignmentCenter;
-        patience.textColor = [UIColor whiteColor];
-        patience.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:14];
-        
-        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"Patience is a virtue." uppercaseString]];
-        [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
-        
-        [patience setAttributedText:attributedString3];
-        
         quoteLoaded = NO;
+        loadingView = [[MBLoadingView alloc] initWithFrame:CGRectMake(0, 20, 30.0, 30.0)];
         
-        [self.view addSubview:loading];
-        [self.view.layer addSublayer:shapeLayer];
-        [self.view addSubview:patience];
+        [self.view addSubview:loadingView];
+        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                         target:self
+                                       selector:@selector(showNoConnectionView:)
+                                       userInfo:nil
+                                        repeats:NO];
     }
+}
+
+-(void)showNoConnectionView:(NSTimer *)timer
+{
+    [connection cancel];
+    MBNoConnectionViewController *noConnection = [MBNoConnectionViewController new];
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromTop;
+    [self.view.window.layer addAnimation:transition forKey:nil];
+    
+    [self presentViewController:noConnection animated:NO completion:nil];
 }
 
 -(void)closeModal
 {
+    [connection cancel];
+    [timer invalidate];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -356,6 +336,7 @@
         responseData = [[NSMutableData alloc] init];
     }
     [responseData appendData:data];
+    [timer invalidate];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

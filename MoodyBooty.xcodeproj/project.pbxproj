@@ -10,6 +10,13 @@
 		C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */; };
 		C12EA5B617A1A83C004B805E /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EA5B517A1A83C004B805E /* smiley.png */; };
 		C1623F2017A1BCB3000A130E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1623F1F17A1BCB3000A130E /* QuartzCore.framework */; };
+		C168DF5117BF4F4A001004A0 /* nointernet.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5017BF4F4A001004A0 /* nointernet.png */; };
+		C168DF5317BF4F87001004A0 /* nointernet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5217BF4F87001004A0 /* nointernet@2x.png */; };
+		C168DF5617BF5137001004A0 /* filled.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5417BF5137001004A0 /* filled.png */; };
+		C168DF5717BF5137001004A0 /* open.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5517BF5137001004A0 /* open.png */; };
+		C168DF5A17BF5145001004A0 /* filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5817BF5145001004A0 /* filled@2x.png */; };
+		C168DF5B17BF5145001004A0 /* open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5917BF5145001004A0 /* open@2x.png */; };
+		C16A577F17BF3A1300659AD4 /* MBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C16A577E17BF3A1300659AD4 /* MBLoadingView.m */; };
 		C179EB141797B22100FB8A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB131797B22100FB8A7F /* UIKit.framework */; };
 		C179EB161797B22100FB8A7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB151797B22100FB8A7F /* Foundation.framework */; };
 		C179EB181797B22100FB8A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C179EB171797B22100FB8A7F /* CoreGraphics.framework */; };
@@ -96,6 +103,14 @@
 		C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteViewController.m; sourceTree = "<group>"; };
 		C12EA5B517A1A83C004B805E /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
 		C1623F1F17A1BCB3000A130E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C168DF5017BF4F4A001004A0 /* nointernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nointernet.png; sourceTree = "<group>"; };
+		C168DF5217BF4F87001004A0 /* nointernet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nointernet@2x.png"; sourceTree = "<group>"; };
+		C168DF5417BF5137001004A0 /* filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filled.png; sourceTree = "<group>"; };
+		C168DF5517BF5137001004A0 /* open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open.png; sourceTree = "<group>"; };
+		C168DF5817BF5145001004A0 /* filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filled@2x.png"; sourceTree = "<group>"; };
+		C168DF5917BF5145001004A0 /* open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@2x.png"; sourceTree = "<group>"; };
+		C16A577D17BF3A1300659AD4 /* MBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoadingView.h; sourceTree = "<group>"; };
+		C16A577E17BF3A1300659AD4 /* MBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoadingView.m; sourceTree = "<group>"; };
 		C179EB101797B22100FB8A7F /* MoodyBooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodyBooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C179EB131797B22100FB8A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C179EB151797B22100FB8A7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -371,6 +386,8 @@
 				C1A8CB5B17B8AC46008DD2EE /* MBTextView.m */,
 				C1B8002217BE130700BA791E /* MBNoConnectionViewController.h */,
 				C1B8002317BE130700BA791E /* MBNoConnectionViewController.m */,
+				C16A577D17BF3A1300659AD4 /* MBLoadingView.h */,
+				C16A577E17BF3A1300659AD4 /* MBLoadingView.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -395,10 +412,16 @@
 				C179EB251797B22100FB8A7F /* Default.png */,
 				C179EB271797B22100FB8A7F /* Default@2x.png */,
 				C179EB291797B22100FB8A7F /* Default-568h@2x.png */,
+				C168DF5017BF4F4A001004A0 /* nointernet.png */,
+				C168DF5217BF4F87001004A0 /* nointernet@2x.png */,
 				C19EFEFD17BCA6F30046CFA6 /* dull.png */,
 				C19EFEFE17BCA6F30046CFA6 /* guilty.png */,
 				C19EFEFF17BCA6F40046CFA6 /* dull@2x.png */,
 				C19EFF0017BCA6F40046CFA6 /* guilty@2x.png */,
+				C168DF5417BF5137001004A0 /* filled.png */,
+				C168DF5517BF5137001004A0 /* open.png */,
+				C168DF5817BF5145001004A0 /* filled@2x.png */,
+				C168DF5917BF5145001004A0 /* open@2x.png */,
 				C12EA5B517A1A83C004B805E /* smiley.png */,
 				C17A609A17A1BEA300C0BBA4 /* FreigSanProBook.otf */,
 				C17A609B17A1BEA300C0BBA4 /* FreigSanProMed.otf */,
@@ -603,6 +626,12 @@
 				C19EFF0617BCA7830046CFA6 /* anxious@2x.png in Resources */,
 				C19EFF0917BCA7C10046CFA6 /* scared.png in Resources */,
 				C19EFF0A17BCA7C10046CFA6 /* scared@2x.png in Resources */,
+				C168DF5117BF4F4A001004A0 /* nointernet.png in Resources */,
+				C168DF5317BF4F87001004A0 /* nointernet@2x.png in Resources */,
+				C168DF5617BF5137001004A0 /* filled.png in Resources */,
+				C168DF5717BF5137001004A0 /* open.png in Resources */,
+				C168DF5A17BF5145001004A0 /* filled@2x.png in Resources */,
+				C168DF5B17BF5145001004A0 /* open@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +677,7 @@
 				C1BF552717A3260B006411A9 /* MBButton.m in Sources */,
 				C1A8CB5C17B8AC46008DD2EE /* MBTextView.m in Sources */,
 				C1B8002417BE130700BA791E /* MBNoConnectionViewController.m in Sources */,
+				C16A577F17BF3A1300659AD4 /* MBLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
