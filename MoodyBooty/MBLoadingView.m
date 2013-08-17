@@ -77,7 +77,7 @@ NSInteger off;
         loading.backgroundColor = [UIColor clearColor];
         loading.editable = NO;
         
-        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Loading..." uppercaseString]];
+        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Loading...", nil) uppercaseString]];
         [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
         [loading setAttributedText:attributedString2];
         
@@ -87,7 +87,7 @@ NSInteger off;
         patience.textColor = [UIColor whiteColor];
         patience.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
         
-        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"Patience is a virtue." uppercaseString]];
+        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Patience is a virtue.", nil) uppercaseString]];
         [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
         
         [patience setAttributedText:attributedString3];

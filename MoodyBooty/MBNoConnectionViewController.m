@@ -82,7 +82,7 @@
     
     NSMutableAttributedString *attributedString4;
 
-    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Try Again", nil) uppercaseString]];
+    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(NSLocalizedString(@"Try Again", nil), nil) uppercaseString]];
     [attributedString4 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString4.length)];
     
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
@@ -100,7 +100,7 @@
     crap.backgroundColor = [UIColor clearColor];
     crap.editable = NO;
     
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[@"Aw crap" uppercaseString]];
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Aw crap", nil) uppercaseString]];
     [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
     [crap setAttributedText:attributedString2];
     
@@ -114,7 +114,7 @@
     noConnectionString.backgroundColor = [UIColor clearColor];
     noConnectionString.editable = NO;
     
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[@"No internet connection" uppercaseString]];
+    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"No internet connection", nil) uppercaseString]];
     [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
     [noConnectionString setAttributedText:attributedString3];
 
@@ -136,7 +136,7 @@
     [self.view.window.layer addAnimation:transition forKey:nil];
     
     [self dismissViewControllerAnimated:NO completion:^{
-        
+
     }];
 }
 
