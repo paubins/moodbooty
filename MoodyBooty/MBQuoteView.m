@@ -37,7 +37,7 @@
     
     
     NSMutableAttributedString *attributedString2;
-    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D", _quote]];
+    attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D", self.quote]];
     [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
     [label setAttributedText:attributedString2];
     
@@ -74,7 +74,7 @@
     [attributedTo setFont:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:16]];
     
     NSMutableAttributedString *attributedString3;
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[_quoted uppercaseString]];
+    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[self.quoted uppercaseString]];
     [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
     
     [attributedTo setAttributedText:attributedString3];

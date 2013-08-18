@@ -29,15 +29,7 @@ NSTimer *timer;
     
     quoteLoaded = NO;
     
-    NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                            timeoutInterval:30];
-    
-    connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
-    
-    
+    [self initiateConnection];
     
     self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
     
@@ -166,9 +158,27 @@ NSTimer *timer;
     
 }
 
+- (void) initiateConnection
+{
+    NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
+                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                            timeoutInterval:30];
+    if ( connection ) {
+        connection = nil;
+    }
+    connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
+
+}
+
 - (void) reloadQuote:(UISwipeGestureRecognizer*)swipeGesture
 {
-    
+    if ( quoteLoaded ) {
+        [quoteView removeFromSuperview];
+        [self initiateConnection];
+        quoteLoaded = NO;
+    }
 }
 
 -(void)viewWillLayoutSubviews {
@@ -181,8 +191,6 @@ NSTimer *timer;
         [quoteView setQuote:quote];
         [quoteView setQuoted:quoted];
         
-        
-        quoteLoaded = NO;
         if ( timer ) {
             [timer invalidate];
         }
@@ -192,6 +200,9 @@ NSTimer *timer;
         
     } else {
         quoteLoaded = NO;
+        if ( loadingView ) {
+            loadingView = nil;
+        }
         loadingView = [[MBLoadingView alloc] initWithFrame:CGRectMake(0, 20, 30.0, 30.0)];
         
         [self.view addSubview:loadingView];
