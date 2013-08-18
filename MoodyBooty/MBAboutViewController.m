@@ -25,13 +25,13 @@
     
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The glass is always", nil) uppercaseString]];
-    [attributedString addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString.length)];
     [always setAttributedText:attributedString];
     
-    always.textColor = [UIColor colorWithRed:125.0/255.0 green:177.0/255.0 blue:183.0/255.0 alpha:1.0];
+    always.textColor = [UIColor colorWithRed:188.0/255.0 green:221.0/255.0 blue:232.0/255.0 alpha:1.0];
     always.backgroundColor = [UIColor clearColor];
     always.textAlignment = NSTextAlignmentCenter;
-    always.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:26/2];
+    always.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:27/2];
     
     UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 320, 40)];
     
@@ -96,26 +96,17 @@
     UIBezierPath *linePath2;
     CAShapeLayer *line2;
     
+    linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+    line2 = [CAShapeLayer layer];
+    line2.path = [linePath2 CGPath];
+    line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
-            
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
         } else {
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
-            
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
         }
     }

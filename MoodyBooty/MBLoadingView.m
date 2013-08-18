@@ -28,8 +28,8 @@ NSInteger off;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        MBTextView *loading;
-        UITextView *patience;
+        UILabel *loading;
+        UILabel *patience;
         NSMutableAttributedString *attributedString2;
         NSMutableAttributedString *attributedString3;
         CGSize screenSize = [[UIScreen mainScreen] bounds].size;
@@ -44,25 +44,25 @@ NSInteger off;
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             if (screenSize.height > 480.0f) {
-                loading = [[MBTextView alloc] initWithFrame:CGRectMake(0, 205, screenSize.width, 20)];
-                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 275, screenSize.width, 20)];
-                circle.frame = CGRectMake(130, 250, 11, 11);
-                circle2.frame = CGRectMake(155, 250, 11, 11);
-                circle3.frame = CGRectMake(180, 250, 11, 11);
+                loading = [[UILabel alloc] initWithFrame:CGRectMake(0, 205, screenSize.width, 20)];
+                patience = [[UILabel alloc] initWithFrame:CGRectMake(0, 275, screenSize.width, 20)];
+                circle.frame = CGRectMake(130, 245, 11, 11);
+                circle2.frame = CGRectMake(155, 245, 11, 11);
+                circle3.frame = CGRectMake(180, 245, 11, 11);
                 
-                emptyCircle.frame = CGRectMake(130, 250, 11, 11);
-                emptyCircle2.frame = CGRectMake(155, 250, 11, 11);
-                emptyCircle3.frame = CGRectMake(180, 250, 11, 11);
+                emptyCircle.frame = CGRectMake(130, 245, 11, 11);
+                emptyCircle2.frame = CGRectMake(155, 245, 11, 11);
+                emptyCircle3.frame = CGRectMake(180, 245, 11, 11);
             } else {
-                loading = [[MBTextView alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 20)];
-                patience = [[UITextView alloc] initWithFrame:CGRectMake(0, 245, screenSize.width, 20)];
-                circle.frame = CGRectMake(130, 220, 11, 11);
-                circle2.frame = CGRectMake(155, 220, 11, 11);
-                circle3.frame = CGRectMake(180, 220, 11, 11);
+                loading = [[UILabel alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 20)];
+                patience = [[UILabel alloc] initWithFrame:CGRectMake(0, 245, screenSize.width, 20)];
+                circle.frame = CGRectMake(130, 215, 11, 11);
+                circle2.frame = CGRectMake(155, 215, 11, 11);
+                circle3.frame = CGRectMake(180, 215, 11, 11);
                 
-                emptyCircle.frame = CGRectMake(130, 250, 11, 11);
-                emptyCircle2.frame = CGRectMake(155, 250, 11, 11);
-                emptyCircle3.frame = CGRectMake(180, 250, 11, 11);
+                emptyCircle.frame = CGRectMake(130, 215, 11, 11);
+                emptyCircle2.frame = CGRectMake(155, 215, 11, 11);
+                emptyCircle3.frame = CGRectMake(180, 215, 11, 11);
             }
         }
         off = 1;
@@ -70,18 +70,15 @@ NSInteger off;
             timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         }
         
-        loading.scrollEnabled = NO;
         loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
         loading.textColor = [UIColor whiteColor];
         loading.textAlignment = NSTextAlignmentCenter;
         loading.backgroundColor = [UIColor clearColor];
-        loading.editable = NO;
         
         attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Loading...", nil) uppercaseString]];
         [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
         [loading setAttributedText:attributedString2];
         
-        patience.editable = NO;
         patience.backgroundColor = [UIColor clearColor];
         patience.textAlignment = NSTextAlignmentCenter;
         patience.textColor = [UIColor whiteColor];

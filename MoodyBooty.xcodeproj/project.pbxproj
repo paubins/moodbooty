@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */; };
 		C12EA5B617A1A83C004B805E /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EA5B517A1A83C004B805E /* smiley.png */; };
+		C1574B6817C0A98100007CDD /* MBQuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1574B6717C0A98100007CDD /* MBQuoteView.m */; };
 		C1623F2017A1BCB3000A130E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1623F1F17A1BCB3000A130E /* QuartzCore.framework */; };
 		C168DF5117BF4F4A001004A0 /* nointernet.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5017BF4F4A001004A0 /* nointernet.png */; };
 		C168DF5317BF4F87001004A0 /* nointernet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C168DF5217BF4F87001004A0 /* nointernet@2x.png */; };
@@ -102,6 +103,8 @@
 		C12EA5B217A19C1C004B805E /* MBQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteViewController.h; sourceTree = "<group>"; };
 		C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteViewController.m; sourceTree = "<group>"; };
 		C12EA5B517A1A83C004B805E /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
+		C1574B6617C0A98000007CDD /* MBQuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteView.h; sourceTree = "<group>"; };
+		C1574B6717C0A98100007CDD /* MBQuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteView.m; sourceTree = "<group>"; };
 		C1623F1F17A1BCB3000A130E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C168DF5017BF4F4A001004A0 /* nointernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nointernet.png; sourceTree = "<group>"; };
 		C168DF5217BF4F87001004A0 /* nointernet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nointernet@2x.png"; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				C1B8002317BE130700BA791E /* MBNoConnectionViewController.m */,
 				C16A577D17BF3A1300659AD4 /* MBLoadingView.h */,
 				C16A577E17BF3A1300659AD4 /* MBLoadingView.m */,
+				C1574B6617C0A98000007CDD /* MBQuoteView.h */,
+				C1574B6717C0A98100007CDD /* MBQuoteView.m */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				C1A8CB5C17B8AC46008DD2EE /* MBTextView.m in Sources */,
 				C1B8002417BE130700BA791E /* MBNoConnectionViewController.m in Sources */,
 				C16A577F17BF3A1300659AD4 /* MBLoadingView.m in Sources */,
+				C1574B6817C0A98100007CDD /* MBQuoteView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

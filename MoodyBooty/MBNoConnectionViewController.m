@@ -47,17 +47,14 @@
     MBTextView *crap;
     MBTextView *noConnectionString;
     
+    linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+    line2 = [CAShapeLayer layer];
+    line2.path = [linePath2 CGPath];
+    line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 255, imageSmiley.size.width, imageSmiley.size.height);
-            
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
@@ -65,13 +62,6 @@
             noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 20)];
         } else {
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 225, imageSmiley.size.width, imageSmiley.size.height);
-            
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:68.0/255.0 green:147.0/255.0 blue:157.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
@@ -136,7 +126,7 @@
     [self.view.window.layer addAnimation:transition forKey:nil];
     
     [self dismissViewControllerAnimated:NO completion:^{
-
+	
     }];
 }
 

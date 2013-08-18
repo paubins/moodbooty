@@ -13,12 +13,14 @@
 #import <Social/Social.h>
 #import "MBNoConnectionViewController.h"
 #import "MBLoadingView.h"
+#import "MBQuoteView.h"
 
 #define kDefaultFontSize  50.0
 
 @implementation MBQuoteViewController
 
 MBLoadingView *loadingView;
+MBQuoteView *quoteView;
 NSTimer *timer;
 
 -(void) loadView
@@ -39,7 +41,7 @@ NSTimer *timer;
     
     self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
     
-    self.view.backgroundColor = _color;
+    self.view.backgroundColor = [_color colorWithAlphaComponent:0.92];
     
     UILabel *topLabel = [UILabel new];
     
@@ -79,48 +81,33 @@ NSTimer *timer;
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
+    linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
+    line2 = [CAShapeLayer layer];
+    line2.path = [linePath2 CGPath];
+    line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+    
+    linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+    line3 = [CAShapeLayer layer];
+    line3.path = [linePath3 CGPath];
+    line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+    
+    linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
+    line4 = [CAShapeLayer layer];
+    line4.path = [linePath4 CGPath];
+    line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 480, 320, 1);
-            
-            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
-            line3 = [CAShapeLayer layer];
-            line3.path = [linePath3 CGPath];
-            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line3.frame = CGRectMake(106.6, 480, 1, 146/2);
-            
-            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
-            line4 = [CAShapeLayer layer];
-            line4.path = [linePath4 CGPath];
-            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line4.frame = CGRectMake(213.2, 480, 1, 146/2);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 106.6, 146/2)];
             shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 480, 106.6, 146/2)];
             shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 480, 106.6, 146/2)];
         } else {
-            linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
-            
-            //shape layer for the line
-            line2 = [CAShapeLayer layer];
-            line2.path = [linePath2 CGPath];
-            line2.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line2.frame = CGRectMake(0, 390, 320, 1);
-            
-            linePath3 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
-            line3 = [CAShapeLayer layer];
-            line3.path = [linePath3 CGPath];
-            line3.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line3.frame = CGRectMake(106.6, 390, 1, 146/2);
-            
-            linePath4 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, 146/2)];
-            line4 = [CAShapeLayer layer];
-            line4.path = [linePath4 CGPath];
-            line4.fillColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1].CGColor;
             line4.frame = CGRectMake(213.2, 390, 1, 146/2);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 106.6, 146/2)];
@@ -137,8 +124,6 @@ NSTimer *timer;
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
     [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
     backButton.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
-    
-    
     
     NSMutableAttributedString *attributedString5;
     attributedString5 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to \nFacebook", nil) uppercaseString]];
@@ -162,6 +147,12 @@ NSTimer *timer;
     shareTwitter.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     shareTwitter.titleLabel.textAlignment = NSTextAlignmentCenter;
     
+    
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(reloadQuote:)];
+    swipeGesture.numberOfTouchesRequired = 1;
+    swipeGesture.direction = (UISwipeGestureRecognizerDirectionLeft);
+    [self.view addGestureRecognizer:swipeGesture];
+    
     [self.view addSubview:topLabel];
     [self.view.layer addSublayer:line];
     
@@ -175,61 +166,21 @@ NSTimer *timer;
     
 }
 
+- (void) reloadQuote:(UISwipeGestureRecognizer*)swipeGesture
+{
+    
+}
+
 -(void)viewWillLayoutSubviews {
-    UITextView *attributedTo;
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    MBTextView *label = [[MBTextView alloc] initWithFrame:CGRectMake(35, 160, 250, 150)];
+
     
     if ( quoteLoaded ) {
-        UIImage *image = [UIImage imageNamed:@"Smiley_2"];
         
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(320/2 - ceil(image.size.width/2), 105, image.size.width, image.size.height);
-        imageView.contentMode = UIViewContentModeCenter;
+        quoteView = [[MBQuoteView alloc] initWithFrame:CGRectMake(0.0, 0, screenSize.width, screenSize.height - 146)];
+        [quoteView setQuote:quote];
+        [quoteView setQuoted:quoted];
         
-        
-        NSMutableAttributedString *attributedString2;
-        attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"\u201C%@\u201D",quote]];
-        [attributedString2 addAttribute:NSKernAttributeName value:@0 range:NSMakeRange(0, attributedString2.length)];
-        [label setAttributedText:attributedString2];
-        
-        label.scrollEnabled = NO;
-        label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
-        
-        CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
-        
-        if (fontSize.height > 150) {
-            int newFontSize = kDefaultFontSize;
-            while (fontSize.height >= 150 || fontSize.width > 250 ) {
-                label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:newFontSize--];
-                fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
-            }
-        }
-        
-        
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.backgroundColor = [UIColor clearColor];
-        label.editable = NO;
-
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            if (screenSize.height > 480.0f) {
-                attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 340, 320, 40)];
-            } else {
-                attributedTo = [[UITextView alloc] initWithFrame:CGRectMake(0, 320, 320, 40)];
-            }
-        }
-        attributedTo.editable = NO;
-        attributedTo.backgroundColor = [UIColor clearColor];
-        attributedTo.textAlignment = NSTextAlignmentCenter;
-        attributedTo.textColor = [UIColor whiteColor];
-        attributedTo.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:16];
-        
-        NSMutableAttributedString *attributedString3;
-        attributedString3 = [[NSMutableAttributedString alloc] initWithString:[quoted uppercaseString]];
-        [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
-        
-        [attributedTo setAttributedText:attributedString3];
         
         quoteLoaded = NO;
         if ( timer ) {
@@ -237,9 +188,7 @@ NSTimer *timer;
         }
         
         [loadingView removeFromSuperview];
-        [self.view addSubview:imageView];
-        [self.view addSubview:label];
-        [self.view addSubview:attributedTo];
+        [self.view addSubview:quoteView];
         
     } else {
         quoteLoaded = NO;
