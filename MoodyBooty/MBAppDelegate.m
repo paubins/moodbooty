@@ -19,6 +19,9 @@
 {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window = window;
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:NO forKey:@"aboutShown"];
 
     MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
     

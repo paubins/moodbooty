@@ -72,7 +72,7 @@
     
     NSMutableAttributedString *attributedString4;
 
-    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(NSLocalizedString(@"Try Again", nil), nil) uppercaseString]];
+    attributedString4 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Try Again", nil) uppercaseString]];
     [attributedString4 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString4.length)];
     
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];

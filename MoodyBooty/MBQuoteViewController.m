@@ -14,6 +14,7 @@
 #import "MBNoConnectionViewController.h"
 #import "MBLoadingView.h"
 #import "MBQuoteView.h"
+#import "CoreFoundation/CoreFoundation.h"
 
 #define kDefaultFontSize  50.0
 
@@ -38,7 +39,8 @@ NSTimer *timer;
     UILabel *topLabel = [UILabel new];
     
     NSMutableAttributedString *attributedString;
-    attributedString = [[NSMutableAttributedString alloc] initWithString:[[NSString stringWithFormat:NSLocalizedString(@"don't be %@.", nil), self.mood] uppercaseString]];
+    NSString *dontBe = [NSString stringWithFormat:@"don't be %@.", self.mood];
+    attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(dontBe, nil) uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
@@ -47,7 +49,6 @@ NSTimer *timer;
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     topLabel.frame = CGRectMake(0, 0, 320, 146/2);
     topLabel.textAlignment = NSTextAlignmentCenter;
-    
     
 
     UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 3)];
@@ -118,7 +119,7 @@ NSTimer *timer;
     backButton.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     
     NSMutableAttributedString *attributedString5;
-    attributedString5 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to \nFacebook", nil) uppercaseString]];
+    attributedString5 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to Facebook", nil) uppercaseString]];
     [attributedString5 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString5.length)];
     
     [shareFacebook setAttributedTitle:attributedString5 forState:UIControlStateNormal];
@@ -129,7 +130,7 @@ NSTimer *timer;
     shareFacebook.titleLabel.textAlignment = NSTextAlignmentCenter;
     
     NSMutableAttributedString *attributedString6;
-    attributedString6 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to \nTwitter", nil) uppercaseString]];
+    attributedString6 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Share to Twitter", nil) uppercaseString]];
     [attributedString6 addAttribute:NSKernAttributeName value:@1 range:NSMakeRange(0, attributedString6.length)];
     
     [shareTwitter setAttributedTitle:attributedString6 forState:UIControlStateNormal];
@@ -161,7 +162,8 @@ NSTimer *timer;
 - (void) initiateConnection
 {
     NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/", self.mood, lang]];
+    NSString *cfuuid= [self getUUID];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/%@/", self.mood, lang, cfuuid]];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                             timeoutInterval:30];
@@ -170,6 +172,15 @@ NSTimer *timer;
     }
     connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 
+}
+
+- (NSString *)getUUID
+{
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    CFRelease(newUniqueId);
+    
+    return uuidString;
 }
 
 - (void) reloadQuote:(UISwipeGestureRecognizer*)swipeGesture
@@ -206,11 +217,11 @@ NSTimer *timer;
         loadingView = [[MBLoadingView alloc] initWithFrame:CGRectMake(0, 20, 30.0, 30.0)];
         
         [self.view addSubview:loadingView];
-        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-                                         target:self
-                                       selector:@selector(showNoConnectionView:)
-                                       userInfo:nil
-                                        repeats:NO];
+//        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+//                                         target:self
+//                                       selector:@selector(showNoConnectionView:)
+//                                       userInfo:nil
+//                                        repeats:NO];
     }
 }
 
@@ -271,7 +282,7 @@ NSTimer *timer;
         [alertView show];
         return;
     }
-    NSString *quoteWithQuoted = [NSString stringWithFormat:@"\"%@\" - %@", quote, quoted];
+    NSString *quoteWithQuoted = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
     
     if ( quoteWithQuoted.length > 140 ) {
         UIAlertView *alertView = [[UIAlertView alloc]
@@ -285,7 +296,7 @@ NSTimer *timer;
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:quote];
+        [tweetSheet setInitialText:quoteWithQuoted];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }
@@ -310,6 +321,17 @@ NSTimer *timer;
     NSArray* dictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     
     NSDictionary *fields = [dictionary[0] objectForKey:@"fields"];
+    if ( fields == nil ) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:NSLocalizedString(@"Whoops", nil)
+                                  message:NSLocalizedString(@"Data was unable to load.", nil)
+                                  delegate:nil
+                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        [self closeModal];
+        return;
+    }
     
     moodInfo = @[self.mood, [fields objectForKey:@"quote"], [fields objectForKey:@"attribution"], self.color];
     quoteLoaded = YES;

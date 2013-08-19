@@ -82,7 +82,7 @@
         NSString *mood = NSLocalizedString(array[0], nil);
         UIColor *color = array[1];
         
-        UIImage *image = [UIImage imageNamed:mood];
+        UIImage *image = [UIImage imageNamed:array[0]];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
       
         if ( i == 2 ) {
@@ -179,6 +179,14 @@
     
     if ( ![prefs boolForKey:@"aboutShown"] ){
         MBAboutViewController *aboutViewController = [MBAboutViewController new];
+        
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.3;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromTop;
+        [self.view.window.layer addAnimation:transition forKey:nil];
+    
         [self presentViewController:aboutViewController animated:YES completion:nil];
         [prefs setBool:YES forKey:@"aboutShown"];
         [prefs synchronize];

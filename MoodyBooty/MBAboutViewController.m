@@ -60,7 +60,7 @@
     }
     
     NSMutableAttributedString *attributedString3;
-    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The app that turns your\r frown upside down with\r a dose of inspiration to\r kick any bad mood\r in the butt!", nil) uppercaseString]];
+    attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The app that turns your frown upside down with a dose of inspiration to kick any bad mood in the butt!", nil) uppercaseString]];
     [attributedString3 addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString3.length)];
     [description setAttributedText:attributedString3];
     
