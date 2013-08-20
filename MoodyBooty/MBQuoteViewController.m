@@ -162,7 +162,10 @@ NSTimer *timer;
 - (void) initiateConnection
 {
     NSString *lang = [[[NSLocale preferredLanguages] objectAtIndex:0] lowercaseString];
-    NSString *cfuuid= [self getUUID];
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSString *cfuuid = [prefs stringForKey:@"cfuuid"];
+    
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/%@/", self.mood, lang, cfuuid]];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
@@ -172,15 +175,6 @@ NSTimer *timer;
     }
     connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 
-}
-
-- (NSString *)getUUID
-{
-    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
-    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
-    CFRelease(newUniqueId);
-    
-    return uuidString;
 }
 
 - (void) reloadQuote:(UISwipeGestureRecognizer*)swipeGesture
@@ -217,18 +211,14 @@ NSTimer *timer;
         loadingView = [[MBLoadingView alloc] initWithFrame:CGRectMake(0, 20, 30.0, 30.0)];
         
         [self.view addSubview:loadingView];
-        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-                                         target:self
-                                       selector:@selector(showNoConnectionView:)
-                                       userInfo:nil
-                                        repeats:NO];
     }
 }
 
--(void)showNoConnectionView:(NSTimer *)timer
+-(void)showNoConnectionView
 {
     [connection cancel];
     MBNoConnectionViewController *noConnection = [MBNoConnectionViewController new];
+    noConnection.delegate = self;
     
     CATransition *transition = [CATransition animation];
     transition.duration = 0.3;
@@ -315,6 +305,11 @@ NSTimer *timer;
     [responseData setLength:0];
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [self showNoConnectionView];
+}
+
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error;
@@ -323,14 +318,7 @@ NSTimer *timer;
     if ( [dictionary count] > 0 ) {
         fields = [dictionary[0] objectForKey:@"fields"];
     } else {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(@"Whoops", nil)
-                                  message:NSLocalizedString(@"Data was unable to load.", nil)
-                                  delegate:nil
-                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                  otherButtonTitles:nil, nil];
-        [alertView show];
-        [self closeModal];
+        [self showNoConnectionView];
         return;
     }
     
@@ -341,6 +329,11 @@ NSTimer *timer;
     quoted = moodInfo[2];
     
     [self.view setNeedsLayout];
+}
+
+- (void) restartConnection
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MBNoConnectionViewControllerDelegate;
+
 @interface MBNoConnectionViewController : UIViewController
+
+@property (nonatomic, weak) id<MBNoConnectionViewControllerDelegate> delegate;
+
+- (void)restartConnection;
+
+@end
+
+@protocol MBNoConnectionViewControllerDelegate <NSObject>
+
+- (void)childViewController:(MBNoConnectionViewController *)viewController;
 
 @end

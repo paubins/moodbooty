@@ -11,6 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MBTextView.h"
 
+
+
 @interface MBNoConnectionViewController ()
 
 @end
@@ -125,8 +127,11 @@
     transition.subtype = kCATransitionFromBottom;
     [self.view.window.layer addAnimation:transition forKey:nil];
     
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:NO completion:^{
+        if ([self.delegate respondsToSelector:@selector(restartConnection)]) {
+            [self.delegate performSelector:@selector(restartConnection)];
+        }
+    }];
 }
 
 

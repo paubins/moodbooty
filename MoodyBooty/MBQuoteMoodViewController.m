@@ -207,8 +207,6 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
-
-
 - (void) openModel:(UIButton *)sender
 {
     

@@ -12,17 +12,18 @@
 
 @implementation MBLoadingView
 
-UIImageView *circle;
-UIImageView *circle2;
-UIImageView *circle3;
 
-UIImageView *emptyCircle;
-UIImageView *emptyCircle2;
-UIImageView *emptyCircle3;
+@synthesize circle = _circle;
+@synthesize circle2 = _circle2;
+@synthesize circle3 = _circle3;
 
-NSTimer *timer;
+@synthesize emptyCircle = _emptyCircle;
+@synthesize emptyCircle2 = _emptyCircle2;
+@synthesize emptyCircle3 = _emptyCircle3;
 
-NSInteger off;
+@synthesize timer = _timer;
+
+@synthesize off = _off;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -34,44 +35,44 @@ NSInteger off;
         NSMutableAttributedString *attributedString3;
         CGSize screenSize = [[UIScreen mainScreen] bounds].size;
         
-        circle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
-        circle2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
-        circle3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
+        _circle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
+        _circle2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
+        _circle3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"filled"]];
         
-        emptyCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
-        emptyCircle2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
-        emptyCircle3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
+        _emptyCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
+        _emptyCircle2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
+        _emptyCircle3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"open"]];
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
             if (screenSize.height > 480.0f) {
                 loading = [[UILabel alloc] initWithFrame:CGRectMake(0, 205, screenSize.width, 20)];
                 patience = [[UILabel alloc] initWithFrame:CGRectMake(0, 275, screenSize.width, 20)];
-                circle.frame = CGRectMake(130, 245, 11, 11);
-                circle2.frame = CGRectMake(155, 245, 11, 11);
-                circle3.frame = CGRectMake(180, 245, 11, 11);
+                _circle.frame = CGRectMake(130, 245, 11, 11);
+                _circle2.frame = CGRectMake(155, 245, 11, 11);
+                _circle3.frame = CGRectMake(180, 245, 11, 11);
                 
-                emptyCircle.frame = CGRectMake(130, 245, 11, 11);
-                emptyCircle2.frame = CGRectMake(155, 245, 11, 11);
-                emptyCircle3.frame = CGRectMake(180, 245, 11, 11);
+                _emptyCircle.frame = CGRectMake(130, 245, 11, 11);
+                _emptyCircle2.frame = CGRectMake(155, 245, 11, 11);
+                _emptyCircle3.frame = CGRectMake(180, 245, 11, 11);
             } else {
                 loading = [[UILabel alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 20)];
                 patience = [[UILabel alloc] initWithFrame:CGRectMake(0, 245, screenSize.width, 20)];
-                circle.frame = CGRectMake(130, 215, 11, 11);
-                circle2.frame = CGRectMake(155, 215, 11, 11);
-                circle3.frame = CGRectMake(180, 215, 11, 11);
+                _circle.frame = CGRectMake(130, 215, 11, 11);
+                _circle2.frame = CGRectMake(155, 215, 11, 11);
+                _circle3.frame = CGRectMake(180, 215, 11, 11);
                 
-                emptyCircle.frame = CGRectMake(130, 215, 11, 11);
-                emptyCircle2.frame = CGRectMake(155, 215, 11, 11);
-                emptyCircle3.frame = CGRectMake(180, 215, 11, 11);
+                _emptyCircle.frame = CGRectMake(130, 215, 11, 11);
+                _emptyCircle2.frame = CGRectMake(155, 215, 11, 11);
+                _emptyCircle3.frame = CGRectMake(180, 215, 11, 11);
             }
         }
-        off = 1;
+        _off = 1;
         
-        if ( timer ) {
-            [timer invalidate];
-            timer = nil;
+        if ( _timer ) {
+            [_timer invalidate];
+            _timer = nil;
         } else {
-            timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
+            _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         }
         
         loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
@@ -95,17 +96,17 @@ NSInteger off;
         
         [self addSubview:loading];
         
-        [self addSubview:circle];
-        [self addSubview:circle2];
-        [self addSubview:circle3];
+        [self addSubview:_circle];
+        [self addSubview:_circle2];
+        [self addSubview:_circle3];
         
-        circle.hidden = YES;
-        circle2.hidden = YES;
-        circle3.hidden = YES;
+        _circle.hidden = YES;
+        _circle2.hidden = YES;
+        _circle3.hidden = YES;
         
-        [self addSubview:emptyCircle];
-        [self addSubview:emptyCircle2];
-        [self addSubview:emptyCircle3];
+        [self addSubview:_emptyCircle];
+        [self addSubview:_emptyCircle2];
+        [self addSubview:_emptyCircle3];
         
         [self addSubview:patience];
     }
@@ -116,19 +117,19 @@ NSInteger off;
 -(void)turnOff:(NSTimer *)timer
 {
     
-    circle.hidden = !( off == 1 );
-    emptyCircle.hidden = ( off == 1 );
+    _circle.hidden = !( _off == 1 );
+    _emptyCircle.hidden = ( _off == 1 );
 
-    circle2.hidden = !( off == 2 );
-    emptyCircle2.hidden = ( off == 2 );
+    _circle2.hidden = !( _off == 2 );
+    _emptyCircle2.hidden = ( _off == 2 );
 
-    circle3.hidden = !( off == 3 );
-    emptyCircle3.hidden = ( off == 3 );
+    _circle3.hidden = !( _off == 3 );
+    _emptyCircle3.hidden = ( _off == 3 );
     
-    if ( off == 3 ) {
-        off = 1;
+    if ( _off == 3 ) {
+        _off = 1;
     } else {
-        off++;
+        _off++;
     }
 }
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBNoConnectionViewController.h"
 
-@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate, NSURLConnectionDelegate> {
+@interface MBQuoteViewController : UIViewController <UIGestureRecognizerDelegate, NSURLConnectionDelegate, MBNoConnectionViewControllerDelegate> {
     BOOL quoteLoaded;
     NSMutableData *responseData;
     NSArray *moodInfo;

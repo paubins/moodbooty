@@ -15,6 +15,16 @@
 
 @implementation MBAppDelegate
 
+
+- (NSString *)getUUID
+{
+    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
+    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
+    CFRelease(newUniqueId);
+    
+    return uuidString;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -22,9 +32,16 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:NO forKey:@"aboutShown"];
+    
+    NSString *cfuuid;
+    if ( [prefs stringForKey:@"cfuuid"] == nil) {
+        cfuuid = [self getUUID];
+        [prefs setValue:cfuuid forKey:@"cfuuid"];
+        [prefs synchronize];
+        NSLog(@"uuid set");
+    }
 
     MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];
-    
     self.window.rootViewController = controller;
     self.window.rootViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
     

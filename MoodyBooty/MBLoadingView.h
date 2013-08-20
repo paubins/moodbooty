@@ -10,4 +10,16 @@
 
 @interface MBLoadingView : UIView
 
+@property (nonatomic, readonly) UIImageView *circle;
+@property (nonatomic, readonly) UIImageView *circle2;
+@property (nonatomic, readonly) UIImageView *circle3;
+
+@property (nonatomic, readonly) UIImageView *emptyCircle;
+@property (nonatomic, readonly) UIImageView *emptyCircle2;
+@property (nonatomic, readonly) UIImageView *emptyCircle3;
+
+@property (nonatomic, readonly) NSTimer *timer;
+
+@property (nonatomic, readonly) NSInteger off;
+
 @end
