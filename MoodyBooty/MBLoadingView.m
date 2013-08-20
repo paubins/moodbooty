@@ -66,9 +66,11 @@ NSInteger off;
             }
         }
         off = 1;
-        if ( !timer ) {
-            timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
+        
+        if ( timer ) {
+            timer = nil;
         }
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         
         loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
         loading.textColor = [UIColor whiteColor];

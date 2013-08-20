@@ -321,7 +321,7 @@ NSTimer *timer;
     NSArray* dictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     NSDictionary *fields;
     if ( [dictionary count] > 0 ) {
-        dictionary = [dictionary[0] objectForKey:@"fields"];
+        fields = [dictionary[0] objectForKey:@"fields"];
     } else {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:NSLocalizedString(@"Whoops", nil)
