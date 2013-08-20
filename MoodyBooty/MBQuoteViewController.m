@@ -217,11 +217,11 @@ NSTimer *timer;
         loadingView = [[MBLoadingView alloc] initWithFrame:CGRectMake(0, 20, 30.0, 30.0)];
         
         [self.view addSubview:loadingView];
-//        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-//                                         target:self
-//                                       selector:@selector(showNoConnectionView:)
-//                                       userInfo:nil
-//                                        repeats:NO];
+        timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                         target:self
+                                       selector:@selector(showNoConnectionView:)
+                                       userInfo:nil
+                                        repeats:NO];
     }
 }
 

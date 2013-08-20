@@ -58,15 +58,15 @@
             line2.frame = CGRectMake(0, 480, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
-            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 195, screenSize.width, 20)];
-            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 20)];
+            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 195, screenSize.width, 40)];
+            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 40)];
         } else {
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 225, imageSmiley.size.width, imageSmiley.size.height);
             line2.frame = CGRectMake(0, 390, 320, 1);
             
             backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
-            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 150, screenSize.width, 20)];
-            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 20)];
+            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 150, screenSize.width, 40)];
+            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 40)];
         }
     }
     
@@ -125,9 +125,8 @@
     transition.subtype = kCATransitionFromBottom;
     [self.view.window.layer addAnimation:transition forKey:nil];
     
-    [self dismissViewControllerAnimated:NO completion:^{
-	
-    }];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 

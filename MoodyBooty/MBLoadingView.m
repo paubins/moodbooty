@@ -68,9 +68,11 @@ NSInteger off;
         off = 1;
         
         if ( timer ) {
+            [timer invalidate];
             timer = nil;
+        } else {
+            timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         }
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         
         loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
         loading.textColor = [UIColor whiteColor];
@@ -109,8 +111,6 @@ NSInteger off;
     }
     return self;
 }
-
-
 
 
 -(void)turnOff:(NSTimer *)timer
