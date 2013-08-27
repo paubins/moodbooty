@@ -16,12 +16,20 @@
 {
     [super loadView];
     
-    UIImage *image = [UIImage imageNamed:@"intro_bg"];
+    UIImage *image;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if ( screenSize.height == 480.0f ) {
+        image = [UIImage imageNamed:@"introbg@3_5"];
+    } else {
+        image = [UIImage imageNamed:@"intro_bg"];
+    }
+    
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
     
-    UILabel *always = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 320, 20)];
+    UILabel *always = [[UILabel alloc] initWithFrame:CGRectMake(0, 35, 320, 20)];
     
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"The glass is always", nil) uppercaseString]];
@@ -31,9 +39,9 @@
     always.textColor = [UIColor colorWithRed:188.0/255.0 green:221.0/255.0 blue:232.0/255.0 alpha:1.0];
     always.backgroundColor = [UIColor clearColor];
     always.textAlignment = NSTextAlignmentCenter;
-    always.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:27/2];
+    always.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:27/2];
     
-    UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, 320, 40)];
+    UILabel *halfFull = [[UILabel alloc] initWithFrame:CGRectMake(0, 65, 320, 40)];
     
     NSMutableAttributedString *attributedString2;
     attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Half full", nil) uppercaseString]];
@@ -43,19 +51,19 @@
     halfFull.textColor = [UIColor whiteColor];
     halfFull.backgroundColor = [UIColor clearColor];
     halfFull.textAlignment = NSTextAlignmentCenter;
-    halfFull.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:72/2];
+    halfFull.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:72/2];
     halfFull.shadowColor = [UIColor blackColor];
     halfFull.shadowOffset = CGSizeMake(-0.5, 0.5);
     
     UILabel *description;
     
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 300, 240, 120)];
+            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 295, 240, 120)];
         } else {
-            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 230, 240, 120)];
+            description = [[UILabel alloc] initWithFrame:CGRectMake(40, 213, 240, 120)];
         }
     }
     
@@ -64,7 +72,7 @@
     [attributedString3 addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString3.length)];
     [description setAttributedText:attributedString3];
     
-    description.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:27/2];
+    description.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:27/2];
     description.textColor = [UIColor colorWithRed:188.0/255.0 green:221.0/255.0 blue:232.0/255.0 alpha:1.0];
     description.backgroundColor = [UIColor clearColor];
     description.numberOfLines = 0;
@@ -88,7 +96,7 @@
         if (screenSize.height > 480.0f) {
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 420, imageSmiley.size.width, imageSmiley.size.height);
         } else {
-            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 350, imageSmiley.size.width, imageSmiley.size.height);
+            imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 333, imageSmiley.size.width, imageSmiley.size.height);
         }
     }
     
@@ -123,7 +131,7 @@
 
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
-    [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    [backButton setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:36/2] forKey:@"font"];
     backButton.titleLabel.textColor = [UIColor whiteColor];
     
     

@@ -42,14 +42,14 @@
     [label setAttributedText:attributedString2];
     
     label.scrollEnabled = NO;
-    label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:kDefaultFontSize];
+    label.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:kDefaultFontSize];
     
     CGSize fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
     
     if (fontSize.height > 150) {
         int newFontSize = kDefaultFontSize;
         while (fontSize.height >= 150 || fontSize.width > 250 ) {
-            label.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:newFontSize--];
+            label.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:newFontSize--];
             fontSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(230,9999)];
         }
     }
@@ -71,7 +71,7 @@
     attributedTo.backgroundColor = [UIColor clearColor];
     attributedTo.textAlignment = NSTextAlignmentCenter;
     attributedTo.textColor = [UIColor whiteColor];
-    [attributedTo setFont:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:16]];
+    [attributedTo setFont:[UIFont fontWithName:@"SourceSansPro-Regular" size:16]];
     
     NSMutableAttributedString *attributedString3;
     attributedString3 = [[NSMutableAttributedString alloc] initWithString:[self.quoted uppercaseString]];

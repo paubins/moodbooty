@@ -79,14 +79,14 @@
     
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
-    [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    [backButton setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:36/2] forKey:@"font"];
     backButton.titleLabel.textColor = [UIColor whiteColor];
     
     
     NSMutableAttributedString *attributedString2;
 
     crap.scrollEnabled = NO;
-    crap.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+    crap.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
     crap.textColor = [UIColor whiteColor];
     crap.textAlignment = NSTextAlignmentCenter;
     crap.backgroundColor = [UIColor clearColor];
@@ -100,7 +100,7 @@
     NSMutableAttributedString *attributedString3;
     
     noConnectionString.scrollEnabled = NO;
-    noConnectionString.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+    noConnectionString.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
     noConnectionString.textColor = [UIColor whiteColor];
     noConnectionString.textAlignment = NSTextAlignmentCenter;
     noConnectionString.backgroundColor = [UIColor clearColor];

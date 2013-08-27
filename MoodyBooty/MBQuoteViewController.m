@@ -44,7 +44,7 @@ NSTimer *timer;
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
     [topLabel setAttributedText:attributedString];
     
-    topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];    
+    topLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:32/2];    
     topLabel.textColor = [UIColor colorWithRed:246.0 green:246.0 blue:246.0 alpha:1];
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     topLabel.frame = CGRectMake(0, 0, 320, 146/2);
@@ -115,7 +115,7 @@ NSTimer *timer;
     
     [backButton setAttributedTitle:attributedString4 forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(closeModal) forControlEvents:UIControlEventTouchDown];
-    [backButton setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+    [backButton setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:36/2] forKey:@"font"];
     backButton.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     
     NSMutableAttributedString *attributedString5;
@@ -124,7 +124,7 @@ NSTimer *timer;
     
     [shareFacebook setAttributedTitle:attributedString5 forState:UIControlStateNormal];
     [shareFacebook addTarget:self action:@selector(shareToFacebook) forControlEvents:UIControlEventTouchDown];
-    [shareFacebook setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
+    [shareFacebook setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:14] forKey:@"font"];
     shareFacebook.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     shareFacebook.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     shareFacebook.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -135,7 +135,7 @@ NSTimer *timer;
     
     [shareTwitter setAttributedTitle:attributedString6 forState:UIControlStateNormal];
     [shareTwitter addTarget:self action:@selector(shareToTwitter) forControlEvents:UIControlEventTouchDown];
-    [shareTwitter setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:14] forKey:@"font"];
+    [shareTwitter setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:14] forKey:@"font"];
     shareTwitter.titleLabel.textColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     shareTwitter.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     shareTwitter.titleLabel.textAlignment = NSTextAlignmentCenter;

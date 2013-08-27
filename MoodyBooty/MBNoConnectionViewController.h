@@ -14,12 +14,12 @@
 
 @property (nonatomic, weak) id<MBNoConnectionViewControllerDelegate> delegate;
 
-- (void)restartConnection;
+
 
 @end
 
 @protocol MBNoConnectionViewControllerDelegate <NSObject>
 
-- (void)childViewController:(MBNoConnectionViewController *)viewController;
+- (void)restartConnection;
 
 @end

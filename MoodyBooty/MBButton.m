@@ -19,7 +19,7 @@
     attributedString4 = [[NSMutableAttributedString alloc] initWithString:[titleLabel.text uppercaseString]];
     [attributedString4 addAttribute:NSKernAttributeName value:@3 range:NSMakeRange(0, attributedString4.length)];
     [titleLabel setAttributedText:attributedString4];
-    titleLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2];
+    titleLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:36/2];
     
     
 }

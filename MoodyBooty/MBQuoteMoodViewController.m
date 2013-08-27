@@ -32,7 +32,7 @@
     topLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     topLabel.textColor = [UIColor whiteColor];
     topLabel.textAlignment = NSTextAlignmentCenter;
-    topLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
+    topLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:32/2];
     topLabel.shadowColor = [UIColor blackColor];
     topLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
     
@@ -97,7 +97,7 @@
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button addSubview:imageView];
         [button addTarget:self action:@selector(openModel:) forControlEvents:UIControlEventTouchDown];
-        [button setValue:[UIFont fontWithName:@"FreightSansProMedium-Regular" size:36/2] forKey:@"font"];
+        [button setValue:[UIFont fontWithName:@"SourceSansPro-Regular" size:36/2] forKey:@"font"];
         button.titleLabel.adjustsFontSizeToFitWidth = YES;
         
         
@@ -145,7 +145,7 @@
     bottomLabel.backgroundColor = [UIColor colorWithRed:59.0/255.0 green:58.0/255.0 blue:58.0/255.0 alpha:1.0];
     bottomLabel.textColor = [UIColor whiteColor];
     bottomLabel.textAlignment = NSTextAlignmentCenter;
-    bottomLabel.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:32/2];
+    bottomLabel.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:32/2];
     bottomLabel.shadowColor = [UIColor blackColor];
     bottomLabel.shadowOffset = CGSizeMake(-0.5, 0.5);
     bottomLabel.userInteractionEnabled = YES;

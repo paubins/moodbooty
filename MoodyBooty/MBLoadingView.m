@@ -75,7 +75,7 @@
             _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(turnOff:) userInfo:nil repeats:YES];
         }
         
-        loading.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+        loading.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
         loading.textColor = [UIColor whiteColor];
         loading.textAlignment = NSTextAlignmentCenter;
         loading.backgroundColor = [UIColor clearColor];
@@ -87,7 +87,7 @@
         patience.backgroundColor = [UIColor clearColor];
         patience.textAlignment = NSTextAlignmentCenter;
         patience.textColor = [UIColor whiteColor];
-        patience.font = [UIFont fontWithName:@"FreightSansProMedium-Regular" size:18];
+        patience.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
         
         attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Patience is a virtue.", nil) uppercaseString]];
         [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
