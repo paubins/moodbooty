@@ -38,7 +38,6 @@
         cfuuid = [self getUUID];
         [prefs setValue:cfuuid forKey:@"cfuuid"];
         [prefs synchronize];
-        NSLog(@"uuid set");
     }
 
     MBQuoteMoodViewController *controller = [MBQuoteMoodViewController new];

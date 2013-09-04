@@ -173,6 +173,7 @@ NSTimer *timer;
     if ( connection ) {
         connection = nil;
     }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self startImmediately:YES];
 
 }
@@ -251,13 +252,11 @@ NSTimer *timer;
     }
     NSString *formattedQuote = [NSString stringWithFormat:@"\"%@\" - %@", moodInfo[1], moodInfo[2]];
     
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [tweetSheet setInitialText:formattedQuote];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
+
+    SLComposeViewController *facebookSheet = [SLComposeViewController
+                                           composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [facebookSheet setInitialText:formattedQuote];
+    [self presentViewController:facebookSheet animated:YES completion:nil];
 }
 
 -(void)shareToTwitter
@@ -282,13 +281,11 @@ NSTimer *timer;
                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                  otherButtonTitles:nil, nil];
         [alertView show];
-    } else if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:quoteWithQuoted];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
+    } 
+    SLComposeViewController *tweetSheet = [SLComposeViewController
+                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tweetSheet setInitialText:quoteWithQuoted];
+    [self presentViewController:tweetSheet animated:YES completion:nil];
 }
 
 -(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -307,11 +304,13 @@ NSTimer *timer;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self showNoConnectionView];
 }
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSError *error;
     NSArray* dictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     NSDictionary *fields;

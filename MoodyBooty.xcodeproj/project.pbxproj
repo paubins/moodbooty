@@ -91,7 +91,7 @@
 		C1DB1FA817B9F4E00069048D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA617B9F4E00069048D /* icon@2x.png */; };
 		C1DB1FAA17B9F50B0069048D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA917B9F50B0069048D /* icon.png */; };
 		C1DB1FAC17B9F5140069048D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FAB17B9F5140069048D /* icon@2x.png */; };
-		C1DF7D5E17C4A0CC00D0CF6E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1DF7D5D17C4A0CC00D0CF6E /* MainStoryboard.storyboard */; };
+		C1EFF26017CC44B600FD581E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C179EB2B1797B22100FB8A7F /* MainStoryboard.storyboard */; };
 		C1F2EEE217AB6DB4006481B7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2EEE117AB6DB4006481B7 /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -313,6 +313,7 @@
 		C1BF552017A265D6006411A9 /* intro_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_bg@2x.png"; sourceTree = "<group>"; };
 		C1BF552517A3260B006411A9 /* MBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButton.h; sourceTree = "<group>"; };
 		C1BF552617A3260B006411A9 /* MBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButton.m; sourceTree = "<group>"; };
+		C1C492C917CC3F9500BDDF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
 		C1DB1FA517B9F4E00069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C1DB1FA617B9F4E00069048D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		C1DB1FA917B9F50B0069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
@@ -321,7 +322,6 @@
 		C1DB1FAE17BA03650069048D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C1DB1FAF17BA03650069048D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C1DB1FB017BA05580069048D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C1DF7D5D17C4A0CC00D0CF6E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C1F2EEE117AB6DB4006481B7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -355,7 +355,6 @@
 		C179EB071797B22100FB8A7F = {
 			isa = PBXGroup;
 			children = (
-				C1DF7D5D17C4A0CC00D0CF6E /* MainStoryboard.storyboard */,
 				C176F2DF17C492AE00631389 /* Default-568h@2x.png */,
 				C176F2DD17C492A700631389 /* Default@2x.png */,
 				C176F2DB17C492A300631389 /* Default.png */,
@@ -613,6 +612,7 @@
 				C12EA5B617A1A83C004B805E /* smiley.png in Resources */,
 				C17A60AD17A1E6B300C0BBA4 /* about-background.png in Resources */,
 				C17A60AF17A1E82000C0BBA4 /* about-smiley.png in Resources */,
+				C1EFF26017CC44B600FD581E /* MainStoryboard.storyboard in Resources */,
 				C18BCA8117A1EBC30065BA6E /* milk.png in Resources */,
 				C1BF54B717A24FD9006411A9 /* Smiley_1.png in Resources */,
 				C1BF54F117A25A04006411A9 /* Smiley_1@2x.png in Resources */,
@@ -668,7 +668,6 @@
 				C151D16117C4853500D6555B /* SourceSansPro-Regular.ttf in Resources */,
 				C151D16217C4853500D6555B /* SourceSansPro-Semibold.ttf in Resources */,
 				C151D16317C4853500D6555B /* SourceSansPro-SemiboldItalic.ttf in Resources */,
-				C1DF7D5E17C4A0CC00D0CF6E /* MainStoryboard.storyboard in Resources */,
 				C1574B6B17C0BFFD00007CDD /* Localizable.strings in Resources */,
 				C151D13317C4797200D6555B /* introbg@3_5.png in Resources */,
 				C176F2DC17C492A300631389 /* Default.png in Resources */,
@@ -847,6 +846,7 @@
 				C19EFEEB17BC93A80046CFA6 /* ro */,
 				C19EFEEF17BC93AE0046CFA6 /* sk */,
 				C19EFEF317BC93B20046CFA6 /* uk */,
+				C1C492C917CC3F9500BDDF4D /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -955,7 +955,7 @@
 		C179EB491797B22100FB8A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
 				INFOPLIST_FILE = "MoodyBooty/MoodyBooty-Info.plist";

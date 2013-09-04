@@ -43,8 +43,6 @@
 		<string>SourceSansPro-Regular.ttf</string>
 		<string>SourceSansPro-Regular.ttf</string>
 	</array>
-	<key>UIMainStoryboardFile</key>
-	<string>MainStoryboard</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
