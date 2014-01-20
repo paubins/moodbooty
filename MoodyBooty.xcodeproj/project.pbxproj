@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C12EA5B417A19C1C004B805E /* MBQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */; };
 		C12EA5B617A1A83C004B805E /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EA5B517A1A83C004B805E /* smiley.png */; };
+		C1494367188DBDD20095B99A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1494366188DBDD20095B99A /* Images.xcassets */; };
 		C151D13317C4797200D6555B /* introbg@3_5.png in Resources */ = {isa = PBXBuildFile; fileRef = C151D13217C4797200D6555B /* introbg@3_5.png */; };
 		C151D15817C4853500D6555B /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C151D14C17C4853400D6555B /* SourceSansPro-Black.ttf */; };
 		C151D15917C4853500D6555B /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C151D14D17C4853400D6555B /* SourceSansPro-BlackItalic.ttf */; };
@@ -87,6 +88,12 @@
 		C1BF551F17A265C8006411A9 /* intro_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF551E17A265C8006411A9 /* intro_bg.png */; };
 		C1BF552117A265D6006411A9 /* intro_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BF552017A265D6006411A9 /* intro_bg@2x.png */; };
 		C1BF552717A3260B006411A9 /* MBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BF552617A3260B006411A9 /* MBButton.m */; };
+		C1D4DFE91883835100F4FD73 /* betrayed.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE31883835100F4FD73 /* betrayed.png */; };
+		C1D4DFEA1883835100F4FD73 /* betrayed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE41883835100F4FD73 /* betrayed@2x.png */; };
+		C1D4DFEB1883835100F4FD73 /* broke.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE51883835100F4FD73 /* broke.png */; };
+		C1D4DFEC1883835100F4FD73 /* broke@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE61883835100F4FD73 /* broke@2x.png */; };
+		C1D4DFED1883835100F4FD73 /* ugly.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE71883835100F4FD73 /* ugly.png */; };
+		C1D4DFEE1883835100F4FD73 /* ugly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1D4DFE81883835100F4FD73 /* ugly@2x.png */; };
 		C1DB1FA717B9F4E00069048D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA517B9F4E00069048D /* icon.png */; };
 		C1DB1FA817B9F4E00069048D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA617B9F4E00069048D /* icon@2x.png */; };
 		C1DB1FAA17B9F50B0069048D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C1DB1FA917B9F50B0069048D /* icon.png */; };
@@ -109,6 +116,7 @@
 		C12EA5B217A19C1C004B805E /* MBQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBQuoteViewController.h; sourceTree = "<group>"; };
 		C12EA5B317A19C1C004B805E /* MBQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBQuoteViewController.m; sourceTree = "<group>"; };
 		C12EA5B517A1A83C004B805E /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
+		C1494366188DBDD20095B99A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C151D13217C4797200D6555B /* introbg@3_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introbg@3_5.png"; sourceTree = "<group>"; };
 		C151D14C17C4853400D6555B /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-Black.ttf"; path = "../SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		C151D14D17C4853400D6555B /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSansPro-BlackItalic.ttf"; path = "../SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -314,6 +322,12 @@
 		C1BF552517A3260B006411A9 /* MBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButton.h; sourceTree = "<group>"; };
 		C1BF552617A3260B006411A9 /* MBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButton.m; sourceTree = "<group>"; };
 		C1C492C917CC3F9500BDDF4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
+		C1D4DFE31883835100F4FD73 /* betrayed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = betrayed.png; sourceTree = "<group>"; };
+		C1D4DFE41883835100F4FD73 /* betrayed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "betrayed@2x.png"; sourceTree = "<group>"; };
+		C1D4DFE51883835100F4FD73 /* broke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = broke.png; sourceTree = "<group>"; };
+		C1D4DFE61883835100F4FD73 /* broke@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "broke@2x.png"; sourceTree = "<group>"; };
+		C1D4DFE71883835100F4FD73 /* ugly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ugly.png; sourceTree = "<group>"; };
+		C1D4DFE81883835100F4FD73 /* ugly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ugly@2x.png"; sourceTree = "<group>"; };
 		C1DB1FA517B9F4E00069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C1DB1FA617B9F4E00069048D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		C1DB1FA917B9F50B0069048D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
@@ -411,6 +425,7 @@
 				C16A577E17BF3A1300659AD4 /* MBLoadingView.m */,
 				C1574B6617C0A98000007CDD /* MBQuoteView.h */,
 				C1574B6717C0A98100007CDD /* MBQuoteView.m */,
+				C1494366188DBDD20095B99A /* Images.xcassets */,
 			);
 			path = MoodyBooty;
 			sourceTree = "<group>";
@@ -442,6 +457,12 @@
 				C1BF54F217A25A7F006411A9 /* Smiley_2@2x.png */,
 				C1BF551A17A25CFD006411A9 /* Milk_Glass.png */,
 				C1BF551B17A25CFE006411A9 /* Milk_Glass@2x.png */,
+				C1D4DFE31883835100F4FD73 /* betrayed.png */,
+				C1D4DFE41883835100F4FD73 /* betrayed@2x.png */,
+				C1D4DFE51883835100F4FD73 /* broke.png */,
+				C1D4DFE61883835100F4FD73 /* broke@2x.png */,
+				C1D4DFE71883835100F4FD73 /* ugly.png */,
+				C1D4DFE81883835100F4FD73 /* ugly@2x.png */,
 				C179EB1B1797B22100FB8A7F /* MoodyBooty-Info.plist */,
 				C179EB1C1797B22100FB8A7F /* InfoPlist.strings */,
 				C179EB1F1797B22100FB8A7F /* main.m */,
@@ -617,6 +638,9 @@
 				C1BF54B717A24FD9006411A9 /* Smiley_1.png in Resources */,
 				C1BF54F117A25A04006411A9 /* Smiley_1@2x.png in Resources */,
 				C1BF54F317A25A80006411A9 /* Smiley_2@2x.png in Resources */,
+				C1494367188DBDD20095B99A /* Images.xcassets in Resources */,
+				C1D4DFEC1883835100F4FD73 /* broke@2x.png in Resources */,
+				C1D4DFEE1883835100F4FD73 /* ugly@2x.png in Resources */,
 				C1BF54F517A25A97006411A9 /* Smiley_2.png in Resources */,
 				C1BF54FF17A25C5B006411A9 /* angry.png in Resources */,
 				C1BF550017A25C5B006411A9 /* anxious.png in Resources */,
@@ -627,6 +651,7 @@
 				C1BF550517A25C5B006411A9 /* nostalgic.png in Resources */,
 				C1BF550617A25C5B006411A9 /* sad.png in Resources */,
 				C1BF550717A25C5B006411A9 /* tired.png in Resources */,
+				C1D4DFE91883835100F4FD73 /* betrayed.png in Resources */,
 				C1BF551117A25C79006411A9 /* angry@2x.png in Resources */,
 				C1BF551317A25C79006411A9 /* depressed@2x.png in Resources */,
 				C1BF551517A25C79006411A9 /* jealous@2x.png in Resources */,
@@ -642,6 +667,8 @@
 				C1DB1FAA17B9F50B0069048D /* icon.png in Resources */,
 				C1DB1FAC17B9F5140069048D /* icon@2x.png in Resources */,
 				C19EFEF817BCA6080046CFA6 /* tired@2x.png in Resources */,
+				C1D4DFED1883835100F4FD73 /* ugly.png in Resources */,
+				C1D4DFEA1883835100F4FD73 /* betrayed@2x.png in Resources */,
 				C19EFEFC17BCA61D0046CFA6 /* impatient@2x.png in Resources */,
 				C19EFF0117BCA6F50046CFA6 /* dull.png in Resources */,
 				C19EFF0217BCA6F50046CFA6 /* guilty.png in Resources */,
@@ -669,6 +696,7 @@
 				C151D16217C4853500D6555B /* SourceSansPro-Semibold.ttf in Resources */,
 				C151D16317C4853500D6555B /* SourceSansPro-SemiboldItalic.ttf in Resources */,
 				C1574B6B17C0BFFD00007CDD /* Localizable.strings in Resources */,
+				C1D4DFEB1883835100F4FD73 /* broke.png in Resources */,
 				C151D13317C4797200D6555B /* introbg@3_5.png in Resources */,
 				C176F2DC17C492A300631389 /* Default.png in Resources */,
 				C176F2E017C492AE00631389 /* Default-568h@2x.png in Resources */,
@@ -955,6 +983,8 @@
 		C179EB491797B22100FB8A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";
@@ -968,6 +998,8 @@
 		C179EB4A1797B22100FB8A7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoodyBooty/MoodyBooty-Prefix.pch";

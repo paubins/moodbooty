@@ -23,7 +23,6 @@
     
     UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 146/2)];
     
-    
     NSMutableAttributedString *attributedString;
     attributedString = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"How ya feeling today?", nil) uppercaseString]];
     [attributedString addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString.length)];
@@ -50,6 +49,10 @@
                        @[@"impatient", [UIColor colorWithRed:115.0/255.0 green:208.0/255.0 blue:181.0/255.0 alpha:1]], // teal
                        @[@"tired", [UIColor colorWithRed:92.0/255.0 green:106.0/255.0 blue:136.0/255.0 alpha:1]], // light brown
                        
+                       @[@"broke", [UIColor colorWithRed:175.0/255.0 green:171.0/255.0 blue:50.0/255.0 alpha:1]],
+                       @[@"ugly", [UIColor colorWithRed:6.0/255.0 green:118.0/255.0 blue:93.0/255.0 alpha:1]],
+                       @[@"betrayed", [UIColor colorWithRed:39.0/255.0 green:136.0/255.0 blue:176.0/255.0 alpha:1]],
+                       
                        @[@"lonely", [UIColor colorWithRed:82.0/255.0 green:186.0/255.0 blue:213.0/255.0 alpha:1]], // blue
                        @[@"depressed", [UIColor colorWithRed:146.0/255.0 green:139.0/255.0 blue:137.0/255.0 alpha:1]], // brown
                        @[@"guilty", [UIColor colorWithRed:148.0/255.0 green:62.0/255.0 blue:70.0/255.0 alpha:1]], // pink
@@ -61,6 +64,7 @@
                        @[@"dull", [UIColor colorWithRed:141.0/255.0 green:115.0/255.0 blue:148.0/255.0 alpha:1]], // pink
                        @[@"scared", [UIColor colorWithRed:130.0/255.0 green:93.0/255.0 blue:73.0/255.0 alpha:1]], // pink
                        @[@"anxious", [UIColor colorWithRed:190.0/255.0 green:179.0/255.0 blue:162.0/255.0 alpha:1]], // purple
+                       
                        ];
 
     
@@ -73,8 +77,8 @@
     CGSize screenSize = screenBound.size;
     CGFloat screenHeight = screenSize.height;
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 147/2, 106.7*3, screenHeight - 158)];
-    [scrollView setContentSize:CGSizeMake(106.7*3, 106.7*4)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0, 147/2, 106.7*3, screenHeight - 158 + 20)];
+    [scrollView setContentSize:CGSizeMake(106.7*3, 106.7*5)];
     [scrollView setBounces:NO];
     
     for ( NSArray *array in self.moods )
@@ -122,7 +126,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,480, 320, 146/2)];
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 320, 146/2)];
             
             for ( int i = 0; i < 3; i++ ) {
                 UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((i*106.7), 147/2 + (j*106) , 106.7, 100)];
@@ -138,7 +142,7 @@
                 [self.view addSubview:button];
             }
         } else {
-            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
+            bottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 410, 320, 146/2)];
         }
     }
     
@@ -223,6 +227,11 @@
     
     
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 

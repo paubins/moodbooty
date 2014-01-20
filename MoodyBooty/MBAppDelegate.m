@@ -28,7 +28,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
     self.window = window;
+    
+//    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+//    self.window.clipsToBounds =YES;
+//    self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:NO forKey:@"aboutShown"];

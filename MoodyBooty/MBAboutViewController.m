@@ -17,7 +17,7 @@
     [super loadView];
     
     UIImage *image;
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
     
     if ( screenSize.height == 480.0f ) {
         image = [UIImage imageNamed:@"introbg@3_5"];
@@ -81,7 +81,7 @@
     description.lineBreakMode = NSLineBreakByWordWrapping;
     
     
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view.userInteractionEnabled = YES;
 
     self.view.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:102.0/255.0 blue:111.0/255.0 alpha:1.0];
@@ -111,11 +111,11 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            line2.frame = CGRectMake(0, 480, 320, 1);
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
+            line2.frame = CGRectMake(0, 500, 320, 1);
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 320, 146/2)];
         } else {
-            line2.frame = CGRectMake(0, 390, 320, 1);
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
+            line2.frame = CGRectMake(0, 410, 320, 1);
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 410, 320, 146/2)];
         }
     }
     
@@ -157,6 +157,12 @@
     [self.view.window.layer addAnimation:transition forKey:nil];
     
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 

@@ -32,7 +32,7 @@ NSTimer *timer;
     
     [self initiateConnection];
     
-    self.view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
+    self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
     
     self.view.backgroundColor = [_color colorWithAlphaComponent:0.92];
     
@@ -91,21 +91,21 @@ NSTimer *timer;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            line2.frame = CGRectMake(0, 480, 320, 1);
-            line3.frame = CGRectMake(106.6, 480, 1, 146/2);
-            line4.frame = CGRectMake(213.2, 480, 1, 146/2);
+            line2.frame = CGRectMake(0, 500, 320, 1);
+            line3.frame = CGRectMake(106.6, 500, 1, 146/2);
+            line4.frame = CGRectMake(213.2, 500, 1, 146/2);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 106.6, 146/2)];
-            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 480, 106.6, 146/2)];
-            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 480, 106.6, 146/2)];
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 106.6, 146/2)];
+            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 500, 106.6, 146/2)];
+            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 500, 106.6, 146/2)];
         } else {
-            line2.frame = CGRectMake(0, 390, 320, 1);
-            line3.frame = CGRectMake(106.6, 390, 1, 146/2);
-            line4.frame = CGRectMake(213.2, 390, 1, 146/2);
+            line2.frame = CGRectMake(0, 410, 320, 1);
+            line3.frame = CGRectMake(106.6, 410, 1, 146/2);
+            line4.frame = CGRectMake(213.2, 410, 1, 146/2);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 106.6, 146/2)];
-            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 390, 106.6, 146/2)];
-            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 390, 106.6, 146/2)];
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 410, 106.6, 146/2)];
+            shareFacebook = [[UIButton alloc] initWithFrame:CGRectMake(106.6, 410, 106.6, 146/2)];
+            shareTwitter = [[UIButton alloc] initWithFrame:CGRectMake(213.2, 410, 106.6, 146/2)];
         }
     }
 
@@ -188,7 +188,7 @@ NSTimer *timer;
 }
 
 -(void)viewWillLayoutSubviews {
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
 
     
     if ( quoteLoaded ) {
@@ -333,6 +333,12 @@ NSTimer *timer;
 - (void) restartConnection
 {
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

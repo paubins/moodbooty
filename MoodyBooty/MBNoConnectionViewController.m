@@ -46,8 +46,8 @@
     UIButton *backButton;
     UIBezierPath *linePath2;
     CAShapeLayer *line2;
-    MBTextView *crap;
-    MBTextView *noConnectionString;
+    UILabel *crap;
+    UILabel *noConnectionString;
     
     linePath2 = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, self.view.frame.size.width, 1)];
     line2 = [CAShapeLayer layer];
@@ -57,18 +57,18 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 255, imageSmiley.size.width, imageSmiley.size.height);
-            line2.frame = CGRectMake(0, 480, 320, 1);
+            line2.frame = CGRectMake(0, 500, 320, 1);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 480, 320, 146/2)];
-            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 195, screenSize.width, 40)];
-            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 40)];
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 320, 146/2)];
+            crap = [[UILabel alloc] initWithFrame:CGRectMake(0, 195, screenSize.width, 40)];
+            noConnectionString = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, screenSize.width, 40)];
         } else {
             imageSmileyView.frame = CGRectMake(320/2-imageSmiley.size.width/2, 225, imageSmiley.size.width, imageSmiley.size.height);
-            line2.frame = CGRectMake(0, 390, 320, 1);
+            line2.frame = CGRectMake(0, 410, 320, 1);
             
-            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 390, 320, 146/2)];
-            crap = [[MBTextView alloc] initWithFrame:CGRectMake(0, 150, screenSize.width, 40)];
-            noConnectionString = [[MBTextView alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 40)];
+            backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 410, 320, 146/2)];
+            crap = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, screenSize.width, 40)];
+            noConnectionString = [[UILabel alloc] initWithFrame:CGRectMake(0, 175, screenSize.width, 40)];
         }
     }
     
@@ -85,12 +85,10 @@
     
     NSMutableAttributedString *attributedString2;
 
-    crap.scrollEnabled = NO;
-    crap.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
+    crap.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14];
     crap.textColor = [UIColor whiteColor];
     crap.textAlignment = NSTextAlignmentCenter;
     crap.backgroundColor = [UIColor clearColor];
-    crap.editable = NO;
     
     attributedString2 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"Aw crap", nil) uppercaseString]];
     [attributedString2 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString2.length)];
@@ -99,12 +97,10 @@
     
     NSMutableAttributedString *attributedString3;
     
-    noConnectionString.scrollEnabled = NO;
-    noConnectionString.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:18];
+    noConnectionString.font = [UIFont fontWithName:@"SourceSansPro-Regular" size:14];
     noConnectionString.textColor = [UIColor whiteColor];
     noConnectionString.textAlignment = NSTextAlignmentCenter;
     noConnectionString.backgroundColor = [UIColor clearColor];
-    noConnectionString.editable = NO;
     
     attributedString3 = [[NSMutableAttributedString alloc] initWithString:[NSLocalizedString(@"No internet connection", nil) uppercaseString]];
     [attributedString3 addAttribute:NSKernAttributeName value:@2.5 range:NSMakeRange(0, attributedString3.length)];
