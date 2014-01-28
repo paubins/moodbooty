@@ -166,9 +166,11 @@ NSTimer *timer;
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *cfuuid = [prefs stringForKey:@"cfuuid"];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/%@/", self.mood, lang, cfuuid]];
+    NSString *connectionUrl = [NSString stringWithFormat:@"http://www.halffullapp.com/quote/%@/%@/%@/", self.mood, lang, cfuuid];
+    
+    NSURL *url = [NSURL URLWithString:connectionUrl];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
-                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                             timeoutInterval:30];
     if ( connection ) {
         connection = nil;
