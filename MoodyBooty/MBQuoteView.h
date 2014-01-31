@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBQuoteView : UIView
+@interface MBQuoteView : UIView <NSURLConnectionDelegate>
 
 @property NSString *quote;
 @property NSString *quoted;
+@property NSString *quoteID;
+@property BOOL liked;
 
 @end

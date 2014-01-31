@@ -31,12 +31,8 @@
     
     self.window = window;
     
-//    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-//    self.window.clipsToBounds =YES;
-//    self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setBool:NO forKey:@"aboutShown"];
+
     
     NSString *cfuuid;
     if ( [prefs stringForKey:@"cfuuid"] == nil) {

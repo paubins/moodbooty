@@ -23,6 +23,8 @@
 MBLoadingView *loadingView;
 MBQuoteView *quoteView;
 NSTimer *timer;
+NSString *_quoteID;
+BOOL _liked;
 
 -(void) loadView
 {
@@ -198,6 +200,8 @@ NSTimer *timer;
         quoteView = [[MBQuoteView alloc] initWithFrame:CGRectMake(0.0, 0, screenSize.width, screenSize.height - 146)];
         [quoteView setQuote:quote];
         [quoteView setQuoted:quoted];
+        [quoteView setQuoteID:_quoteID];
+        [quoteView setLiked:_liked];
         
         if ( timer ) {
             [timer invalidate];
@@ -325,6 +329,9 @@ NSTimer *timer;
     
     moodInfo = @[self.mood, [fields objectForKey:@"quote"], [fields objectForKey:@"attribution"], self.color];
     quoteLoaded = YES;
+    
+    _quoteID = [dictionary[0] objectForKey:@"pk"];
+    _liked = [dictionary count] == 2;
     
     quote = moodInfo[1];
     quoted = moodInfo[2];

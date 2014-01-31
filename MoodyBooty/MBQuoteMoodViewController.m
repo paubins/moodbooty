@@ -169,32 +169,9 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    
-    //[self setModalTransitionStyle:UIMOdalTransi];
-    //[self setModalPresentationStyle:UIModalPre];
     self.definesPresentationContext = YES;
     self.providesPresentationContextTransitionStyle = YES;
     
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    if ( ![prefs boolForKey:@"aboutShown"] ){
-        MBAboutViewController *aboutViewController = [MBAboutViewController new];
-        
-        CATransition *transition = [CATransition animation];
-        transition.duration = 0.3;
-        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        transition.type = kCATransitionPush;
-        transition.subtype = kCATransitionFromTop;
-        [self.view.window.layer addAnimation:transition forKey:nil];
-    
-        [self presentViewController:aboutViewController animated:YES completion:nil];
-        [prefs setBool:YES forKey:@"aboutShown"];
-        [prefs synchronize];
-    }
 }
 
 - (void) handleGesture
