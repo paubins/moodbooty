@@ -1,0 +1,6 @@
+framework module Pods_MoodyBooty {
+  umbrella header "Pods-MoodyBooty-umbrella.h"
+
+  export *
+  module * { export * }
+}

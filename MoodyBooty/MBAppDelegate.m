@@ -12,6 +12,7 @@
 #import "MBAboutViewController.h"
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
+#import <OneSignal/OneSignal.h>
 
 @implementation MBAppDelegate
 
@@ -27,6 +28,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [OneSignal setLogLevel:ONE_S_LL_VERBOSE visualLevel:ONE_S_LL_NONE];
+      
+    // OneSignal initialization
+    [OneSignal initWithLaunchOptions:launchOptions];
+    [OneSignal setAppId:@"297f0031-a352-4bf5-abd3-d24f3cadcd3f"];
+
+    // promptForPushNotifications will show the native iOS notification permission prompt.
+    // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
+    [OneSignal promptForPushNotificationsWithUserResponse:^(BOOL accepted) {
+        NSLog(@"User accepted notifications: %d", accepted);
+    }];
+
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window = window;
